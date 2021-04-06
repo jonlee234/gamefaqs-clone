@@ -1,5 +1,29 @@
 [
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -13,6 +37,22 @@
         "description": "django.contrib",
         "isExtraImport": true,
         "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
         "documentation": {}
     },
     {
@@ -24,11 +64,11 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -48,11 +88,19 @@
         "documentation": {}
     },
     {
-        "label": "Game",
-        "importPath": "game.models",
-        "description": "game.models",
+        "label": "HttpResponseRedirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
         "isExtraImport": true,
-        "detail": "game.models",
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "game_form",
+        "importPath": "game.forms",
+        "description": "game.forms",
+        "isExtraImport": true,
+        "detail": "game.forms",
         "documentation": {}
     },
     {
@@ -89,6 +137,30 @@
         "documentation": {}
     },
     {
+        "label": "AddGameView",
+        "importPath": "game.views",
+        "description": "game.views",
+        "isExtraImport": true,
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "AllGameView",
+        "importPath": "game.views",
+        "description": "game.views",
+        "isExtraImport": true,
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "GameTitleView",
+        "importPath": "game.views",
+        "description": "game.views",
+        "isExtraImport": true,
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -106,6 +178,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "game.migrations.0001_initial",
+        "description": "game.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Game',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(blank=True, max_length=40, null=True)),",
+        "detail": "game.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "GameConfig",
         "kind": 6,
         "importPath": "game.apps",
@@ -115,11 +196,20 @@
         "documentation": {}
     },
     {
+        "label": "game_form",
+        "kind": 6,
+        "importPath": "game.forms",
+        "description": "game.forms",
+        "peekOfCode": "class game_form(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),\n        (\"08\", \"PS4\"),",
+        "detail": "game.forms",
+        "documentation": {}
+    },
+    {
         "label": "Game",
         "kind": 6,
         "importPath": "game.models",
         "description": "game.models",
-        "peekOfCode": "class Game(models.Model):\n    title = models.CharField(max_length=40, null=True, blank=True)\n    description = models.TextField()\n    platform = models.CharField(max_length=10)\n    def __str__(self):\n        return f'{self.title} | {self.platform}'",
+        "peekOfCode": "class Game(models.Model):\n    PLATFORM_CHOICES = (\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),\n        (\"08\", \"PS4\"),",
         "detail": "game.models",
         "documentation": {}
     },
@@ -128,16 +218,25 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def AllGameView(request):\n    template = 'all-games.html'\n    games = Game.objects.all()\n    return render(request, template, {\n        'games': games\n    })\ndef gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {",
+        "peekOfCode": "def AllGameView(request):\n    template = 'all-games.html'\n    games = Game.objects.all()\n    return render(request, template, {\n        'games': games\n    })\ndef GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {",
         "detail": "game.views",
         "documentation": {}
     },
     {
-        "label": "gameTitleView",
+        "label": "GameTitleView",
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })",
+        "peekOfCode": "def GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })\ndef AddGameView(request):\n    template = 'generic-form.html'\n    if request.method == 'POST':\n        form = game_form(request.POST)",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "AddGameView",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def AddGameView(request):\n    template = 'generic-form.html'\n    if request.method == 'POST':\n        form = game_form(request.POST)\n        if form.is_valid():\n            data = form.cleaned_data\n            game = Game.objects.create(\n                title=data['title'],\n                description=data['description'],\n                platform=data['platform'],",
         "detail": "game.views",
         "documentation": {}
     },
@@ -209,7 +308,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "ROOT_URLCONF = 'gamefaqs_project.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'gamefaqs_project.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -218,7 +317,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [BASE_DIR / 'templates'],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -308,7 +407,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView, name='add-game'),\n]",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },

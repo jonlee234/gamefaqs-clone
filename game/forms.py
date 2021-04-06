@@ -1,9 +1,7 @@
-from django.db import models
-
-# Create your models here.
+from django import forms
 
 
-class Game(models.Model):
+class game_form(forms.Form):
     PLATFORM_CHOICES = (
         ("01", "PC"),
         ("02", "PS5"),
@@ -25,9 +23,7 @@ class Game(models.Model):
         ("18", "RetoPy"),
         ("19", "Other Systems"),
     )
-    title = models.CharField(max_length=40, null=True, blank=True)
-    description = models.TextField()
-    platform = models.CharField(max_length=2, choices=PLATFORM_CHOICES)
 
-    def __str__(self):
-        return f'{self.title} | {self.platform}'
+    title = forms.CharField()
+    description = forms.CharField(widget=forms.Textarea)
+    platform = forms.ChoiceField(choices=PLATFORM_CHOICES)
