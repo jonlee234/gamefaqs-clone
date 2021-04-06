@@ -9,4 +9,4 @@ class Post(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user_posted = models.ForeignKey(User, on_delete=models.CASCADE)
     thumbnail = models.ImageField()
-    # platforms = models.ManyToManyField("app.Model", verbose_name=_("")) or models.Charfield w/ choices
+    # platforms = models.ManyToManyField()
