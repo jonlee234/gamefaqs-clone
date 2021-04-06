@@ -26,11 +26,9 @@ SECRET_KEY = "#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<< << << < HEAD
-ALLOWED_HOSTS = [*]
-== == == =
+
 ALLOWED_HOSTS = ["*"]
->>>>>> > 801ff225e3a1765cc8d3750f2e36d257e952a82b
+
 
 
 # Application definition
@@ -44,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "authentication",
-    'posts'
+    'post',
 ]
 
 MIDDLEWARE = [

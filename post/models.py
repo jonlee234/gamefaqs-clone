@@ -1,4 +1,5 @@
 from django.db import models
+
 from accounts.models import CustomUser
 
 # Create your models here.
@@ -20,13 +21,16 @@ PLATFORM_CHOICES = (
     ("15", "PSP"),
     ("16", "Vita"),
     ("17", "3DS"),
-    ("18", "RetoPy"),
+    ("18", "RetroPy"),
     ("19", "Other Systems"),
+)
+
 
 class Post(models.Model):
     text = models.CharField(max_length=500)
     topic = models.CharField(max_length=40)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE)
-    user_posted = models.ForeignKey(CustomUser on_delete=models.CASCADE)
-    thumbnail = models.ImageField()
-    platforms = models.CharField(choices= PLATFORM_CHOICES max_length=50)
+    # Will need game model to work.
+    # game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    thumbnail = models.ImageField(null=True)
+    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)
