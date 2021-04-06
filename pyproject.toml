@@ -7,7 +7,7 @@ authors = ["Steven Delpercio <stevendelpercio1992@hotmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 Django = "^3.1.7"
-black = "^20.8b1"
+Pillow = "^8.2.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^20.8b1", allow-prereleases = true}
