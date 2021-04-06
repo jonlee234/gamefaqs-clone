@@ -28,6 +28,11 @@ class Game(models.Model):
     title = models.CharField(max_length=40, null=True, blank=True)
     description = models.TextField()
     platform = models.CharField(max_length=2, choices=PLATFORM_CHOICES)
+    cover_art = models.ImageField(
+        upload_to='cover-art/',
+        blank=True,
+        null=True,
+        )
 
     def __str__(self):
         return f'{self.title} | {self.platform}'

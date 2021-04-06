@@ -24,7 +24,7 @@ def GameTitleView(request, game_id):
 def AddGameView(request):
     template = 'generic-form.html'
     if request.method == 'POST':
-        form = game_form(request.POST)
+        form = game_form(request.POST, request.FILES)
 
         if form.is_valid():
             data = form.cleaned_data
@@ -32,6 +32,7 @@ def AddGameView(request):
                 title=data['title'],
                 description=data['description'],
                 platform=data['platform'],
+                cover_art=data['cover_art']
             )
             game.save()
         return HttpResponseRedirect(reverse('game-title', args=[game.id]))
@@ -39,4 +40,17 @@ def AddGameView(request):
     form = game_form()
     return render(request, template, {
         'form': form
+    })
+
+
+def PlatformView(request, platform):
+    template = 'platform.html'
+    string = str(platform)
+
+    if len(string) < 2:
+        string= '0' + str(platform)
+
+    games = Game.objects.filter(platform=string)
+    return render(request, template, {
+        'games': games
     })

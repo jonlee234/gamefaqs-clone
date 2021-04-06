@@ -14,12 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
-from game.views import AddGameView, AllGameView, GameTitleView
+from authentication import views as auth_view
+from accounts import views as user_view
+from game.views import AddGameView, AllGameView, GameTitleView, PlatformView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('viewGames/', AllGameView, name='games'),
     path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),
     path('newGame/', AddGameView, name='add-game'),
-]
+    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),
+    path("", user_view.index, name="homepage"),
+    path("login/", auth_view.login_view),
+    path("signup/", auth_view.signup_view),
+    path("logout/", auth_view.logout_view),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
