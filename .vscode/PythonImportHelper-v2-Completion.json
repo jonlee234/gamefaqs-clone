@@ -1,87 +1,5 @@
 [
     {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "django.utils.timezone",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "detail": "django.utils.timezone",
-        "documentation": {}
-    },
-    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -143,6 +61,38 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -444,15 +394,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "accounts.migrations.0001_initial",
-        "description": "accounts.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "accounts.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "accounts.admin",
@@ -549,15 +490,6 @@
         "description": "authentication.views",
         "peekOfCode": "def logout_view(request):\n    logout(request)\n    return HttpResponseRedirect(reverse(\"homepage\"))",
         "detail": "authentication.views",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "game.migrations.0001_initial",
-        "description": "game.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Game',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(blank=True, max_length=40, null=True)),",
-        "detail": "game.migrations.0001_initial",
         "documentation": {}
     },
     {
