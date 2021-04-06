@@ -5,8 +5,16 @@ from game.models import Game
 
 
 def AllGameView(request):
-    games = Game.objects.all()
     template = 'all-games.html'
+    games = Game.objects.all()
     return render(request, template, {
         'games': games
+    })
+
+
+def gameTitleView(request, game_id):
+    template = 'game-info.html'
+    game = Game.objects.get(id=game_id)
+    return render(request, template, {
+        'game': game
     })

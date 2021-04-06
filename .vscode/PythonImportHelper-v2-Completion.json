@@ -128,7 +128,16 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def AllGameView(request):\n    games = Game.objects.all()\n    template = 'all-games.html'\n    return render(request, template, {\n        'games': games\n    })",
+        "peekOfCode": "def AllGameView(request):\n    template = 'all-games.html'\n    games = Game.objects.all()\n    return render(request, template, {\n        'games': games\n    })\ndef gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "gameTitleView",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })",
         "detail": "game.views",
         "documentation": {}
     },
