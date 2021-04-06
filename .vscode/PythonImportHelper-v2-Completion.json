@@ -48,6 +48,14 @@
         "documentation": {}
     },
     {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -113,6 +121,15 @@
         "description": "game.models",
         "peekOfCode": "class Game(models.Model):\n    title = models.CharField(max_length=40, null=True, blank=True)\n    description = models.TextField()\n    platform = models.CharField(max_length=10)\n    def __str__(self):\n        return f'{self.title} | {self.platform}'",
         "detail": "game.models",
+        "documentation": {}
+    },
+    {
+        "label": "AllGameView",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def AllGameView(request):\n    games = Game.objects.all()\n    template = 'all-games.html'\n    return render(request, template, {\n        'games': games\n    })",
+        "detail": "game.views",
         "documentation": {}
     },
     {
