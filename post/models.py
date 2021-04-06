@@ -1,6 +1,7 @@
 from django.db import models
 
 from accounts.models import CustomUser
+from django.utils import timezone
 
 # Create your models here.
 PLATFORM_CHOICES = (
@@ -28,6 +29,7 @@ PLATFORM_CHOICES = (
 
 class Post(models.Model):
     text = models.CharField(max_length=500)
+    post_date= models.DateTimeField(default= timezone.now)
     topic = models.CharField(max_length=40)
     # Will need game model to work.
     # game = models.ForeignKey(Game, on_delete=models.CASCADE)
