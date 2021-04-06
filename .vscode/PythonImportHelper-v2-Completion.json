@@ -96,6 +96,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "game_form",
         "importPath": "game.forms",
         "description": "game.forms",
@@ -407,7 +415,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView, name='add-game'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView, name='add-game'),\n]",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },

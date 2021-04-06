@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, reverse
 from game.models import Game
 from game.forms import game_form
 
@@ -34,7 +34,7 @@ def AddGameView(request):
                 platform=data['platform'],
             )
             game.save()
-        return HttpResponseRedirect
+        return HttpResponseRedirect(reverse('game-title', args=[game.id]))
 
     form = game_form()
     return render(request, template, {
