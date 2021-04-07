@@ -41,6 +41,7 @@ def signup_view(request):
     return render(request, "signup.html", {"form": form})
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("homepage"))

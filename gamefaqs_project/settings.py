@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,14 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0"
+SECRET_KEY = config("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 
 ALLOWED_HOSTS = ["*"]
-
 
 
 # Application definition
@@ -42,8 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "authentication",
-    'post',
-    'game',
+    "post",
+    "game",
 ]
 
 MIDDLEWARE = [
@@ -81,8 +82,8 @@ WSGI_APPLICATION = "gamefaqs_project.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': str(BASE_DIR / "db.sqlite3"),
     }
 }
@@ -128,3 +129,4 @@ STATIC_URL = "/static/"
 AUTH_USER_MODEL = "accounts.CustomUser"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+LOGIN_URL = "/login"

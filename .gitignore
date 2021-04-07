@@ -5,13 +5,7 @@
 __pycache__
 db.sqlite3
 media
-account/
-authentication/
-
-**/migrations/**
-!**/migrations
-!**/migrations/__init__.py
-
+.env
 
 # Backup files # 
 *.bak 
