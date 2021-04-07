@@ -36,3 +36,6 @@ class Post(models.Model):
     user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     thumbnail = models.ImageField(null=True, blank=True, upload_to="images/")
     platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)
+
+    def get_absolute_url(self):
+        return reverse("post-detail", kwargs={"pk": self.pk})
