@@ -34,10 +34,6 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-=======
-
->>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,12 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "authentication",
-<<<<<<< HEAD
-    'game'
-=======
     'post',
     'game',
->>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5
 ]
 
 MIDDLEWARE = [
@@ -91,7 +83,7 @@ WSGI_APPLICATION = "gamefaqs_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'NAME': str(BASE_DIR / "db.sqlite3"),
     }
 }
 
