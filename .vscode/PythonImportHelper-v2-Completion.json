@@ -546,7 +546,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = \"#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "SECRET_KEY = \"#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -555,7 +555,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -564,7 +564,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "ALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"accounts\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -573,7 +573,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n<<<<<<< HEAD\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'game',\n=======",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"accounts\",\n    'game',\n    \"authentication\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
