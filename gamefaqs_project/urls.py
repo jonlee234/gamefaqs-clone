@@ -19,9 +19,14 @@ from django.conf.urls.static import static
 from django.urls import path
 from authentication import views as auth_view
 from accounts import views as user_view
+from game.views import AddGameView, AllGameView, GameTitleView, PlatformView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('viewGames/', AllGameView, name='games'),
+    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),
+    path('newGame/', AddGameView, name='add-game'),
+    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),
     path("", user_view.index, name="homepage"),
     path("login/", auth_view.login_view),
     path("signup/", auth_view.signup_view),
