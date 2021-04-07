@@ -31,4 +31,6 @@ urlpatterns = [
     path("login/", auth_view.login_view),
     path("signup/", auth_view.signup_view),
     path("logout/", auth_view.logout_view),
+    path("post/add/", post_view.PostCreate.as_view(), name="post-create"),
+    path("posts/<int:pk>", post_view.PostDetailView.as_view(), name="post_detail"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
