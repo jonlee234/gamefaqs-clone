@@ -89,12 +89,28 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.utils.timezone",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -162,11 +178,35 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
         "label": "timezone",
         "importPath": "django.utils",
         "description": "django.utils",
         "isExtraImport": true,
         "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -211,6 +251,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -295,6 +343,22 @@
         "description": "accounts.models",
         "isExtraImport": true,
         "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUser",
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "isExtraImport": true,
+        "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
         "documentation": {}
     },
     {
@@ -524,6 +588,24 @@
         "documentation": {}
     },
     {
+        "label": "AllGameView",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def AllGameView(request):\n    template = 'all-games.html'\n    games = Game.objects.all()\n    return render(request, template, {\n        'games': games\n    })\ndef gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "gameTitleView",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def gameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "gamefaqs_project.asgi",
@@ -728,6 +810,33 @@
         "description": "gamefaqs_project.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "gamefaqs_project.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "PostConfig",
+        "kind": 6,
+        "importPath": "post.apps",
+        "description": "post.apps",
+        "peekOfCode": "class PostConfig(AppConfig):\n    name = 'post'",
+        "detail": "post.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "kind": 6,
+        "importPath": "post.models",
+        "description": "post.models",
+        "peekOfCode": "class Post(models.Model):\n    text = models.CharField(max_length=500)\n    post_date= models.DateTimeField(default= timezone.now)\n    topic = models.CharField(max_length=40)\n    # Will need game model to work.\n    # game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True)\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)",
+        "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "PLATFORM_CHOICES",
+        "kind": 5,
+        "importPath": "post.models",
+        "description": "post.models",
+        "peekOfCode": "PLATFORM_CHOICES = (\n    (\"1\", \"PC\"),\n    (\"2\", \"PS5\"),\n    (\"3\", \"XSX\"),\n    (\"4\", \"Switch\"),\n    (\"5\", \"iOS\"),\n    (\"6\", \"Android\"),\n    (\"7\", \"Arcade\"),\n    (\"8\", \"PS4\"),\n    (\"9\", \"PS3\"),",
+        "detail": "post.models",
         "documentation": {}
     },
     {
