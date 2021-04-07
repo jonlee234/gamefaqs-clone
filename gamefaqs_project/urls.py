@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
+from django.conf.urls import handler404, handler500
+
 from authentication import views as auth_view
 from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView
+from post import views as post_view
+from error_pages.views import error_404_view, error_500_view
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,3 +40,5 @@ urlpatterns = [
     path("post/add/", post_view.PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", post_view.PostDetailView.as_view(), name="post_detail"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+handler404 = 'error_pages.views.error_404_view'
+handler500 = 'error_pages.views.error_500_view'
