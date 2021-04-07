@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import View
 from game.models import Game
 from game.forms import game_form
+from django.views.generic import View
 
 # Create your views here.
 
@@ -21,9 +24,15 @@ def GameTitleView(request, game_id):
     })
 
 
-def AddGameView(request):
-    template = 'generic-form.html'
-    if request.method == 'POST':
+class AddGameView(LoginRequiredMixin, View):
+    def get(self, request):
+        template = 'generic-form.html'
+        form = game_form()
+        return render(request, template, {
+            'form': form
+        })
+
+    def post(self, request):
         form = game_form(request.POST, request.FILES)
 
         if form.is_valid():
@@ -36,11 +45,6 @@ def AddGameView(request):
             )
             game.save()
         return HttpResponseRedirect(reverse('game-title', args=[game.id]))
-
-    form = game_form()
-    return render(request, template, {
-        'form': form
-    })
 
 
 def PlatformView(request, platform):

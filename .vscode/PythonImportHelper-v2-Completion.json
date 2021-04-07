@@ -104,38 +104,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -376,6 +344,30 @@
         "documentation": {}
     },
     {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
         "label": "game_form",
         "importPath": "game.forms",
         "description": "game.forms",
@@ -414,14 +406,6 @@
         "description": "decouple",
         "isExtraImport": true,
         "detail": "decouple",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -502,24 +486,6 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
-        "label": "django.utils.timezone",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "detail": "django.utils.timezone",
         "documentation": {}
     },
     {
@@ -631,15 +597,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "game.migrations.0001_initial",
-        "description": "game.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Game',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(blank=True, max_length=40, null=True)),",
-        "detail": "game.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
         "label": "GameConfig",
         "kind": 6,
         "importPath": "game.apps",
@@ -667,6 +624,15 @@
         "documentation": {}
     },
     {
+        "label": "AddGameView",
+        "kind": 6,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "class AddGameView(LoginRequiredMixin, View):\n    def get(self, request):\n        template = 'generic-form.html'\n        form = game_form()\n        return render(request, template, {\n            'form': form\n        })\n    def post(self, request):\n        form = game_form(request.POST, request.FILES)\n        if form.is_valid():",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
         "label": "AllGameView",
         "kind": 2,
         "importPath": "game.views",
@@ -680,16 +646,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })\ndef AddGameView(request):\n    template = 'generic-form.html'\n    if request.method == 'POST':\n        form = game_form(request.POST, request.FILES)",
-        "detail": "game.views",
-        "documentation": {}
-    },
-    {
-        "label": "AddGameView",
-        "kind": 2,
-        "importPath": "game.views",
-        "description": "game.views",
-        "peekOfCode": "def AddGameView(request):\n    template = 'generic-form.html'\n    if request.method == 'POST':\n        form = game_form(request.POST, request.FILES)\n        if form.is_valid():\n            data = form.cleaned_data\n            game = Game.objects.create(\n                title=data['title'],\n                description=data['description'],\n                platform=data['platform'],",
+        "peekOfCode": "def GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {\n        'game': game\n    })\nclass AddGameView(LoginRequiredMixin, View):\n    def get(self, request):\n        template = 'generic-form.html'\n        form = game_form()",
         "detail": "game.views",
         "documentation": {}
     },
@@ -905,7 +862,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView, name='add-game'),\n    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"login/\", auth_view.login_view),\n    path(\"signup/\", auth_view.signup_view),\n    path(\"logout/\", auth_view.logout_view),",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView.as_view(), name='add-game'),\n    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"login/\", auth_view.login_view),\n    path(\"signup/\", auth_view.signup_view),\n    path(\"logout/\", auth_view.logout_view),",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },
@@ -916,15 +873,6 @@
         "description": "gamefaqs_project.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "gamefaqs_project.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "post.migrations.0001_initial",
-        "description": "post.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Post',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "post.migrations.0001_initial",
         "documentation": {}
     },
     {
