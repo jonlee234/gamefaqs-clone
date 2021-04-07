@@ -26,12 +26,18 @@ SECRET_KEY = "#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,7 +46,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "authentication",
+<<<<<<< HEAD
     'game'
+=======
+    'post',
+    'game',
+>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5
 ]
 
 MIDDLEWARE = [

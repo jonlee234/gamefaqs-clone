@@ -48,7 +48,7 @@ def PlatformView(request, platform):
     string = str(platform)
 
     if len(string) < 2:
-        string= '0' + str(platform)
+        string = '0' + str(platform)
 
     games = Game.objects.filter(platform=string)
     return render(request, template, {

@@ -1,84 +1,10 @@
 [
     {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
         "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "django.utils.timezone",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "detail": "django.utils.timezone",
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -146,11 +72,75 @@
         "documentation": {}
     },
     {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "timezone",
         "importPath": "django.utils",
         "description": "django.utils",
         "isExtraImport": true,
         "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -219,6 +209,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -295,6 +293,14 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUser",
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "isExtraImport": true,
+        "detail": "accounts.models",
         "documentation": {}
     },
     {
@@ -444,15 +450,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "accounts.migrations.0001_initial",
-        "description": "accounts.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "accounts.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "accounts.admin",
@@ -552,15 +549,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "game.migrations.0001_initial",
-        "description": "game.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Game',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(blank=True, max_length=40, null=True)),",
-        "detail": "game.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
         "label": "GameConfig",
         "kind": 6,
         "importPath": "game.apps",
@@ -619,7 +607,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string= '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })",
+        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })",
         "detail": "game.views",
         "documentation": {}
     },
@@ -646,7 +634,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = \"#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = \"#^)pex^dki(^_=m4aciyzy_06yelc6u&ios32=06++d*q8&_)0\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n=======\n>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5\n    \"django.contrib.admin\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -655,7 +643,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n=======\n>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -664,7 +652,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"accounts\",",
+        "peekOfCode": "ALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n<<<<<<< HEAD\n=======\n>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -673,7 +661,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"accounts\",\n    \"authentication\",\n    'game'",
+        "peekOfCode": "INSTALLED_APPS = [\n<<<<<<< HEAD\n=======\n>>>>>>> 0f8c0972a1cde164d2bc1023e8c2bc43f855bde5\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -828,6 +816,33 @@
         "description": "gamefaqs_project.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "gamefaqs_project.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "PostConfig",
+        "kind": 6,
+        "importPath": "post.apps",
+        "description": "post.apps",
+        "peekOfCode": "class PostConfig(AppConfig):\n    name = 'post'",
+        "detail": "post.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "kind": 6,
+        "importPath": "post.models",
+        "description": "post.models",
+        "peekOfCode": "class Post(models.Model):\n    text = models.CharField(max_length=500)\n    post_date= models.DateTimeField(default= timezone.now)\n    topic = models.CharField(max_length=40)\n    # Will need game model to work.\n    # game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True)\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)",
+        "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "PLATFORM_CHOICES",
+        "kind": 5,
+        "importPath": "post.models",
+        "description": "post.models",
+        "peekOfCode": "PLATFORM_CHOICES = (\n    (\"1\", \"PC\"),\n    (\"2\", \"PS5\"),\n    (\"3\", \"XSX\"),\n    (\"4\", \"Switch\"),\n    (\"5\", \"iOS\"),\n    (\"6\", \"Android\"),\n    (\"7\", \"Arcade\"),\n    (\"8\", \"PS4\"),\n    (\"9\", \"PS3\"),",
+        "detail": "post.models",
         "documentation": {}
     },
     {
