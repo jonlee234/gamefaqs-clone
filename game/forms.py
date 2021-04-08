@@ -23,7 +23,11 @@ class game_form(forms.Form):
         ("18", "RetoPy"),
         ("19", "Other Systems"),
     )
-    cover_art = forms.ImageField()
+    cover_art = forms.ImageField(required=False)
     title = forms.CharField()
     description = forms.CharField(widget=forms.Textarea)
     platform = forms.ChoiceField(choices=PLATFORM_CHOICES)
+
+
+class SearchBar(forms.Form):
+    search = forms.CharField()
