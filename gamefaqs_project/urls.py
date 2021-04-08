@@ -36,5 +36,5 @@ urlpatterns = [
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", PostDetailView.as_view(), name = "post_detail"),
     # Will change to user_profile_view when I know what content to add.
-    path('user/<int:user_id>/', views.index),
+    path('user/<int:CustomUser_id>/', views.user_profile_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

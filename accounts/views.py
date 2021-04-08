@@ -15,7 +15,3 @@ def user_profile_view(request, CustomUser_id):
     return render(
         request, "user_profile.html", {"user": my_Custom_User}
     )
-
-
-# basic user information
-# following/followers
