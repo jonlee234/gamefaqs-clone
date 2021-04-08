@@ -34,7 +34,7 @@ def signup_view(request):
                 bio=data["bio"],
                 email=data["email"],
                 platform_choice_field=data["platform_choice_field"],
-                # avatar=data.get("avatar"),
+                avatar=data.get("avatar"),
             )
             return HttpResponseRedirect(request.GET.get("next", reverse("homepage")))
     form = SignupForm()
