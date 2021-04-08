@@ -64,6 +64,9 @@ sqlparse = ">=0.2.2"
 argon2 = ["argon2-cffi (>=16.1.0)"]
 bcrypt = ["bcrypt"]
 
+[package.dependencies]
+Django = ">=2.1"
+
 [[package]]
 name = "flake8"
 version = "3.9.0"
@@ -168,7 +171,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ca4b2fd2e754b6a23b3c57e7d47a1c6bc65ae86bfedd0b7ac5b01bbf0f1a8ad9"
+content-hash = "3dde00e2779c9ac98566aa0046d84b1e2885f6e44852c5b418d7106df84d0ca9"
 
 [metadata.files]
 appdirs = [
@@ -190,6 +193,7 @@ django = [
     {file = "Django-3.1.7-py3-none-any.whl", hash = "sha256:baf099db36ad31f970775d0be5587cc58a6256a6771a44eb795b554d45f211b8"},
     {file = "Django-3.1.7.tar.gz", hash = "sha256:32ce792ee9b6a0cbbec340123e229ac9f765dff8c2a4ae9247a14b2ba3a365a7"},
 ]
+<<<<<<< HEAD
 flake8 = [
     {file = "flake8-3.9.0-py2.py3-none-any.whl", hash = "sha256:12d05ab02614b6aee8df7c36b97d1a3b2372761222b19b58621355e82acddcff"},
     {file = "flake8-3.9.0.tar.gz", hash = "sha256:78873e372b12b093da7b5e5ed302e8ad9e988b38b063b61ad937f26ca58fc5f0"},
@@ -197,6 +201,11 @@ flake8 = [
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
+=======
+django-fontawesome-5 = [
+    {file = "django-fontawesome-5-1.0.18.tar.gz", hash = "sha256:4fc4a7f5d0fe6e10d542ac9f1c143ad5e92aa61c6f310ea297c3c26bfc6001dd"},
+    {file = "django_fontawesome_5-1.0.18-py3-none-any.whl", hash = "sha256:1be340e795a6a68ebd9ba5d75e26bd72a839515c351786ff45e16b90bf50c3a0"},
+>>>>>>> 4e7faeb39ac6b91604ab3683fa0cae3363fc1061
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
