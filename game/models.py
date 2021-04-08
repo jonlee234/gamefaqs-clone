@@ -32,6 +32,7 @@ class Game(models.Model):
         upload_to='cover-art/',
         blank=True,
         null=True,
+        default='cover-art/cover-art-default.png'
         )
 
     def __str__(self):

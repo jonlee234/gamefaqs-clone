@@ -490,6 +490,14 @@
         "documentation": {}
     },
     {
+        "label": "Search",
+        "importPath": "game.views",
+        "description": "game.views",
+        "isExtraImport": true,
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -628,7 +636,7 @@
         "kind": 6,
         "importPath": "game.forms",
         "description": "game.forms",
-        "peekOfCode": "class SearchBar(forms.Form):\n    PLATFORM_CHOICES = (\n        ('00', '--'),\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),",
+        "peekOfCode": "class SearchBar(forms.Form):\n    search = forms.CharField()",
         "detail": "game.forms",
         "documentation": {}
     },
@@ -673,16 +681,16 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })\ndef search(request):",
+        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })\ndef Search(request, title):",
         "detail": "game.views",
         "documentation": {}
     },
     {
-        "label": "search",
+        "label": "Search",
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def search(request):\n    filter = Game.objects.all().filter(platform=str(search_by))\n            for items in filter:\n                if str(search).lower() in str(items.title).lower():\n                    title = str(search).lower())",
+        "peekOfCode": "def Search(request, title):\n    template = 'search.html'\n    context = {}\n    game = []\n    search = ''\n    regex = r'([\\s\\w\\d+]+)'\n    find = re.findall(regex, title)\n    if find:\n        for words in find:\n            search = words",
         "detail": "game.views",
         "documentation": {}
     },

@@ -23,15 +23,17 @@ class AllGameView(View):
     def post(self, request):
         search_bar = SearchBar(request.POST)
         title = ''
-        platform = ''
 
         if search_bar.is_valid():
             data = search_bar.cleaned_data
 
             title = data['search']
-            platform = data['search_by']
 
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(
+                reverse(
+                    'search',
+                    args=[title]
+                ))
 
 
 def GameTitleView(request, game_id):
@@ -55,14 +57,31 @@ class AddGameView(LoginRequiredMixin, View):
 
         if form.is_valid():
             data = form.cleaned_data
-            game = Game.objects.create(
-                title=data['title'],
-                description=data['description'],
-                platform=data['platform'],
-                cover_art=data['cover_art']
-            )
-            game.save()
-        return HttpResponseRedirect(reverse('game-title', args=[game.id]))
+            if data['cover_art']:
+                game = Game.objects.create(
+                    title=data['title'],
+                    description=data['description'],
+                    platform=data['platform'],
+                    cover_art=data['cover_art']
+                )
+                game.save()
+                return HttpResponseRedirect(
+                    reverse(
+                        'game-title',
+                        args=[game.id]
+                    ))
+            else:
+                game = Game.objects.create(
+                    title=data['title'],
+                    description=data['description'],
+                    platform=data['platform'],
+                )
+                game.save()
+                return HttpResponseRedirect(
+                    reverse(
+                        'game-title',
+                        args=[game.id]
+                    ))
 
 
 def PlatformView(request, platform):
@@ -78,9 +97,31 @@ def PlatformView(request, platform):
     })
 
 
-def search(request):
-    
-    filter = Game.objects.all().filter(platform=str(search_by))
-            for items in filter:
-                if str(search).lower() in str(items.title).lower():
-                    title = str(search).lower())
+def Search(request, title):
+    template = 'search.html'
+    context = {}
+    game = []
+    search = ''
+
+    regex = r'([\s\w\d+]+)'
+
+    find = re.findall(regex, title)
+
+    if find:
+        for words in find:
+            search = words
+
+    get = Game.objects.all()
+    for items in get:
+        filter = re.findall(str(search).lower(), str(items).lower())
+        if filter:
+            print(filter)
+            if str(search).lower() in str(items.title).lower():
+                # print(str(search))
+                id = items.id
+                game.append(Game.objects.get(id=id))
+
+                context.update({
+                    'games': game
+                })
+    return render(request, template, context)
