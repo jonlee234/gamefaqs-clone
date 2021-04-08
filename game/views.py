@@ -2,18 +2,36 @@ from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 from game.models import Game
-from game.forms import game_form
-from django.views.generic import View
+from game.forms import game_form, SearchBar
+import re
 
 # Create your views here.
 
 
-def AllGameView(request):
-    template = 'all-games.html'
-    games = Game.objects.all()
-    return render(request, template, {
-        'games': games
-    })
+class AllGameView(View):
+    def get(self, request):
+        template = 'all-games.html'
+
+        search_bar = SearchBar()
+
+        games = Game.objects.all()
+        return render(request, template, {
+            'games': games,
+            'search': search_bar
+        })
+
+    def post(self, request):
+        search_bar = SearchBar(request.POST)
+        title = ''
+        platform = ''
+
+        if search_bar.is_valid():
+            data = search_bar.cleaned_data
+
+            title = data['search']
+            platform = data['search_by']
+
+            return HttpResponseRedirect('/')
 
 
 def GameTitleView(request, game_id):
@@ -58,3 +76,11 @@ def PlatformView(request, platform):
     return render(request, template, {
         'games': games
     })
+
+
+def search(request):
+    
+    filter = Game.objects.all().filter(platform=str(search_by))
+            for items in filter:
+                if str(search).lower() in str(items.title).lower():
+                    title = str(search).lower())

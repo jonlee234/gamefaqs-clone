@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>view all games</h1>
+    <form action='' method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{search}}
+        <input type="submit" value="Search">
+    </form>
     {% for items in games %}
     <li>
         <a href="/viewGames/{{items.id}}">

@@ -23,7 +23,7 @@ from game.views import AddGameView, AllGameView, GameTitleView, PlatformView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('viewGames/', AllGameView, name='games'),
+    path('viewGames/', AllGameView.as_view(), name='games'),
     path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),
     path('newGame/', AddGameView.as_view(), name='add-game'),
     path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),

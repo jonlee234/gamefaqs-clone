@@ -360,19 +360,28 @@
         "documentation": {}
     },
     {
-        "label": "View",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
         "label": "game_form",
         "importPath": "game.forms",
         "description": "game.forms",
         "isExtraImport": true,
         "detail": "game.forms",
+        "documentation": {}
+    },
+    {
+        "label": "SearchBar",
+        "importPath": "game.forms",
+        "description": "game.forms",
+        "isExtraImport": true,
+        "detail": "game.forms",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -615,6 +624,15 @@
         "documentation": {}
     },
     {
+        "label": "SearchBar",
+        "kind": 6,
+        "importPath": "game.forms",
+        "description": "game.forms",
+        "peekOfCode": "class SearchBar(forms.Form):\n    PLATFORM_CHOICES = (\n        ('00', '--'),\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),",
+        "detail": "game.forms",
+        "documentation": {}
+    },
+    {
         "label": "Game",
         "kind": 6,
         "importPath": "game.models",
@@ -624,20 +642,20 @@
         "documentation": {}
     },
     {
+        "label": "AllGameView",
+        "kind": 6,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "class AllGameView(View):\n    def get(self, request):\n        template = 'all-games.html'\n        search_bar = SearchBar()\n        games = Game.objects.all()\n        return render(request, template, {\n            'games': games,\n            'search': search_bar\n        })\n    def post(self, request):",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
         "label": "AddGameView",
         "kind": 6,
         "importPath": "game.views",
         "description": "game.views",
         "peekOfCode": "class AddGameView(LoginRequiredMixin, View):\n    def get(self, request):\n        template = 'generic-form.html'\n        form = game_form()\n        return render(request, template, {\n            'form': form\n        })\n    def post(self, request):\n        form = game_form(request.POST, request.FILES)\n        if form.is_valid():",
-        "detail": "game.views",
-        "documentation": {}
-    },
-    {
-        "label": "AllGameView",
-        "kind": 2,
-        "importPath": "game.views",
-        "description": "game.views",
-        "peekOfCode": "def AllGameView(request):\n    template = 'all-games.html'\n    games = Game.objects.all()\n    return render(request, template, {\n        'games': games\n    })\ndef GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    return render(request, template, {",
         "detail": "game.views",
         "documentation": {}
     },
@@ -655,7 +673,16 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })",
+        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })\ndef search(request):",
+        "detail": "game.views",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "kind": 2,
+        "importPath": "game.views",
+        "description": "game.views",
+        "peekOfCode": "def search(request):\n    filter = Game.objects.all().filter(platform=str(search_by))\n            for items in filter:\n                if str(search).lower() in str(items.title).lower():\n                    title = str(search).lower())",
         "detail": "game.views",
         "documentation": {}
     },
@@ -862,7 +889,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView, name='games'),\n    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView.as_view(), name='add-game'),\n    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"login/\", auth_view.login_view),\n    path(\"signup/\", auth_view.signup_view),\n    path(\"logout/\", auth_view.logout_view),",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('viewGames/', AllGameView.as_view(), name='games'),\n    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),\n    path('newGame/', AddGameView.as_view(), name='add-game'),\n    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"login/\", auth_view.login_view),\n    path(\"signup/\", auth_view.signup_view),\n    path(\"logout/\", auth_view.logout_view),",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },
