@@ -19,8 +19,8 @@ from django.conf.urls.static import static
 from django.urls import path
 from authentication import views as auth_view
 from accounts import views as user_view
-from game.views import AddGameView, AllGameView, GameTitleView
-from game.views import PlatformView, Search
+from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
+from post.views import PostCreate, PostDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +33,6 @@ urlpatterns = [
     path("signup/", auth_view.signup_view),
     path("logout/", auth_view.logout_view),
     path('viewGames/search/<str:title>/', Search, name='search'),
+    path("post/add/", PostCreate.as_view(), name="post-create"),
+    path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

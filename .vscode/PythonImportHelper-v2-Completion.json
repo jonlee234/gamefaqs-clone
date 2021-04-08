@@ -280,6 +280,14 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
@@ -328,22 +336,6 @@
         "documentation": {}
     },
     {
-        "label": "Game",
-        "importPath": "game.models",
-        "description": "game.models",
-        "isExtraImport": true,
-        "detail": "game.models",
-        "documentation": {}
-    },
-    {
-        "label": "Game",
-        "importPath": "game.models",
-        "description": "game.models",
-        "isExtraImport": true,
-        "detail": "game.models",
-        "documentation": {}
-    },
-    {
         "label": "LoginRequiredMixin",
         "importPath": "django.contrib.auth.mixins",
         "description": "django.contrib.auth.mixins",
@@ -357,6 +349,22 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
         "documentation": {}
     },
     {
@@ -442,6 +450,30 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_lazy",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "views",
         "importPath": "authentication",
         "description": "authentication",
@@ -498,11 +530,67 @@
         "documentation": {}
     },
     {
+        "label": "PostCreate",
+        "importPath": "post.views",
+        "description": "post.views",
+        "isExtraImport": true,
+        "detail": "post.views",
+        "documentation": {}
+    },
+    {
+        "label": "PostDetailView",
+        "importPath": "post.views",
+        "description": "post.views",
+        "isExtraImport": true,
+        "detail": "post.views",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "importPath": "django.views.generic.edit",
+        "description": "django.views.generic.edit",
+        "isExtraImport": true,
+        "detail": "django.views.generic.edit",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic.edit",
+        "description": "django.views.generic.edit",
+        "isExtraImport": true,
+        "detail": "django.views.generic.edit",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic.edit",
+        "description": "django.views.generic.edit",
+        "isExtraImport": true,
+        "detail": "django.views.generic.edit",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic.detail",
+        "description": "django.views.generic.detail",
+        "isExtraImport": true,
+        "detail": "django.views.generic.detail",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "importPath": "post.models",
+        "description": "post.models",
+        "isExtraImport": true,
+        "detail": "post.models",
         "documentation": {}
     },
     {
@@ -920,11 +1008,20 @@
         "documentation": {}
     },
     {
+        "label": "CreatePostForm",
+        "kind": 6,
+        "importPath": "post.forms",
+        "description": "post.forms",
+        "peekOfCode": "class CreatePostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = [\"topic\", \"game\", \"platforms\", \"text\", \"post_date\", \"thumbnail\"]",
+        "detail": "post.forms",
+        "documentation": {}
+    },
+    {
         "label": "Post",
         "kind": 6,
         "importPath": "post.models",
         "description": "post.models",
-        "peekOfCode": "class Post(models.Model):\n    text = models.CharField(max_length=500)\n    post_date= models.DateTimeField(default= timezone.now)\n    topic = models.CharField(max_length=40)\n    # Will need game model to work.\n    # game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True)\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)",
+        "peekOfCode": "class Post(models.Model):\n    text = models.CharField(max_length=500)\n    post_date = models.DateTimeField(default=timezone.now)\n    topic = models.CharField(max_length=40)\n    game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True, blank=True, upload_to=\"media/\")\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)\n    def get_absolute_url(self):\n        return reverse(\"post_detail\", kwargs={\"pk\": self.pk})",
         "detail": "post.models",
         "documentation": {}
     },
@@ -935,6 +1032,24 @@
         "description": "post.models",
         "peekOfCode": "PLATFORM_CHOICES = (\n    (\"1\", \"PC\"),\n    (\"2\", \"PS5\"),\n    (\"3\", \"XSX\"),\n    (\"4\", \"Switch\"),\n    (\"5\", \"iOS\"),\n    (\"6\", \"Android\"),\n    (\"7\", \"Arcade\"),\n    (\"8\", \"PS4\"),\n    (\"9\", \"PS3\"),",
         "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "PostCreate",
+        "kind": 6,
+        "importPath": "post.views",
+        "description": "post.views",
+        "peekOfCode": "class PostCreate(CreateView):\n    template_name = \"add_post.html\"\n    model = Post\n    fields = [\"topic\", \"game\", \"platforms\", \"text\", \"post_date\", \"thumbnail\"]\n    def form_valid(self, form):\n        form.instance.user_posted = self.request.user\n        return super().form_valid(form)\nclass PostDetailView(DetailView):\n    template_name = \"post_detail.html\"\n    model = Post",
+        "detail": "post.views",
+        "documentation": {}
+    },
+    {
+        "label": "PostDetailView",
+        "kind": 6,
+        "importPath": "post.views",
+        "description": "post.views",
+        "peekOfCode": "class PostDetailView(DetailView):\n    template_name = \"post_detail.html\"\n    model = Post\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context",
+        "detail": "post.views",
         "documentation": {}
     },
     {
