@@ -336,6 +336,39 @@
         "documentation": {}
     },
     {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
+        "label": "Game",
+        "importPath": "game.models",
+        "description": "game.models",
+        "isExtraImport": true,
+        "detail": "game.models",
+        "documentation": {}
+    },
+    {
         "label": "LoginRequiredMixin",
         "importPath": "django.contrib.auth.mixins",
         "description": "django.contrib.auth.mixins",
@@ -349,22 +382,6 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "Game",
-        "importPath": "game.models",
-        "description": "game.models",
-        "isExtraImport": true,
-        "detail": "game.models",
-        "documentation": {}
-    },
-    {
-        "label": "Game",
-        "importPath": "game.models",
-        "description": "game.models",
-        "isExtraImport": true,
-        "detail": "game.models",
         "documentation": {}
     },
     {
@@ -384,12 +401,11 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
+        "label": "searchBy",
+        "importPath": "game.helpers",
+        "description": "game.helpers",
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "detail": "game.helpers",
         "documentation": {}
     },
     {
@@ -729,6 +745,15 @@
         "documentation": {}
     },
     {
+        "label": "searchBy",
+        "kind": 2,
+        "importPath": "game.helpers",
+        "description": "game.helpers",
+        "peekOfCode": "def searchBy(title):\n    game = []\n    search = ''\n    regex = r'([\\s\\w\\d+]+)'\n    find = re.findall(regex, title)\n    if find:\n        for words in find:\n            search = words\n    get = Game.objects.all()\n    for items in get:",
+        "detail": "game.helpers",
+        "documentation": {}
+    },
+    {
         "label": "Game",
         "kind": 6,
         "importPath": "game.models",
@@ -778,7 +803,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def Search(request, title):\n    template = 'search.html'\n    context = {}\n    game = []\n    search = ''\n    regex = r'([\\s\\w\\d+]+)'\n    find = re.findall(regex, title)\n    if find:\n        for words in find:\n            search = words",
+        "peekOfCode": "def Search(request, title):\n    template = 'search.html'\n    games = searchBy(title)\n    return render(request, template, {\n        'games': games\n    })",
         "detail": "game.views",
         "documentation": {}
     },
