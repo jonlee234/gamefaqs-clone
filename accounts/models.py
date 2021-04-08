@@ -24,14 +24,6 @@ PLATFORM_CHOICES = (
     ("19", "Other Systems"),
 )
 
-"""
-notes:
-needed to change username to unique
-fix the emailfield to only unique true and max length
-datetime should refer to current datetime per timezone now
-Choice Field needs to be models.Charfield
-"""
-
 
 class CustomUser(AbstractUser):
     username = models.CharField(max_length=20, unique=True)
@@ -41,9 +33,5 @@ class CustomUser(AbstractUser):
     platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)
     avatar = models.ImageField(null=True, blank=True, upload_to="media/")
 
-    # update to anything else you'd like to show here
     def __str__(self):
         return self.username
-
-
-# Profile Pic(null)
