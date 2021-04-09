@@ -26,7 +26,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "authentication",
     "post",
     "game",
-    "error_pages"
+    "error_pages",
 ]
 
 MIDDLEWARE = [
@@ -84,9 +84,9 @@ WSGI_APPLICATION = "gamefaqs_project.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / "db.sqlite3"),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": str(BASE_DIR / "db.sqlite3"),
     }
 }
 
