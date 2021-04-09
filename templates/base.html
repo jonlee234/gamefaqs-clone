@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %} GAMR {% endblock %}</title>
+  </head>
+  <body>
+    {% block navBar %}
+    <div className="nav-bar-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="navbar-template">
+            <button onclick="window.location.href='/';">Home</button>
+            <!-- not yet merged with main -->
+            <button onclick="window.location.href='/profile';">Profile</button>
+            <button onclick="window.location.href='viewGames/';">Games</button>
+            <!-- No General Platform Page -->
+            <button onclick="window.location.href='/platforms';">
+              Platforms
+            </button>
+            <button onclick="window.location.href='/post/add/';">Post</button>
+            <button onclick="window.location.href='/logout';">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <div className="content">{% block content %}{% endblock %}</div>
+  </body>
+</html>

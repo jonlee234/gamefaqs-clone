@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Games</title>
-</head>
-<body>
-    <h1>view all games</h1>
-    <form action='' method="post" enctype="multipart/form-data">
-        {% csrf_token %} 
-        {{search}}
-        <input type="submit" value="Search">
-    </form>
-    {% for items in games %}
-    <li>
-        <a href="/viewGames/{{items.id}}">
-            {{ items.title.title }}<br>
-        </a>
-        platform: <a href="/viewGames/platform/{{items.platform}}">{{items.platform}}</a>
-    </li>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %} {% block content %}
+
+<div className="game-view-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="games-template">
+        <h1>view all games</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %} {{search}}
+          <input type="submit" value="Search" />
+        </form>
+        <!-- Temp HR  -->
+        <hr />
+        {% for items in games %}
+        <li>
+          <a href="/viewGames/{{items.id}}"> {{ items.title.title }}<br /> </a>
+          platform:
+          <a href="/viewGames/platform/{{items.platform}}"
+            >{{items.platform}}</a
+          >
+        </li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
