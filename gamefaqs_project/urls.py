@@ -27,6 +27,7 @@ from error_pages.views import error_404_view, error_500_view
 
 
 from post.views import PostCreate, PostDetailView
+from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,7 +41,9 @@ urlpatterns = [
     path("logout/", auth_view.logout_view),
     path('viewGames/search/<str:title>/', Search, name='search'),
     path("post/add/", PostCreate.as_view(), name="post-create"),
-    path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
+    path("posts/<int:pk>", PostDetailView.as_view(), name = "post_detail"),
+    # Will change to user_profile_view when I know what content to add.
+    path('user/<int:CustomUser_id>/', views.user_profile_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'error_pages.views.error_404_view'
 handler500 = 'error_pages.views.error_500_view'
