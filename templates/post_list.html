@@ -1,0 +1,26 @@
+<h1>Posts</h1>
+<ul>
+  {% for post in object_list %}
+  <li>{{ post.post_date }} - {{ post.topic }}</li>
+  {% empty %}
+  <li>No articles yet.</li>
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  <span class="step-links">
+    {% if object_list.has_previous %}
+    <a href="?page=1">&laquo; first</a>
+    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+    </span>
+
+    {% if object_list.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
