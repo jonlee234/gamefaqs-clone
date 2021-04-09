@@ -785,7 +785,7 @@
         "kind": 6,
         "importPath": "accounts.models",
         "description": "accounts.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\")\n    followers = models.ManyToManyField('self', symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    # update to anything else you'd like to show here",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\", default=\"media/default.png\")\n    followers = models.ManyToManyField('self', symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    # update to anything else you'd like to show here",
         "detail": "accounts.models",
         "documentation": {}
     },
