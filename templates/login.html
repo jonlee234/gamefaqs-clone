@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GF</title>
-</head>
+<div className="signup-form-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login-template">
+        <h1>GameFaqs</h1>
+        <form className="signup-form" method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <input type="submit" value="submit" />
+          <p><a href="/signup/">Not a GAMR yet? Join the crew.</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-<body>
-    <h1>GameFaqs</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="submit">
-        <p> <a href="/signup/">Dont have an account? Signup</a> </p>
-    </form>
-</body>
-
-</html>
+{% endblock %}
