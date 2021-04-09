@@ -47,11 +47,14 @@ urlpatterns = [
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
     path("admin/", admin.site.urls),
+
     path("follow/<int:user_id>", follower_view),
     path("unfollow/<int:user_id>", unfollow_view),
     path("favorite_game/<int:game_id>", favorite_game_view),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 
 handler404 = "error_pages.views.error_404_view"
 handler500 = "error_pages.views.error_500_view"
