@@ -24,7 +24,12 @@ from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
 from post import views as post_view
 from error_pages.views import error_404_view, error_500_view
-from accounts.views import favorite_game_view, follower_view, unfavorite_game_view, unfollow_view
+from accounts.views import (
+    favorite_game_view,
+    follower_view,
+    unfavorite_game_view,
+    unfollow_view,
+)
 
 from post.views import PostCreate, PostDetailView
 from accounts.views import favorite_game_view

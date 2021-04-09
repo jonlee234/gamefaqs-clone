@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{user.username}}'s Profile</title>
+  </head>
+  <body>
+    <div className="profile-title-container">
+      <h1 className="profile-title">
+        {{user.username}}'s Profile {{user.avatar}}
+      </h1>
+    </div>
+    <br />
+    <div className="status-container">
+      <label for="online_status">Set your online status:</label>
+      <select className="online_status">
+        <option value="offline">Offline</option>
+        <option value="online">Online</option>
+        <option value="lfg">Looking For Group</option>
+        <option value="dnd">Do Not Disturb</option>
+        <!-- another invisable extra credit location -->
+        <option value="can">Drinking Verification Can</option>
+      </select>
+    </div>
+    <!-- temp HR for help visualizating -->
+    <hr />
+    <div class="profile-container">
+      <h3>User Bio:</h3>
+      {{user.bio}}
+      <br />
+      <h3>Post's by {{user.username}}:</h3>
+      <ul className="profile-posts">
+        {% for item in post.post_detail.all %}
+        <li>
+          <a href="posts/<int:pk>">{{item.topic}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <br />
+      <h3>{{user.username}}'s Platform of choice:</h3>
+      <!-- Returning the id number and not string -->
+      <span className="profile-platform">{{user.platform_choice_field}}</span>
+      <br />
+      <h4>
+        {{user.username}} has been a member since
+        <span className="profile_date_joined"> {{user.date_joined}}</span>
+      </h4>
+    </div>
+  </body>
+</html>
