@@ -1,4 +1,6 @@
-<div class="container">
+{% extends "base.html" %} {% block content %}
+
+<div class="error-container">
   <div class="row">
     <div class="col-md-12">
       <div class="error-template">
@@ -10,13 +12,12 @@
         </div>
         <div class="error-actions">
           <a href="http://localhost:8000/" class="btn btn-primary btn-lg">
-            Take Me Home
-          </a>
-          <a href="http://localhost:8000/" class="btn btn-default btn-lg"></a>
-            Contact Support
+            Teleport Me Back Home
           </a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+{% endblock %}
