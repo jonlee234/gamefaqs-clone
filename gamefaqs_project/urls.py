@@ -30,20 +30,20 @@ from post.views import PostCreate, PostDetailView
 from accounts import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('viewGames/', AllGameView.as_view(), name='games'),
-    path('viewGames/<int:game_id>/', GameTitleView, name='game-title'),
-    path('newGame/', AddGameView.as_view(), name='add-game'),
-    path('viewGames/platform/<int:platform>/', PlatformView, name='platform'),
     path("", user_view.index, name="homepage"),
+    path("viewGames/", AllGameView.as_view(), name="games"),
+    path("viewGames/<int:game_id>/", GameTitleView, name="game-title"),
+    path("newGame/", AddGameView.as_view(), name="add-game"),
+    path("viewGames/platform/<int:platform>/", PlatformView, name="platform"),
     path("login/", auth_view.login_view),
     path("signup/", auth_view.signup_view),
     path("logout/", auth_view.logout_view),
-    path('viewGames/search/<str:title>/', Search, name='search'),
+    path("viewGames/search/<str:title>/", Search, name="search"),
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", PostDetailView.as_view(), name = "post_detail"),
     # Will change to user_profile_view when I know what content to add.
     path('user/<int:CustomUser_id>/', views.user_profile_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'error_pages.views.error_404_view'
-handler500 = 'error_pages.views.error_500_view'
+
+handler404 = "error_pages.views.error_404_view"
+handler500 = "error_pages.views.error_500_view"
