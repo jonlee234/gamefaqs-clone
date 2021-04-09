@@ -1,20 +1,14 @@
 {% extends "base.html" %} {% block content %}
-
-
 {% load bootstrap4 %}
-
-
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
-
-
 {% bootstrap_messages %}
 <div className="landingpage">
   <div class="row">
     <div class="col-md-12">
       <div class="landing-template">
         <h1>GameFaqs</h1>
-        <div>
+        <div class="landing-profile-view">
           {% if user.avatar %}
           <img src="{{user.avatar.url}}" alt=" User Avitar" width="100" height="100">
           {% else %}
@@ -26,11 +20,22 @@
           <p>{{user.platform}}</p>
         </div>
         <p>Hey there, {{user}} welcome to GameFaqs!</p>
-        <p>Check out our most recent posts!</p>
-        <p>(CODE BLOCK FOR POSTS SORTED BY DATE)</p>
-        <p>Games</p>
+        <h4>Recent Posts</h4>
+        {% for post in posts %}
+        <div class="small-posts">
+          <p>{{post.topic}}</p>
+        </div>
+        {%endfor%}
+        <h4>New Gamrs</h4>
+        {% for users in users_list %}
+        <div class="small-users">
+          {{users.username}}
+          {{users.platform_choice_field}}
+        </div>
+        {%endfor%}
+        <h4>Games</h4>
         {% for game in games %}
-        <div>
+        <div class="landing-games-list">
           {{game.cover_art}}
           {{game.title}}
           {{game.platform}}

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "post",
     "game",
     "error_pages",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,4 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_URL = "/login"
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

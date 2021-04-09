@@ -12,5 +12,6 @@ import random
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
     posts = Post.objects.all().order_by("-post_date")[:10]
+    users_list= CustomUser.objects.all().order_by("-date_joined")[:10]
     games = Game.objects.all()
-    return render(request, "index.html", {"user": user, "games": games})
+    return render(request, "index.html", {"user": user, "games": games, 'posts':posts, "users_list":users_list})
