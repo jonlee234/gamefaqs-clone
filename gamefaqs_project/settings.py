@@ -26,9 +26,10 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     "authentication",
     "post",
     "game",
+    "error_pages"
 ]
 
 MIDDLEWARE = [

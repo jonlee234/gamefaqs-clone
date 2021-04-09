@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,3 +20,20 @@
     
 </body>
 </html>
+=======
+{% extends "base.html" %} {% block content %}
+
+<div className="game-search-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="search-template">
+        {% for items in games %}
+        <a href="/viewGames/{{items.id}}">{{ items.title.title }}<br /></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+>>>>>>> 26176b7e0d43bede34632c0422abf36142e1f77a
