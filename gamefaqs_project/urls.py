@@ -38,7 +38,7 @@ urlpatterns = [
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
     path("admin/", admin.site.urls),
-    path("posts/", PostListView.as_view(), name="Post-list"),
+    path("posts/", PostListView.as_view(), name="post-list"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = "error_pages.views.error_404_view"
