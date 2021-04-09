@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 from game.models import Game
 from game.forms import game_form, SearchBar
-import re
+from game.helpers import searchBy
 
 # Create your views here.
 
@@ -99,29 +99,8 @@ def PlatformView(request, platform):
 
 def Search(request, title):
     template = 'search.html'
-    context = {}
-    game = []
-    search = ''
+    games = searchBy(title)
 
-    regex = r'([\s\w\d+]+)'
-
-    find = re.findall(regex, title)
-
-    if find:
-        for words in find:
-            search = words
-
-    get = Game.objects.all()
-    for items in get:
-        filter = re.findall(str(search).lower(), str(items).lower())
-        if filter:
-            print(filter)
-            if str(search).lower() in str(items.title).lower():
-                # print(str(search))
-                id = items.id
-                game.append(Game.objects.get(id=id))
-
-                context.update({
-                    'games': game
-                })
-    return render(request, template, context)
+    return render(request, template, {
+        'games': games
+    })
