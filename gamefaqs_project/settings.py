@@ -26,7 +26,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "authentication",
     "post",
     "game",
-    "error_pages"
+    "error_pages",
+    "bootstrap4",
+    "django_forms_bootstrap",
 ]
 
 MIDDLEWARE = [
@@ -84,9 +86,9 @@ WSGI_APPLICATION = "gamefaqs_project.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / "db.sqlite3"),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": str(BASE_DIR / "db.sqlite3"),
     }
 }
 
@@ -132,3 +134,4 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_URL = "/login"
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
