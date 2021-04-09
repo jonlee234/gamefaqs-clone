@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from post.models import Post
 
 
@@ -21,6 +22,17 @@ class PostCreate(CreateView):
 class PostDetailView(DetailView):
     template_name = "post_detail.html"
     model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
+
+class PostListView(ListView):
+
+    model = Post
+    paginate_by = 10  
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
