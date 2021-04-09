@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "game",
     "error_pages",
     "bootstrap4",
+    "django_forms_bootstrap",
 ]
 
 MIDDLEWARE = [

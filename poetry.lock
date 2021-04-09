@@ -80,6 +80,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-bootstrap"
+version = "0.2.4"
+description = "Django class-based views working with Bootstrap, from Twitter."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "django-bootstrap4"
 version = "2.3.1"
 description = "Bootstrap support for Django projects"
@@ -104,6 +112,14 @@ python-versions = "*"
 
 [package.dependencies]
 Django = ">=2.1"
+
+[[package]]
+name = "django-forms-bootstrap"
+version = "3.1.0"
+description = "a simple form filter for using Django forms with Bootstrap"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "flake8"
@@ -233,7 +249,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "eb6dea00e5cc1b07bbcae377cd156b7ae2c1e2214990a67c58082b6e27deaca9"
+content-hash = "f9f33e6e23cb9fece9d4f94c564e5263cc75fe731cc5744aa467329b18a2ed70"
 
 [metadata.files]
 appdirs = [
@@ -260,6 +276,9 @@ django = [
     {file = "Django-3.2-py3-none-any.whl", hash = "sha256:0604e84c4fb698a5e53e5857b5aea945b2f19a18f25f10b8748dbdf935788927"},
     {file = "Django-3.2.tar.gz", hash = "sha256:21f0f9643722675976004eb683c55d33c05486f94506672df3d6a141546f389d"},
 ]
+django-bootstrap = [
+    {file = "django-bootstrap-0.2.4.tar.gz", hash = "sha256:9d48756d600ea1d816150e5c5fc17149afec68e8190eaed56d0858d9a092caff"},
+]
 django-bootstrap4 = [
     {file = "django-bootstrap4-2.3.1.tar.gz", hash = "sha256:2c199020ac38866cdf8d1c5561ce7468116b9685b455a29843c0225ef8568879"},
     {file = "django_bootstrap4-2.3.1-py3-none-any.whl", hash = "sha256:b68f073b647b20ec7894a252a0ca4e06b7b8dafdbad995cb0cdc783d0bb4629d"},
@@ -267,6 +286,10 @@ django-bootstrap4 = [
 django-fontawesome-5 = [
     {file = "django-fontawesome-5-1.0.18.tar.gz", hash = "sha256:4fc4a7f5d0fe6e10d542ac9f1c143ad5e92aa61c6f310ea297c3c26bfc6001dd"},
     {file = "django_fontawesome_5-1.0.18-py3-none-any.whl", hash = "sha256:1be340e795a6a68ebd9ba5d75e26bd72a839515c351786ff45e16b90bf50c3a0"},
+]
+django-forms-bootstrap = [
+    {file = "django-forms-bootstrap-3.1.0.tar.gz", hash = "sha256:ffc6d2b9fba03e2366884e82f613daf1284702e9346746e0e9de299db8138d6f"},
+    {file = "django_forms_bootstrap-3.1.0-py2.py3-none-any.whl", hash = "sha256:50d69baf6c6f262f6ae3651096b52c31552cb75d37493f0c917ce2c16d13f0d9"},
 ]
 flake8 = [
     {file = "flake8-3.9.0-py2.py3-none-any.whl", hash = "sha256:12d05ab02614b6aee8df7c36b97d1a3b2372761222b19b58621355e82acddcff"},
