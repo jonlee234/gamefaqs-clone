@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-</head>
-<body>
-    <h1>Profile</h1>
-<!-- What all do we want to show on here -->
-<!--  -->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{user.username}}'s Profile</title>
+  </head>
+  <body>
+    <h1>{{user.username}}'s Profile {{user.avatar}}</h1>
+    <div class="profile-container">
+      <p>User Bio:</p>
+      {{user.bio}}
+      <br />
+      <ul>
+        {% for item in accounts.post_detail.all %}
+        <li>
+          <a href="posts/<int:pk>">{{item.topic}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <p>Post's by {{user.username}}:</p>
+      {{user.posts}}
+      <br />
+      <p>{{user.username}}'s Platform of choice:</p>
+      {{use.platform_choice_field}}
+      <br />
+      <p>{{user.username}} has been a member since {{user.date_joined}}</p>
+    </div>
+  </body>
 </html>
+
