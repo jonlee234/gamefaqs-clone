@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'app.js' %}"></script> 
     <title>{% block title %} GAMR {% endblock %}</title>
-
   </head>
+
   <body>
-    {% block navBar %}
-
-
+    <!-- Nav Bar Starts -->
+    <!-- {% block navBar %}
     <div class="nav-bar-container">
       <div class="row">
         <div class="col-md-12">
           <div class="navbar-template">
             <button onclick="window.location.href='/';">Home</button>
-            <!-- not yet merged with main -->
+
             <button onclick="window.location.href='/profile';">Profile</button>
             <button onclick="window.location.href='/viewGames/';">Games</button>
-            <!-- No General Platform Page -->
+
             <button onclick="window.location.href='/platforms';">
               Platforms
             </button>
@@ -31,14 +31,18 @@
         </div>
       </div>
     </div>
-    {% endblock %}
+    {% endblock %} -->
+
+    
+    <!-- Nav Bar Ends -->
+
+    <!-- Start of Page Content -->
+    <!-- DO NOT EDIT THIS LINE -->
     <div class="content">{% block content %}{% endblock %}</div>
-    <hr />
+    <!-- End of Page Content -->
 
-
-
-
-
+    <!-- Start of Footer -->
+    {% block footer %}
 <div class="footer-dark">
     <footer>
       <div class="container">
@@ -75,10 +79,7 @@
       </div>
     </footer>
 </div>
-
-
-
-
-
+{% endblock %}
+<!-- End Of Footer -->
   </body>
 </html>
