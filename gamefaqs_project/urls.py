@@ -1,18 +1,3 @@
-"""gamefaqs_project URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -32,7 +17,8 @@ from accounts.views import (
 )
 
 from post.views import PostCreate, PostDetailView
-from accounts.views import favorite_game_view
+# PostListView
+
 
 urlpatterns = [
     path("", user_view.index, name="homepage"),
@@ -47,13 +33,12 @@ urlpatterns = [
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
     path("admin/", admin.site.urls),
-
+    # path("posts/", PostListView.as_view(), name="post-list"),
     path("follow/<int:user_id>", follower_view),
     path("unfollow/<int:user_id>", unfollow_view),
     path("favorite_game/<int:game_id>", favorite_game_view),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 
 handler404 = "error_pages.views.error_404_view"
