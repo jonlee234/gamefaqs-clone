@@ -122,6 +122,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "django-jquery"
+version = "3.1.0"
+description = "jQuery packaged in an handy django app to speed up new applications and deployment."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Django = ">=1.3"
+
+[[package]]
 name = "flake8"
 version = "3.9.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -138,14 +149,6 @@ pyflakes = ">=2.3.0,<2.4.0"
 name = "fontawesome"
 version = "5.10.1.post1"
 description = "The Font Awesome icon set for python"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "fontawesome-free"
-version = "5.15.3"
-description = "Font Awesome Free"
 category = "main"
 optional = false
 python-versions = "*"
@@ -265,7 +268,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "031d4532e024e129e140c3dd739fff7944ca4caa3757a2eb7a52f31368569c07"
+content-hash = "f8109ee072421234a204cd9ec11fbe8303e3cf260a4a0f62d17a5c3d435475fb"
 
 [metadata.files]
 appdirs = [
@@ -306,6 +309,10 @@ django-fontawesome-5 = [
 django-forms-bootstrap = [
     {file = "django-forms-bootstrap-3.1.0.tar.gz", hash = "sha256:ffc6d2b9fba03e2366884e82f613daf1284702e9346746e0e9de299db8138d6f"},
     {file = "django_forms_bootstrap-3.1.0-py2.py3-none-any.whl", hash = "sha256:50d69baf6c6f262f6ae3651096b52c31552cb75d37493f0c917ce2c16d13f0d9"},
+]
+django-jquery = [
+    {file = "django-jquery-3.1.0.tar.gz", hash = "sha256:414ac1083708ac71cc771612e7287702c939d06cd357fd53bb1271a4f6255115"},
+    {file = "django_jquery-3.1.0-py2.py3-none-any.whl", hash = "sha256:e7e2ac14234bac26be937e448d94efd6d37ee2f3cdbaa2def3c8e74c2afb2b9a"},
 ]
 flake8 = [
     {file = "flake8-3.9.0-py2.py3-none-any.whl", hash = "sha256:12d05ab02614b6aee8df7c36b97d1a3b2372761222b19b58621355e82acddcff"},

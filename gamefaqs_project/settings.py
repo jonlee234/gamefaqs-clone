@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "bootstrap4",
     "django_forms_bootstrap",
     "fontawesome",
+    "jquery",
 ]
 
 MIDDLEWARE = [
