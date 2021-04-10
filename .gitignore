@@ -118,3 +118,4 @@ GitHub.sublime-settings
 .history
 
 gamefaqs_project/__pycache__/urls.cpython-39.pyc
+*.pyc
