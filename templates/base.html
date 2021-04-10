@@ -1,38 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+    />
+    <script src="{% static 'app.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <title>{% block title %} GAMR {% endblock %}</title>
   </head>
+
   <body>
-    {% block navBar %}
-    <div className="nav-bar-container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="navbar-template">
-            <button onclick="window.location.href='/';">Home</button>
-            <!-- not yet merged with main -->
-            <button onclick="window.location.href='/profile';">Profile</button>
-            <button onclick="window.location.href='/viewGames/';">Games</button>
-            <!-- No General Platform Page -->
-            <button onclick="window.location.href='/platforms';">
-              Platforms
+    <!-- Navigation Block -->
+    <div class="bloc l-bloc" id="nav-bloc">
+      <div class="container">
+        <nav class="navbar row">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">GAMR</a>
+            <!-- Mobile Hamburger -->
+            <button
+              id="nav-toggle"
+              type="button"
+              class="ui-navbar-toggle navbar-toggle"
+              data-toggle="collapse"
+              data-target=".navbar-1"
+            >
+              <!-- Accessablility  -->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span><span class="icon-bar"></span
+              ><span class="icon-bar"></span>
             </button>
-            <button onclick="window.location.href='/post/add/';">Post</button>
-            <button onclick="window.location.href='/posts/';">Posts</button>
-            <button onclick="window.location.href='/logout';">Logout</button>
           </div>
-        </div>
+          <div class="collapse navbar-collapse navbar-1">
+            <ul class="site-navigation nav">
+              <li>
+                <a href="#">games</a>
+              </li>
+              <li>
+                <a href="#">platforms</a>
+              </li>
+              <li>
+                <a href="#">players</a>
+              </li>
+              <li>
+                <a href="#">community</a>
+              </li>
+              <li>
+                <a href="#">feed</a>
+              </li>
+              <li>
+                <a href="#">logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div>
-    {% endblock %}
-    <div className="content">{% block content %}{% endblock %}</div>
-    <hr />
-    <footer>
-      <p>Blah blah blah Im a footer</p>
-    </footer>
+    <!-- Navigation Block END -->
+
+    <!-- Carousel -->
+    <div class="container">
+      <div class="row">
+        <!-- Carousel -->
+        <div
+          id="carousel-example-generic"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carousel-example-generic"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="/media/media/Farcry6.jpeg" alt="First slide" />
+              <!-- Static Header -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <div class="item">
+              <img src="/media/media/Mario_world.jpeg" alt="Second slide" />
+              <!-- Static Header -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <div class="item">
+              <img src="/media/media/Valheim.jpeg" alt="Third slide" />
+              <!-- Static Header -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+          </div>
+          <!-- Controls -->
+          <a
+            class="left carousel-control"
+            href="#carousel-example-generic"
+            data-slide="prev"
+          >
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a
+            class="right carousel-control"
+            href="#carousel-example-generic"
+            data-slide="next"
+          >
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+        <!-- Carousel END -->
+      </div>
+    </div>
+
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <!-- Nav Bar Ends -->
+
+    <!-- DO NOT EDIT THIS LINE -->
+    <!-- Other pages as body  -->
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <!-- Start of Footer -->
+    {% block footer %}
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>QUICK LINKS</h3>
+              <ul>
+                <li>
+                  <a href=""><span class="footer_link1">Home</span></a>
+                </li>
+                <li>
+                  <a href=""><span class="footer_link2">Profile</span></a>
+                </li>
+                <li>
+                  <a href=""><span class="footer_link3">Games</span></a>
+                </li>
+                <li>
+                  <a href=""><span class="footer_link4">Platforms</span></a>
+                </li>
+                <li>
+                  <a href=""><span class="footer_link5"></span>Posts</a>
+                </li>
+                <li>
+                  <a href=""><span class="footer_link6">Something</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>GAMES</h3>
+              <ul>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link1"></span>Something</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link2"></span>Something</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link3"></span>Something</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link4"></span>Something</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link5"></span>Something</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><span class="footer_game_link6"></span>Something</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <h3>Kenzie Academy Team Charity Capstone</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum,
+                quis architecto corrupti omnis, expedita saepe officia earum
+                ipsum repellendus facilis voluptatum consequatur tempora
+                eligendi autem illo nisi debitis! Dolorum, repudiandae!
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="#"><i class="icon ion-social-facebook"></i></a
+              ><a href="#"><i class="icon ion-social-twitter"></i></a
+              ><a href="#"><i class="icon ion-social-snapchat"></i></a
+              ><a href="#"><i class="icon ion-social-instagram"></i></a>
+            </div>
+            <p class="copyright">GAMR &#169; 2021</p>
+          </div>
+          <!-- </footer> -->
+        </div>
+        {% endblock %}
+        <!-- End Of Footer -->
+        <!-- </body> -->
+        <!-- </html> -->
+      </footer>
+    </div>
   </body>
 </html>

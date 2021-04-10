@@ -13,6 +13,9 @@ django-fontawesome-5 = "^1.0.18"
 django-bootstrap4 = "^2.3.1"
 django-bootstrap = "^0.2.4"
 django-forms-bootstrap = "^3.1.0"
+fontawesome = "^5.10.1"
+fontawesome-free = "^5.15.3"
+django-jquery = "^3.1.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^20.8b1", allow-prereleases = true}
