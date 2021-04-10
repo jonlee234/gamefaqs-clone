@@ -199,48 +199,6 @@ width: 100%;
 }
 
 
-
-/* Posts */
-
-.post {
-  background-color: #FFF;
-  overflow: hidden;
-}
-.post .content {
-}
-
-.post .post-img-content img {
-  position: relative;
-}
-
-.post .post-date  {
-  background-color: rgba(51, 51, 51, 0.58);
-  position: absolute;
-  bottom: 0px;
-  width: 50%;
-  color: #FFF;
-  padding: 10px 15px;
-}
-.news .post-img-content {
-  width: 350px;
-  height: 180px;
-  position: relative;
-}
-
-.work .post-img-content {
-  width: 450px;
-  height: 230px;
-  position: relative;
-}
-.feed .post-img-content {
-  width: 260px;
-  height: 130px;
-  position: relative;
-}
-
-
-
-
 /* Mobile adjustments */
 
 @media (max-width: 768px)
