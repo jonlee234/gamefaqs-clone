@@ -17,6 +17,7 @@ from accounts.views import (
 )
 
 from post.views import PostCreate, PostDetailView
+
 # PostListView
 
 

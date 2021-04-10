@@ -1,17 +1,18 @@
-// Document is linked and can be used if needed.// Startup Scripts
-$(document).ready(function()
-{
-	$('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Set hero to fill page height
+$(document).ready(function () {
+  $(".hero").css(
+    "height",
+    $(window).height() - $("header").outerHeight() + "px"
+  ); // Set hero to fill page height
 
-	$('#scroll-hero').click(function()
-	{
-		$('html,body').animate({scrollTop: $("#hero-bloc").height()}, 'slow');
-	});
+  $("#scroll-hero").click(function () {
+    $("html,body").animate({ scrollTop: $("#hero-bloc").height() }, "slow");
+  });
 });
 
-
-// Window resize 
-$(window).resize(function()
-{
-	$('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Refresh hero height  	
-}); 
+// Window resize
+$(window).resize(function () {
+  $(".hero").css(
+    "height",
+    $(window).height() - $("header").outerHeight() + "px"
+  ); // Refresh hero height
+});
