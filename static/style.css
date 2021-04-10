@@ -146,10 +146,10 @@ width: 100%;
   right: 0;
 }
 
-.carousel-control.left span,
+/* .carousel-control.left span,
 .carousel-control.right span {
   
-}
+} */
 
 .carousel-control.left span:hover,
 .carousel-control.right span:hover {

@@ -154,6 +154,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "fontawesome-free"
+version = "5.15.3"
+description = "Font Awesome Free"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "mccabe"
 version = "0.6.1"
 description = "McCabe checker, plugin for flake8"
