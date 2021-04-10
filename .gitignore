@@ -117,3 +117,6 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 
+*.pyc
+gamefaqs_project/__pycache__/urls.cpython-39.pyc
+game/__pycache__/views.cpython-39.pyc
