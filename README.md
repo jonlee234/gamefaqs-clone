@@ -21,7 +21,7 @@
     - [x] List of posts.
     - [x] Details of posts.
     - [x] Logged in users can create a custom post.
-    - Upvote/Downvote feature.
+    - [] Upvote/Downvote feature.
   - Games
     - [x] List of games.
     - [x] Details of games.
