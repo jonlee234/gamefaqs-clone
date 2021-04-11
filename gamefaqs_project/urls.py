@@ -13,6 +13,7 @@ from accounts.views import (
     follower_view,
     unfavorite_game_view,
     unfollow_view,
+    user_profile_view,
 )
 
 from post.views import PostCreate, PostDetailView, PostListView
@@ -34,6 +35,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("follow/<int:user_id>", follower_view),
     path("unfollow/<int:user_id>", unfollow_view),
+    path("user/<int:CustomUser_id>/", views.user_profile_view),
     path("favorite_game/<int:game_id>", favorite_game_view),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
