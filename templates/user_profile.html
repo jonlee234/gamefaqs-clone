@@ -15,38 +15,19 @@
             <!-- SIDEBAR USER TITLE -->
             <div class="profile-usertitle">
               <div class="profile-usertitle-name">{{user.username}}</div>
-              <div class="profile-usertitle-job">GAMR</div>
+              <div class="profile-usertitle-job">{{user.fullname}}</div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-              <button type="button" class="btn btn-success btn-sm">
+              <button type="button" class="btn btn-success btn-sm" href="/follow/1">
                 Follow
               </button>
-              <!-- TODO ADD EMAIL LINK???? -->
+              <!-- Non-functional, Style Purposes only -->
               <button type="button" class="btn btn-danger btn-sm">
                 Message
               </button>
             </div>
-            <!-- END SIDEBAR BUTTONS -->
-            <!-- SIDEBAR MENU -->
-            <div class="profile-usermenu">
-              <ul class="nav">
-                <li>
-                  <a href="/posts/">
-                    <i class="glyphicon glyphicon-user"></i>
-                    Activity
-                  </a>
-                </li>
-                <li>
-                  <a href="/games/" target="_blank">
-                    <i class="glyphicon glyphicon-ok"></i>
-                    Games
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- END MENU -->
 
             <div class="portlet light bordered">
               <!-- STAT -->
@@ -76,9 +57,9 @@
             </div>
           </div>
         </div>
-        <!-- TODO -->
+        <!-- TODO add most recent posts -->
         <div class="col-md-9">
-          <div class="profile-content">Most Recent</div>
+          <div class="profile-content">Most Recent Posts</div>
         </div>
       </div>
       {% endblock %}
