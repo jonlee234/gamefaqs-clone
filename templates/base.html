@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS Requirements -->
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -16,14 +17,37 @@
       type="text/css"
       href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
     />
+    <!-- / -->
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/media/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/media/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/media/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- / -->
+    <!-- JavaScript -->
     <script src="{% static 'app.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- / -->
     <title>{% block title %} GAMR {% endblock %}</title>
   </head>
 
   <body>
-    <!-- Navigation Block -->
+    {% block Navigation %}
     <div class="bloc l-bloc" id="nav-bloc">
       <div class="container">
         <nav class="navbar row">
@@ -43,6 +67,7 @@
               ><span class="icon-bar"></span>
             </button>
           </div>
+          <!-- NaVLinks -->
           <div class="collapse navbar-collapse navbar-1">
             <ul class="site-navigation nav">
               <li>
@@ -68,38 +93,33 @@
         </nav>
       </div>
     </div>
-    <!-- Navigation Block END -->
-
-    <!-- Carousel -->
+    {% endblock %} {% block HeroCarousel%}
     <div class="container">
       <div class="row">
-        <!-- Carousel -->
-        <div
-          id="carousel-example-generic"
-          class="carousel slide"
-          data-ride="carousel"
-        >
+        <div id="carousel-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li
-              data-target="#carousel-example-generic"
+              data-target="#carousel-generic"
               data-slide-to="0"
               class="active"
             ></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-generic" data-slide-to="2"></li>
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
+            <!-- Slide 1 -->
             <div class="item active">
-              <img src="/media/media/Farcry6.jpeg" alt="First slide" />
-              <!-- Static Header -->
+              <img src="/media/images/Dying_light2.jpeg" alt="Dying light 2" />
+              <!-- GAMR Title -->
               <div class="header-text hidden-xs">
                 <div class="col-md-12 text-center">
                   <h2>
                     <span>GAMR</span>
                   </h2>
                   <br />
+                  <!-- TODO Read More -->
                   <div class="">
                     <a class="btn btn-theme btn-sm btn-min-block" href="#"
                       >Read More</a
@@ -109,15 +129,17 @@
               </div>
               <!-- /header-text -->
             </div>
+            <!-- Slide 2 -->
             <div class="item">
-              <img src="/media/media/Mario_world.jpeg" alt="Second slide" />
-              <!-- Static Header -->
+              <img src="/media/images/Halo_Infinite.jpeg" alt="Halo Infinite" />
+              <!-- GAMR Title -->
               <div class="header-text hidden-xs">
                 <div class="col-md-12 text-center">
                   <h2>
                     <span>GAMR</span>
                   </h2>
                   <br />
+                  <!-- TODO Read More -->
                   <div class="">
                     <a class="btn btn-theme btn-sm btn-min-block" href="#"
                       >Read More</a
@@ -127,15 +149,103 @@
               </div>
               <!-- /header-text -->
             </div>
+            <!-- Slide 3 -->
             <div class="item">
-              <img src="/media/media/Valheim.jpeg" alt="Third slide" />
-              <!-- Static Header -->
+              <img src="/media/images/Hitman3.jpeg" alt="Hitman 3" />
+              <!-- GAMR Title -->
               <div class="header-text hidden-xs">
                 <div class="col-md-12 text-center">
                   <h2>
                     <span>GAMR</span>
                   </h2>
                   <br />
+                  <!-- TODO Read More -->
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <!-- Slide 4 -->
+            <div class="item">
+              <img src="/media/images/Mario_world.jpeg" alt="Mario World" />
+              <!-- GAMR Title -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <!-- TODO Read More -->
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <!-- Slide 5 -->
+            <div class="item">
+              <img
+                src="/media/images/new-pokemon-snap-switch.jpeg"
+                alt="Pokemon Snap"
+              />
+              <!-- GAMR Title -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <!-- TODO Read More -->
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <!-- Slide 6 -->
+            <div class="item">
+              <img src="/media/images/Mass_Effect.jpeg" alt="Mass Effect" />
+              <!-- GAMR Title -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <!-- TODO Read More -->
+                  <div class="">
+                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /header-text -->
+            </div>
+            <!-- Slide 6 -->
+            <div class="item">
+              <img
+                src="/media/images/Horizon_Forbidden_West.jpeg"
+                alt="Horizon Forbidden West"
+              />
+              <!-- GAMR Title -->
+              <div class="header-text hidden-xs">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    <span>GAMR</span>
+                  </h2>
+                  <br />
+                  <!-- TODO Read More -->
                   <div class="">
                     <a class="btn btn-theme btn-sm btn-min-block" href="#"
                       >Read More</a
@@ -149,14 +259,14 @@
           <!-- Controls -->
           <a
             class="left carousel-control"
-            href="#carousel-example-generic"
+            href="#carousel-generic"
             data-slide="prev"
           >
             <span class="glyphicon glyphicon-chevron-left"></span>
           </a>
           <a
             class="right carousel-control"
-            href="#carousel-example-generic"
+            href="#carousel-generic"
             data-slide="next"
           >
             <span class="glyphicon glyphicon-chevron-right"></span>
@@ -164,21 +274,14 @@
         </div>
         <!-- Carousel END -->
       </div>
+      {% endblock %}
     </div>
-
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- Nav Bar Ends -->
 
     <!-- DO NOT EDIT THIS LINE -->
     <!-- Other pages as body  -->
     <div class="content">{% block content %}{% endblock %}</div>
 
-    <!-- Start of Footer -->
-    {% block footer %}
+    {% block Footer %}
     <div class="footer-dark">
       <footer>
         <div class="container">
@@ -250,11 +353,12 @@
                 eligendi autem illo nisi debitis! Dolorum, repudiandae!
               </p>
             </div>
+            <!-- Might remove.  Personal github links -->
             <div class="col item social">
-              <a href="#"><i class="icon ion-social-facebook"></i></a
-              ><a href="#"><i class="icon ion-social-twitter"></i></a
-              ><a href="#"><i class="icon ion-social-snapchat"></i></a
-              ><a href="#"><i class="icon ion-social-instagram"></i></a>
+              <a href="#"><i class="icon ion-social-github"></i></a
+              ><a href="#"><i class="icon ion-social-github"></i></a
+              ><a href="#"><i class="icon ion-social-github"></i></a
+              ><a href="#"><i class="icon ion-social-github"></i></a>
             </div>
             <p class="copyright">GAMR &#169; 2021</p>
           </div>
@@ -262,8 +366,6 @@
         </div>
         {% endblock %}
         <!-- End Of Footer -->
-        <!-- </body> -->
-        <!-- </html> -->
       </footer>
     </div>
   </body>
