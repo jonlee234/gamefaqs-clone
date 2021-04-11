@@ -63,15 +63,12 @@ a {
   font-size: 25px;
 }
 
-.nav > a {
-  color: red;
-}
 .nav > li a:hover {
   background: transparent;
 }
 
 .nav-link {
-  color: red;
+  color: #fff;
 }
 .navbar-toggle {
   margin: 12px;
