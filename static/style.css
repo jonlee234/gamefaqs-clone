@@ -53,17 +53,25 @@ a {
   padding: 15px 15px;
 }
 .navbar .nav {
-  padding-top: 2px;
+  padding-top: -4px;
   margin-right: -16px;
   float: right;
 }
 .nav > li {
   float: left;
-  margin-top: 4px;
-  font-size: 16px;
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.nav > a {
+  color: red;
 }
 .nav > li a:hover {
   background: transparent;
+}
+
+.nav-link {
+  color: red;
 }
 .navbar-toggle {
   margin: 12px;
@@ -83,6 +91,7 @@ a {
 }
 .navbar-1 {
   float: right;
+  color: red;
 }
 .site-navigation:first-child {
   float: left;
@@ -97,7 +106,7 @@ a {
 }
 
 .site-navigation .nav > .active {
-  color: #333;
+   color: red;
 }
 
 /* Carousel */
@@ -222,7 +231,7 @@ a {
   .nav > li {
     margin-top: 0;
     border-bottom: 1px solid #0000001a;
-    background: rgba(0, 0, 0, 0.05);
+    background: #0000000d;
     text-align: left;
     width: 100%;
   }
