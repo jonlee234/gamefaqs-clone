@@ -1,6 +1,4 @@
-{% extends "base.html" %} {% block content %} {% load bootstrap4 %} {%
-bootstrap_css %} {% bootstrap_javascript jquery='full' %} {% bootstrap_messages
-%}
+{% extends "base.html" %} {% block content %} {% load bootstrap4 %}
 
 <div class="container">
   <div class="row profile">
@@ -8,50 +6,35 @@ bootstrap_css %} {% bootstrap_javascript jquery='full' %} {% bootstrap_messages
       <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
-          <img
-            src="https://gravatar.com/avatar/31b64e4876d603ce78e04102c67d6144?s=80&d=https://codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png"
-            class="img-responsive"
-            alt=""
-          />
+          <img src="/media/media/hs.jpeg" class="img-responsive" alt="" />
         </div>
         <!-- END SIDEBAR USERPIC -->
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
-          <div class="profile-usertitle-name">Jason Davis</div>
-          <div class="profile-usertitle-job">Developer</div>
+          <div class="profile-usertitle-name">{{user.username}}</div>
+          <div class="profile-usertitle-job">GAMR</div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
         <!-- SIDEBAR BUTTONS -->
         <div class="profile-userbuttons">
           <button type="button" class="btn btn-success btn-sm">Follow</button>
+          <!-- TODO ADD EMAIL LINK???? -->
           <button type="button" class="btn btn-danger btn-sm">Message</button>
         </div>
         <!-- END SIDEBAR BUTTONS -->
         <!-- SIDEBAR MENU -->
         <div class="profile-usermenu">
           <ul class="nav">
-            <li class="active">
-              <a href="#">
-                <i class="glyphicon glyphicon-home"></i>
-                Overview
-              </a>
-            </li>
             <li>
-              <a href="https://codepen.io/jasondavis/pen/jVRwaG?editors=1000">
+              <a href="/posts/">
                 <i class="glyphicon glyphicon-user"></i>
-                Account Settings
+                Activity
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="/games/" target="_blank">
                 <i class="glyphicon glyphicon-ok"></i>
-                Tasks
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="glyphicon glyphicon-flag"></i>
-                Help
+                Games
               </a>
             </li>
           </ul>
@@ -62,95 +45,38 @@ bootstrap_css %} {% bootstrap_javascript jquery='full' %} {% bootstrap_messages
           <!-- STAT -->
           <div class="row list-separated profile-stat">
             <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">37</div>
-              <div class="uppercase profile-stat-text">Projects</div>
+              <div class="uppercase profile-stat-title">3</div>
+              <div class="uppercase profile-stat-text">Posts</div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">51</div>
-              <div class="uppercase profile-stat-text">Tasks</div>
+              <div class="uppercase profile-stat-title">12</div>
+              <div class="uppercase profile-stat-text">Games</div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">61</div>
-              <div class="uppercase profile-stat-text">Uploads</div>
+              <div class="uppercase profile-stat-title">7</div>
+              <div class="uppercase profile-stat-text">Votes</div>
             </div>
           </div>
           <!-- END STAT -->
           <div>
-            <h4 class="profile-desc-title">About Jason Davis</h4>
-            <span class="profile-desc-text">
-              Lorem ipsum dolor sit amet diam nonummy nibh dolore.
-            </span>
+            <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
+            <span class="profile-desc-text"> {{user.bio}} </span>
             <div class="margin-top-20 profile-desc-link">
               <i class="fa fa-globe"></i>
-              <a href="https://www.apollowebstudio.com">apollowebstudio.com</a>
+              <span> Homepage:{{user.homepage}} </span>
             </div>
             <div class="margin-top-20 profile-desc-link">
-              <i class="fa fa-twitter"></i>
-              <a href="https://www.twitter.com/jasondavisfl/">@jasondavisfl</a>
-            </div>
-            <div class="margin-top-20 profile-desc-link">
-              <i class="fa fa-facebook"></i>
-              <a href="https://www.facebook.com/">JasonDavisFL</a>
+              <i class="fa fa-google"></i>
+              Email:{{user.email}}
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- TODO -->
     <div class="col-md-9">
-      <div class="profile-content">Some user related content goes here...</div>
+      <div class="profile-content">Most Recent</div>
     </div>
   </div>
 </div>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{user.username}}'s Profile</title>
-  </head>
-  <body>
-    <div className="profile-title-container">
-      <h1 className="profile-title">
-        {{user.username}}'s Profile {{user.avatar}}
-      </h1>
-    </div>
-    <br />
-    <div className="status-container">
-      <label for="online_status">Set your online status:</label>
-      <select className="online_status">
-        <option value="offline">Offline</option>
-        <option value="online">Online</option>
-        <option value="lfg">Looking For Group</option>
-        <option value="dnd">Do Not Disturb</option>
-
-        <option value="can">Drinking Verification Can</option>
-      </select>
-    </div>
-
-    <hr />
-    <div class="profile-container">
-      <h3>User Bio:</h3>
-      {{user.bio}}
-      <br />
-      <h3>Post's by {{user.username}}:</h3>
-      <ul className="profile-posts">
-        {% for item in post.post_detail.all %}
-        <li>
-          <a href="posts/<int:pk>">{{item.topic}}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      <br />
-      <h3>{{user.username}}'s Platform of choice:</h3>
-
-      <span className="profile-platform">{{user.platform_choice_field}}</span>
-      <br />
-      <h4>
-        {{user.username}} has been a member since
-        <span className="profile_date_joined"> {{user.date_joined}}</span>
-      </h4>
-    </div>
-  </body>
-</html> -->
+{% endblock %}
