@@ -130,6 +130,15 @@ a {
   width: 100%;
   max-height: 460px;
 }
+/* TODO SPEED UP SLIDES */
+/* .carsousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.2s ease-in-out left;
+  -moz-transition: 0.2s ease-in-out left;
+  -o-transition: 0.2s ease-in-out left;
+  transition: 0.2s ease-in-out left;
+} */
 
 .carousel-control {
   width: 0;
@@ -357,7 +366,7 @@ a {
 
 /* PROFILE PAGE */
 body {
-  background: #F1F3FA;
+  background: #f1f3fa;
 }
 
 /* Profile container */
@@ -417,7 +426,7 @@ body {
 .profile-userbuttons .btn:last-child {
   margin-right: 0px;
 }
-    
+
 .profile-usermenu {
   margin-top: 30px;
 }
