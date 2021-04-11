@@ -1,82 +1,87 @@
-{% extends "base.html" %} {% block content %} {% load bootstrap4 %}
-
-<div class="container">
-  <div class="row profile">
-    <div class="col-md-3">
-      <div class="profile-sidebar">
-        <!-- SIDEBAR USERPIC -->
-        <div class="profile-userpic">
-          <img src="/media/media/hs.jpeg" class="img-responsive" alt="" />
-        </div>
-        <!-- END SIDEBAR USERPIC -->
-        <!-- SIDEBAR USER TITLE -->
-        <div class="profile-usertitle">
-          <div class="profile-usertitle-name">{{user.username}}</div>
-          <div class="profile-usertitle-job">GAMR</div>
-        </div>
-        <!-- END SIDEBAR USER TITLE -->
-        <!-- SIDEBAR BUTTONS -->
-        <div class="profile-userbuttons">
-          <button type="button" class="btn btn-success btn-sm">Follow</button>
-          <!-- TODO ADD EMAIL LINK???? -->
-          <button type="button" class="btn btn-danger btn-sm">Message</button>
-        </div>
-        <!-- END SIDEBAR BUTTONS -->
-        <!-- SIDEBAR MENU -->
-        <div class="profile-usermenu">
-          <ul class="nav">
-            <li>
-              <a href="/posts/">
-                <i class="glyphicon glyphicon-user"></i>
-                Activity
-              </a>
-            </li>
-            <li>
-              <a href="/games/" target="_blank">
-                <i class="glyphicon glyphicon-ok"></i>
-                Games
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- END MENU -->
-
-        <div class="portlet light bordered">
-          <!-- STAT -->
-          <div class="row list-separated profile-stat">
-            <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">3</div>
-              <div class="uppercase profile-stat-text">Posts</div>
+{% extends "base.html" %} {% block content %}
+<body>
+  <div class="container-img">
+    <div class="container">
+      <div class="row profile">
+        <div class="col-md-3">
+          <div class="profile-sidebar">
+            <!-- SIDEBAR USERPIC -->
+            <!-- TODO make avatar -->
+            <div class="profile-userpic">
+              <!-- <div class="img-responsive">{{user.avatar}}</div> -->
+              <img src="/media/media/hs.jpeg" class="img-responsive" alt="" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">12</div>
-              <div class="uppercase profile-stat-text">Games</div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+              <div class="profile-usertitle-name">{{user.username}}</div>
+              <div class="profile-usertitle-job">GAMR</div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6">
-              <div class="uppercase profile-stat-title">7</div>
-              <div class="uppercase profile-stat-text">Votes</div>
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- SIDEBAR BUTTONS -->
+            <div class="profile-userbuttons">
+              <button type="button" class="btn btn-success btn-sm">
+                Follow
+              </button>
+              <!-- TODO ADD EMAIL LINK???? -->
+              <button type="button" class="btn btn-danger btn-sm">
+                Message
+              </button>
+            </div>
+            <!-- END SIDEBAR BUTTONS -->
+            <!-- SIDEBAR MENU -->
+            <div class="profile-usermenu">
+              <ul class="nav">
+                <li>
+                  <a href="/posts/">
+                    <i class="glyphicon glyphicon-user"></i>
+                    Activity
+                  </a>
+                </li>
+                <li>
+                  <a href="/games/" target="_blank">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    Games
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- END MENU -->
+
+            <div class="portlet light bordered">
+              <!-- STAT -->
+              <div class="row list-separated profile-stat">
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">3</div>
+                  <div class="uppercase profile-stat-text">Posts</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">12</div>
+                  <div class="uppercase profile-stat-text">Games</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">7</div>
+                  <div class="uppercase profile-stat-text">Votes</div>
+                </div>
+              </div>
+              <!-- END STAT -->
+              <div>
+                <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
+                <span class="profile-desc-text"> {{user.bio}} </span>
+                <div class="margin-top-20 profile-desc-link">
+                  <i class="fa fa-globe"></i>
+                  <span> Homepage:{{user.homepage}} </span>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- END STAT -->
-          <div>
-            <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
-            <span class="profile-desc-text"> {{user.bio}} </span>
-            <div class="margin-top-20 profile-desc-link">
-              <i class="fa fa-globe"></i>
-              <span> Homepage:{{user.homepage}} </span>
-            </div>
-            <div class="margin-top-20 profile-desc-link">
-              <i class="fa fa-google"></i>
-              Email:{{user.email}}
-            </div>
-          </div>
+        </div>
+        <!-- TODO -->
+        <div class="col-md-9">
+          <div class="profile-content">Most Recent</div>
         </div>
       </div>
-    </div>
-    <!-- TODO -->
-    <div class="col-md-9">
-      <div class="profile-content">Most Recent</div>
+      {% endblock %}
     </div>
   </div>
-</div>
-{% endblock %}
+</body>

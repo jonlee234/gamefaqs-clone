@@ -46,17 +46,10 @@ a {
 .navbar {
   margin-bottom: 0;
 }
-/* Removed Text */
-/* .navbar-brand {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-} */
 .navbar-brand img {
   width: auto;
   max-height: 40px;
-  /* margin: -12px 5px 0 0; */
+  margin: -12px 5px 0 0;
 }
 .navbar-brand {
   padding: 15px 15px;
@@ -130,15 +123,6 @@ a {
   width: 100%;
   max-height: 460px;
 }
-/* TODO SPEED UP SLIDES */
-/* .carsousel-inner > .item {
-  position: relative;
-  display: none;
-  -webkit-transition: 0.2s ease-in-out left;
-  -moz-transition: 0.2s ease-in-out left;
-  -o-transition: 0.2s ease-in-out left;
-  transition: 0.2s ease-in-out left;
-} */
 
 .carousel-control {
   width: 0;
@@ -193,11 +177,10 @@ a {
   top: 30%;
   left: 1.8%;
   right: auto;
-  width: 96.66666666666666%;
+  width: 96.666%;
   color: #fff;
 }
 
-/* GAMR I removed the title :{ look like poo*/
 .header-text h2 {
   font-size: 6em;
   font-weight: bold;
@@ -365,13 +348,13 @@ a {
 }
 
 /* PROFILE PAGE */
-body {
-  background: #f1f3fa;
-}
-
 /* Profile container */
 .profile {
-  margin: 20px 0;
+  margin: 0;
+}
+
+.container-img {
+  background-color: #394047c4;
 }
 
 /* Profile sidebar */
