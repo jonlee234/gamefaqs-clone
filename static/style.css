@@ -3,7 +3,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #282d32;
   -webkit-font-smoothing: antialiased;
 }
 a:hover {
@@ -30,21 +30,24 @@ a {
 
 #nav-bloc {
   margin-top: 30px;
+  width: 100%;
+  background-color: #282d32;
 }
 
 .navbar {
   margin-bottom: 0;
 }
-.navbar-brand {
+/* Removed Text */
+/* .navbar-brand {
   font-size: 25px;
   font-weight: bold;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
-}
+} */
 .navbar-brand img {
   width: auto;
   max-height: 40px;
-  margin: -12px 5px 0 0;
+  /* margin: -12px 5px 0 0; */
 }
 .navbar-brand {
   padding: 15px 15px;
@@ -105,7 +108,7 @@ a {
 
 /* Carousel Styles */
 .carousel-indicators .active {
-  background-color: #fff;
+  background-color: #282d32;
 }
 
 .carousel-inner img {
