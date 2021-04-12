@@ -1,8 +1,9 @@
 <!-- TODOS/Blockers -->
-<!-- Get post list to show up -->
+<!-- Get search bar functional -->
+<!-- Get Post Feature working here. -->
 
 {% extends "base.html" %} {% block content %}
-
+<!-- Code that was here before I came -->
 <!-- <h1>Posts</h1>
 <ul>
   {% for post in object_list %}
@@ -54,9 +55,9 @@
     </div>
     <div class="col-md-6 gedf-main">
       <!--- \\\\\\\Post-->
-      <div class="card gedf-card" style="color: #fff">
+      <div class="card gedf-card">
         <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs" role="tablist">
+          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -64,70 +65,57 @@
                 data-toggle="tab"
                 href="#posts"
                 role="tab"
-                >Make a publication</a
+                >Add a post</a
               >
             </li>
           </ul>
         </div>
         <div class="card-body">
-          <div class="tab-content">
-            <div
-              class="tab-pane fade show active"
-              role="tabpanel"
-              aria-labelledby="posts-tab"
-            >
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="posts" role="tabpanel">
               <div class="form-group">
-                <!-- <label class="sr-only" for="message">post</label>
+                <label class="sr-only" for="message">post</label>
                 <textarea
                   class="form-control"
+                  id="message"
                   rows="3"
-                  placeholder="What are you thinking?"
-                ></textarea> -->
-                <div className="add-post-form-container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="add-post-template">
-                        <h1>Trying to get this to work</h1>
-                        <form method="post" enctype="multipart/form-data">
-                          {% csrf_token %} {{form.media}} {{form.as_p}}
-                          <input type="submit" value="submit" />
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Post /////-->
-
-                <!--- \\\\\\\Post Feed-->
-                <div class="card gedf-card" style="color: #fff">
-                  <div class="card-header">
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <ul>
-                          {% for post in object_list %}
-                          <li>
-                            {{ post.post_date }} -
-                            <a href="/posts/{{post.id}}">{{ post.topic }}</a>
-                          </li>
-                          {% empty %}
-                          <li>No posts yet.</li>
-                          {% endfor %}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Post Feed /////-->
-                </div>
+                  placeholder="What do you want to tell the world?"
+                ></textarea>
               </div>
             </div>
-            {% endblock %}
+            <div class="tab-pane fade" id="images" role="tabpanel">
+              <div class="py-4"></div>
+            </div>
           </div>
+          <div class="btn-toolbar justify-content-between">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary">share</button>
+            </div>
+            <div class="btn-group">
+              <button
+                id="btnGroupDrop1"
+                type="button"
+                class="btn btn-link dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-globe"></i>
+              </button>
+            </div>
+          </div>
+          <ul style="color: #fff">
+            {% for post in object_list %}
+            <li>
+              {{ post.post_date }} -
+              <a href="/posts/{{post.id}}">{{ post.topic }}</a>
+            </li>
+            {% empty %}
+            <li>No posts yet.</li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
+      <!-- Post /////-->
     </div>
   </div>
+  {% endblock %}
 </div>
