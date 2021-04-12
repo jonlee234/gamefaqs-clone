@@ -1,29 +1,18 @@
 <!-- TODOS/Blockers -->
-<!-- Get search bar functional -->
-<!-- Get Post Feature working here. -->
 
+<!-- Get Post Feature working here. -->
 {% extends "base.html" %} {% block content %}
-<!-- Code that was here before I came -->
-<!-- <h1>Posts</h1>
-<ul>
-  {% for post in object_list %}
-  <li>
-    {{ post.post_date }} - <a href="/posts/{{post.id}}">{{ post.topic }}</a>
-  </li>
-  {% empty %}
-  <li>No posts yet.</li>
-  {% endfor %}
-</ul> -->
 <nav class="navbar navbar-light bg-white">
   <a href="#" class="navbar-brand">Search Posts</a>
-  <form class="form-inline">
+  <form
+    class="form-inline"
+    action=""
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} {{search}}
     <div class="input-group">
-      <input type="text" class="form-control" />
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="button">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
+      <input type="submit" value="Search" />
     </div>
   </form>
 </nav>
