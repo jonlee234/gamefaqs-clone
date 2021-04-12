@@ -15,9 +15,10 @@
           <img src="https://vectorified.com/images/facebook-no-profile-picture-icon-26.jpg" alt=" User Avitar"
             width="100" height="100">
           {% endif %}
+          <div>
           <p>{{user.username}}</p>
           <p>{{user.email}}</p>
-          <p>{{user.platform}}</p>
+          <p>{{user.get_platform_choice_field_display}}</p>
         </div>
         <p>Hey there, {{user}} welcome to GameFaqs!</p>
         <h4>Recent Posts</h4>
@@ -35,10 +36,10 @@
         {%endfor%}
         <h4>Games</h4>
         {% for game in games %}
-        <div class="landing-games-list">
-          {{game.cover_art}}
-          {{game.title}}
-          {{game.platform}}
+        <a class="landing-games-list">
+          <img src="{{game.cover_art.url}}" width="100" height="100" />
+          <a href="viewGames/{{game.id}}">{{game.title}}</a>
+          <a href="viewGames/platform/{{game.platform}}/">{{game.get_platform_display}}</a>
           <hr>
         </div>
         {%endfor%}
