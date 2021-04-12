@@ -30,7 +30,7 @@ PLATFORM_CHOICES = (
 
 
 class Post(models.Model):
-    text = models.CharField(max_length=500)
+    text = models.TextField(max_length=1000)
     post_date = models.DateTimeField(default=timezone.now)
     topic = models.CharField(max_length=40)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)

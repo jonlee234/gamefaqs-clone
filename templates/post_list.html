@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Posts</h1>
+<ul>
+  {% for post in object_list %}
+  <li>
+    {{ post.post_date }} - <a href="/posts/{{post.id}}">{{ post.topic }}</a>
+  </li>
+  {% empty %}
+  <li>No posts yet.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
