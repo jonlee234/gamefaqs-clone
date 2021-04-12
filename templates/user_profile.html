@@ -1,12 +1,18 @@
+<!-- TODO Blockers -->
+<!-- remove margin 20 above profile -->
+<!-- Get Avatar to show instead of URL -->
+<!-- Set Proper Follow URL -->
+<!-- STRETCH GOAL show recent posts by user in content box -->
+
 {% extends "base.html" %} {% block content %}
 <body>
   <div class="container-img">
     <div class="container">
       <div class="row profile">
         <div class="col-md-3">
-          <div class="profile-sidebar">
+          <div class="profile-sidebar" style="background-color: #b3b3b3">
             <!-- SIDEBAR USERPIC -->
-            <!-- TODO make avatar -->
+            <!-- #####TODO make avatar###### -->
             <div class="profile-userpic">
               <!-- <div class="img-responsive">{{user.avatar}}</div> -->
               <img src="/media/media/hs.jpeg" class="img-responsive" alt="" />
@@ -18,9 +24,14 @@
               <div class="profile-usertitle-job">{{user.fullname}}</div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
+            <!-- ##### TODO proper follow link ###### -->
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
-              <button type="button" class="btn btn-success btn-sm" href="/follow/1">
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                href="/follow/1"
+              >
                 Follow
               </button>
               <!-- Non-functional, Style Purposes only -->
@@ -30,7 +41,7 @@
             </div>
 
             <div class="portlet light bordered">
-              <!-- STAT -->
+              <!-- STATS -->
               <div class="row list-separated profile-stat">
                 <div class="col-md-4 col-sm-4 col-xs-6">
                   <div class="uppercase profile-stat-title">3</div>
@@ -45,7 +56,7 @@
                   <div class="uppercase profile-stat-text">Votes</div>
                 </div>
               </div>
-              <!-- END STAT -->
+              <!-- END STATS -->
               <div>
                 <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
                 <span class="profile-desc-text"> {{user.bio}} </span>
@@ -57,9 +68,11 @@
             </div>
           </div>
         </div>
-        <!-- TODO add most recent posts -->
-        <div class="col-md-9">
-          <div class="profile-content">Most Recent Posts</div>
+        <!-- #####TODO add most recent posts##### -->
+        <div class="col-md-9" style="background-color: #b3b3b3">
+          <div class="profile-content" style="background-color: #b3b3b3">
+            Most Recent Posts
+          </div>
         </div>
       </div>
       {% endblock %}
