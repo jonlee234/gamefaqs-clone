@@ -34,7 +34,7 @@ a {
   font-family: "Open Sans", sans-serif;
   color: #333;
 }
-
+/* ############################################ */
 /* NavBar */
 
 #nav-bloc {
@@ -107,7 +107,7 @@ a {
 .site-navigation .nav > .active {
   color: red;
 }
-
+/* ############################################ */
 /* Carousel */
 
 .container {
@@ -209,6 +209,7 @@ a {
   border-color: #fff;
 }
 
+/* ############################################ */
 /* Mobile adjustments */
 
 @media (max-width: 770px) {
@@ -249,7 +250,15 @@ a {
   .a-block {
     text-align: center;
   }
+  .gedf-main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .gedf-card {
+    margin-bottom: 2.77rem;
+  }
 }
+/* ############################################ */
 /* PROFILE PAGE */
 /* Profile container */
 .profile {
@@ -358,6 +367,15 @@ a {
   background: #fff;
   min-height: 460px;
 }
+/* ############################################ */
+/* Post Page */
+textarea {
+  color: #333;
+}
+.gedf-wrapper {
+  margin-top: 0.97rem;
+}
+/* ############################################ */
 /* FOOTER */
 .footer-dark {
   padding: 50px 0;
@@ -451,4 +469,9 @@ a {
   opacity: 0.3;
   font-size: 13px;
   margin-bottom: 0;
+}
+/* Reset Bootstrap */
+.dropdown-toggle::after {
+  content: none;
+  display: none;
 }
