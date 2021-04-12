@@ -34,7 +34,7 @@ a {
   font-family: "Open Sans", sans-serif;
   color: #333;
 }
-
+/* ############################################ */
 /* NavBar */
 
 #nav-bloc {
@@ -46,17 +46,10 @@ a {
 .navbar {
   margin-bottom: 0;
 }
-/* Removed Text */
-/* .navbar-brand {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-} */
 .navbar-brand img {
   width: auto;
   max-height: 40px;
-  /* margin: -12px 5px 0 0; */
+  margin: -12px 5px 0 0;
 }
 .navbar-brand {
   padding: 15px 15px;
@@ -114,7 +107,7 @@ a {
 .site-navigation .nav > .active {
   color: red;
 }
-
+/* ############################################ */
 /* Carousel */
 
 .container {
@@ -184,11 +177,10 @@ a {
   top: 30%;
   left: 1.8%;
   right: auto;
-  width: 96.66666666666666%;
+  width: 96.666%;
   color: #fff;
 }
 
-/* GAMR I removed the title :{ look like poo*/
 .header-text h2 {
   font-size: 6em;
   font-weight: bold;
@@ -217,6 +209,7 @@ a {
   border-color: #fff;
 }
 
+/* ############################################ */
 /* Mobile adjustments */
 
 @media (max-width: 770px) {
@@ -257,8 +250,97 @@ a {
   .a-block {
     text-align: center;
   }
+  .gedf-main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .gedf-card {
+    margin-bottom: 2.77rem;
+  }
+}
+/* ############################################ */
+/* PROFILE PAGE */
+/* Profile container */
+.profile {
+  margin: 0;
 }
 
+.container-img {
+  background-color: #394047c4;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background-color: rgb(230, 6, 6);
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  min-height: 460px;
+}
+/* ############################################ */
+/* Post Page */
+textarea {
+  color: #333;
+}
+.gedf-wrapper {
+  margin-top: 0.97rem;
+}
+/* ############################################ */
 /* FOOTER */
 .footer-dark {
   padding: 50px 0;
@@ -352,5 +434,9 @@ a {
   opacity: 0.3;
   font-size: 13px;
   margin-bottom: 0;
-  color: #fff;
+}
+/* Reset Bootstrap */
+.dropdown-toggle::after {
+  content: none;
+  display: none;
 }

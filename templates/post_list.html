@@ -1,6 +1,9 @@
+<!-- TODOS/Blockers -->
+<!-- Get post list to show up -->
+
 {% extends "base.html" %} {% block content %}
 
-<h1>Posts</h1>
+<!-- <h1>Posts</h1>
 <ul>
   {% for post in object_list %}
   <li>
@@ -9,6 +12,122 @@
   {% empty %}
   <li>No posts yet.</li>
   {% endfor %}
-</ul>
+</ul> -->
+<nav class="navbar navbar-light bg-white">
+  <a href="#" class="navbar-brand">Search Posts</a>
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="text" class="form-control" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</nav>
 
-{% endblock %}
+<div class="container-fluid gedf-wrapper">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body" style="color: #fff">
+          <div class="h5">GAMR</div>
+          <div class="h7 text-muted">Game Commpunity</div>
+          <div class="h7">Connect, Share, Guide, Play.</div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="h6 text-muted">Post by Gamrs</div>
+            <div class="h5">76,427</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Online Members</div>
+            <div class="h5">112</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Game Guides</div>
+            <div class="h5">1,732</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 gedf-main">
+      <!--- \\\\\\\Post-->
+      <div class="card gedf-card" style="color: #fff">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="posts-tab"
+                data-toggle="tab"
+                href="#posts"
+                role="tab"
+                >Make a publication</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+            <div
+              class="tab-pane fade show active"
+              role="tabpanel"
+              aria-labelledby="posts-tab"
+            >
+              <div class="form-group">
+                <!-- <label class="sr-only" for="message">post</label>
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="What are you thinking?"
+                ></textarea> -->
+                <div className="add-post-form-container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="add-post-template">
+                        <h1>Trying to get this to work</h1>
+                        <form method="post" enctype="multipart/form-data">
+                          {% csrf_token %} {{form.media}} {{form.as_p}}
+                          <input type="submit" value="submit" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Post /////-->
+
+                <!--- \\\\\\\Post Feed-->
+                <div class="card gedf-card" style="color: #fff">
+                  <div class="card-header">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <ul>
+                          {% for post in object_list %}
+                          <li>
+                            {{ post.post_date }} -
+                            <a href="/posts/{{post.id}}">{{ post.topic }}</a>
+                          </li>
+                          {% empty %}
+                          <li>No posts yet.</li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Post Feed /////-->
+                </div>
+              </div>
+            </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
