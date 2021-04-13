@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends "base.html" %} {% block content %}
+
+
 <body>
     {% if games %}
     {% for items in games %}
@@ -17,23 +11,6 @@
     {% else %}
     <h1>No results found</h1>
     {% endif %}
-    
 </body>
-</html>
-=======
-{% extends "base.html" %} {% block content %}
-
-<div className="game-search-container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="search-template">
-        {% for items in games %}
-        <a href="/viewGames/{{items.id}}">{{ items.title.title }}<br /></a>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
 
 {% endblock %}
->>>>>>> 26176b7e0d43bede34632c0422abf36142e1f77a
