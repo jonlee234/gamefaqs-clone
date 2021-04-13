@@ -261,6 +261,36 @@ label {
   }
 }
 /* ############################################ */
+/* Games */
+.game-info-template,
+p {
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.game-info-container {
+  /* backgroun img */
+}
+
+/* ############################################ */
+/* ############################################ */
+/* Posts */
+.post-detail-template,
+p {
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.post-detail-container {
+  /* background img */
+}
+/* ############################################ */
+
+/* ############################################ */
 /* PROFILE PAGE */
 /* Profile container */
 .profile {
@@ -445,7 +475,8 @@ textarea {
   content: none;
   display: none;
 }
-
+/* ############################################ */
+/* Forms */
 form {
   margin: 0 auto;
   text-align: center;
@@ -494,3 +525,4 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   opacity: 0.4;
 }
+/* ############################################ */
