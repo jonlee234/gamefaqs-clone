@@ -15,7 +15,7 @@ a:hover {
 
 header {
   background-color: #394047c4;
-  background-image: url(/media/images/mtndew.jpeg);
+  background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -33,6 +33,10 @@ label,
 a {
   font-family: "Open Sans", sans-serif;
   color: #333;
+}
+
+label {
+  color: #fff;
 }
 /* ############################################ */
 /* NavBar */
@@ -326,7 +330,6 @@ a {
   border-bottom: none;
 }
 
-
 /* Profile Content */
 .profile-content {
   padding: 20px;
@@ -435,8 +438,61 @@ textarea {
   font-size: 13px;
   margin-bottom: 0;
 }
+
+.signup-form-container {
+  color: cadetblue;
+}
 /* Reset Bootstrap */
 .dropdown-toggle::after {
   content: none;
   display: none;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  color: white;
+  border-radius: 10px;
+}
+form input {
+  margin: 15px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+input[type="submit"] {
+  width: 300px;
+  background: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+input[type="submit"]:active {
+  opacity: 0.4;
 }
