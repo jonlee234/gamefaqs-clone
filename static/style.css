@@ -291,6 +291,13 @@ p {
 /* ############################################ */
 
 /* ############################################ */
+/* SEARCH BAR */
+#id_search {
+  color: #333;
+}
+/* ############################################ */
+
+/* ############################################ */
 /* PROFILE PAGE */
 /* Profile container */
 .profile {
@@ -491,6 +498,7 @@ form input {
   margin: 15px 0;
   padding: 15px 10px;
   width: 100%;
+  color: #333;
   outline: none;
   border: 1px solid #bbb;
   border-radius: 20px;
