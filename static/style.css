@@ -19,7 +19,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Globals type styling */
 
 h1,
 h2,
@@ -38,6 +37,7 @@ label {
 }
 /* ############################################ */
 /* NavBar */
+/* ############################################ */
 
 #nav-bloc {
   margin-top: 30px;
@@ -111,6 +111,7 @@ label {
 }
 /* ############################################ */
 /* Carousel */
+/* ############################################ */
 
 .container {
   margin-top: 20px;
@@ -210,9 +211,9 @@ label {
   background-color: transparent;
   border-color: #fff;
 }
-
 /* ############################################ */
 /* Mobile adjustments */
+/* ############################################ */
 
 @media (max-width: 770px) {
   .bloc {
@@ -261,7 +262,37 @@ label {
   }
 }
 /* ############################################ */
+/* Games */
+/* ############################################ */
+.game-info-template,
+p {
+  color: #fff;
+  margin: auto;
+  padding: 10px;
+  /* width: 50%; */
+}
+
+.game-info-container {
+  /* TODO background img */
+}
+
+/* ############################################ */
+/* Posts */
+/* ############################################ */
+.post-detail-template,
+p {
+  color: #fff;
+  margin: auto;
+  padding: 10px;
+  /* width: 50%; */
+}
+
+.post-detail-container {
+  /* TODObackground img */
+}
+/* ############################################ */
 /* PROFILE PAGE */
+/* ############################################ */
 /* Profile container */
 .profile {
   margin: 0;
@@ -437,15 +468,13 @@ textarea {
   margin-bottom: 0;
 }
 
+/* ############################################ */
+/* Forms */
+/* ############################################ */
+
 .signup-form-container {
   color: cadetblue;
 }
-/* Reset Bootstrap */
-.dropdown-toggle::after {
-  content: none;
-  display: none;
-}
-
 form {
   margin: 0 auto;
   text-align: center;
@@ -460,6 +489,7 @@ form input {
   margin: 15px 0;
   padding: 15px 10px;
   width: 100%;
+  color: #333;
   outline: none;
   border: 1px solid #bbb;
   border-radius: 20px;
@@ -494,3 +524,4 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   opacity: 0.4;
 }
+/* ############################################ */

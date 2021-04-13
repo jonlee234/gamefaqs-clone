@@ -1,16 +1,11 @@
 {% extends "base.html" %} {% block content %}
 
-
 <body>
-    {% if games %}
-    {% for items in games %}
-        <a href="/viewGames/{{items.id}}">
-            {{ items.title.title }}<br>
-        </a>
-    {% endfor %}
-    {% else %}
-    <h1>No results found</h1>
-    {% endif %}
+  {% if games %} {% for items in games %}
+  <a href="/viewGames/{{items.id}}"> {{ items.title.title }}<br /> </a>
+  {% endfor %} {% else %}
+  <h1>No results found</h1>
+  {% endif %}
 </body>
 
 {% endblock %}

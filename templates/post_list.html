@@ -4,17 +4,7 @@
 {% extends "base.html" %} {% block content %}
 
 <nav class="navbar navbar-light bg-white">
-  <!-- <form
-    class="form-inline"
-    action=""
-    method="post"
-    enctype="multipart/form-data"
-  >
-    {% csrf_token %} {{search}}
-    <div class="input-group">
-      <input type="submit" value="Search" />
-    </div>
-  </form> -->
+<!-- I deleted the search bar but removing this div messes up the whole pages style so leave it in -->
 </nav>
 
 <div class="container-fluid gedf-wrapper">
@@ -23,7 +13,7 @@
       <div class="card">
         <div class="card-body" style="color: #fff">
           <div class="h5">GAMR</div>
-          <div class="h7 text-muted">Game Commpunity</div>
+          <div class="h7 text-muted">Gaming Community</div>
           <div class="h7">Connect, Share, Guide, Play.</div>
         </div>
         <ul class="list-group list-group-flush">
@@ -58,50 +48,15 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="card-body">
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="posts" role="tabpanel">
-              <div className="add-post-form-container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="add-post-template">
-                      <h1>Add post</h1>
-                      <form method="post" enctype="multipart/form-data" style="color: #fff">
-                        {% csrf_token %} {{form.media}} {{form.as_p}}
-                        <input type="submit" value="submit" />
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <div class="tab-pane fade" id="images" role="tabpanel">
-              <div class="py-4"></div>
-            </div>
-          </div>
-          <div class="btn-toolbar justify-content-between">
-            <!-- <div class="btn-group">
-              <button type="submit" class="btn btn-primary">share</button>
-            </div> -->
-            <div class="btn-group">
-              <button
-                id="btnGroupDrop1"
-                type="button"
-                class="btn btn-link dropdown-toggle"
-                data-toggle="dropdown"
-              >
-                <i class="fa fa-globe"></i>
-              </button>
-            </div>
-          </div>
+          <div class="post-feed">
           <ul style="color: #fff">
             {% for post in object_list %}
             <li>
-              {{ post.post_date }} -
-              <a href="/posts/{{post.id}}">{{ post.topic }}</a>
+              <a href="/posts/{{post.id}}" style="color: #c702f8">{{ post.topic }}</a> -
+              <span class="post-date">{{ post.post_date }}</span> 
             </li>
             {% empty %}
-            <li>No posts yet.</li>
+            <li>No posts yet.<a href="/post/add/">Be the First!</li>
             {% endfor %}
           </ul>
         </div>
