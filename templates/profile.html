@@ -2,10 +2,12 @@
 <img src="{{user.avatar.url}}" width="100px" height="100px"/>
 <p>{{user.username}}</p>
 <p>{{user.get_platform_choice_field_display}}</p>
+
+<a href="/follow/{{user.id}}/">
+    <button>follow</button>
+</a>
 <br>
 <h2>Favorite Games:</h2>
-{% for items in user.favorite_games %}
-<li>{{items}} </li>
-{% endfor %}
+{{favorite_game}}
 
 {% endblock %}

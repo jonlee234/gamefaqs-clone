@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+
+{% for users in user %}
+{% if users.is_active %}
+<li>
+    <a href="profile/{{user.id}}">
+        {{users.username}}
+    </a>
+    {{user.platform_choice_field}}
+</li>
+
+
+{% endif %}
+{% endfor %}
+{% endblock %}

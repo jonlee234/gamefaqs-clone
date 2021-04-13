@@ -394,14 +394,6 @@
         "documentation": {}
     },
     {
-        "label": "CustomUser",
-        "importPath": "accounts.models",
-        "description": "accounts.models",
-        "isExtraImport": true,
-        "detail": "accounts.models",
-        "documentation": {}
-    },
-    {
         "label": "Post",
         "importPath": "post.models",
         "description": "post.models",
@@ -431,15 +423,6 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
         "documentation": {}
     },
     {
@@ -773,6 +756,14 @@
         "documentation": {}
     },
     {
+        "label": "user_list_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
         "label": "favorite_game_view",
         "importPath": "accounts.views",
         "description": "accounts.views",
@@ -911,7 +902,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list= CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(request, \"index.html\", {\"user\": user, \"games\": games, 'posts':posts, \"users_list\":users_list})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return render(request, \"follow.html\")",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list= CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(request, \"index.html\", {\"user\": user, \"games\": games, 'posts':posts, \"users_list\":users_list})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -920,7 +911,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return render(request, \"follow.html\")\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_game.add(CustomUser.objects.get(id=game_id))\n    return render(request, \"follow.html\")\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))",
+        "peekOfCode": "def follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -929,7 +920,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_game.add(CustomUser.objects.get(id=game_id))\n    return render(request, \"follow.html\")\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"homepage\"))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))",
+        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -938,7 +929,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"homepage\"))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"homepage\"))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {",
+        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -947,7 +938,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"homepage\"))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user\n    })",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user,\n    })\ndef user_list_view(request):\n    user = CustomUser.objects.all()",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -956,7 +947,16 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user\n    })",
+        "peekOfCode": "def profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user,\n    })\ndef user_list_view(request):\n    user = CustomUser.objects.all()\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_list_view",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.all()\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
         "detail": "accounts.views",
         "documentation": {}
     },
