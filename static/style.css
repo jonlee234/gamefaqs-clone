@@ -15,7 +15,7 @@ a:hover {
 
 header {
   background-color: #394047c4;
-  background-image: url(/media/images/mtndew.jpeg);
+  background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,10 +28,12 @@ h4,
 h5,
 h6,
 p,
-label,
 .btn,
 a {
   font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+label {
   color: #fff;
 }
 /* ############################################ */
