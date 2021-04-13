@@ -28,13 +28,11 @@ h4,
 h5,
 h6,
 p,
-label,
 .btn,
 a {
   font-family: "Open Sans", sans-serif;
   color: #333;
 }
-
 label {
   color: #fff;
 }
