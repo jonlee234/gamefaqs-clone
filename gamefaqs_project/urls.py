@@ -16,7 +16,7 @@ from accounts.views import (
     user_profile_view,
 )
 
-from post.views import PostCreate, PostDetailView, PostListView
+from post.views import PostCreate, PostDetailView, PostListView, add_comment_to_post
 from accounts.views import favorite_game_view
 
 
@@ -39,6 +39,7 @@ urlpatterns = [
     path("favorite_game/<int:game_id>", favorite_game_view),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
+    path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
