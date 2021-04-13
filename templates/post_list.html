@@ -53,7 +53,7 @@
             {% for post in object_list %}
             <li>
               <a href="/posts/{{post.id}}" style="color: #c702f8">{{ post.topic }}</a> -
-              <span class="post-date">{{ post.post_date }}</span> 
+              <span class="post-date">{{ post.post_date }}<a href="{% url 'post_detail' pk=post.id %}">Comments: {{ post.comments.count }}</a></span> 
             </li>
             {% empty %}
             <li>No posts yet.<a href="/post/add/">Be the First!</li>
