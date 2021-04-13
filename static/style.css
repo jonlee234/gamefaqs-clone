@@ -260,14 +260,16 @@ label {
     margin-bottom: 2.77rem;
   }
 }
+
+/* TODO Figure out why these 2 areas mess up the login/signup forms. */
 /* ############################################ */
 /* Games */
 .game-info-template,
 p {
   color: #fff;
   margin: auto;
-  width: 50%;
   padding: 10px;
+  /* width: 50%; */
 }
 
 .game-info-container {
@@ -281,8 +283,8 @@ p {
 p {
   color: #fff;
   margin: auto;
-  width: 50%;
   padding: 10px;
+  /* width: 50%; */
 }
 
 .post-detail-container {
