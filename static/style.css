@@ -19,7 +19,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Globals type styling */
 
 h1,
 h2,
@@ -38,6 +37,7 @@ label {
 }
 /* ############################################ */
 /* NavBar */
+/* ############################################ */
 
 #nav-bloc {
   margin-top: 30px;
@@ -111,6 +111,7 @@ label {
 }
 /* ############################################ */
 /* Carousel */
+/* ############################################ */
 
 .container {
   margin-top: 20px;
@@ -210,9 +211,9 @@ label {
   background-color: transparent;
   border-color: #fff;
 }
-
 /* ############################################ */
 /* Mobile adjustments */
+/* ############################################ */
 
 @media (max-width: 770px) {
   .bloc {
@@ -260,10 +261,9 @@ label {
     margin-bottom: 2.77rem;
   }
 }
-
-/* TODO Figure out why these 2 areas mess up the login/signup forms. */
 /* ############################################ */
 /* Games */
+/* ############################################ */
 .game-info-template,
 p {
   color: #fff;
@@ -273,12 +273,12 @@ p {
 }
 
 .game-info-container {
-  /* backgroun img */
+  /* TODO background img */
 }
 
 /* ############################################ */
-/* ############################################ */
 /* Posts */
+/* ############################################ */
 .post-detail-template,
 p {
   color: #fff;
@@ -288,19 +288,11 @@ p {
 }
 
 .post-detail-container {
-  /* background img */
+  /* TODObackground img */
 }
-/* ############################################ */
-
-/* ############################################ */
-/* SEARCH BAR */
-#id_search {
-  color: #333;
-}
-/* ############################################ */
-
 /* ############################################ */
 /* PROFILE PAGE */
+/* ############################################ */
 /* Profile container */
 .profile {
   margin: 0;
@@ -476,16 +468,13 @@ textarea {
   margin-bottom: 0;
 }
 
+/* ############################################ */
+/* Forms */
+/* ############################################ */
+
 .signup-form-container {
   color: cadetblue;
 }
-/* Reset Bootstrap */
-.dropdown-toggle::after {
-  content: none;
-  display: none;
-}
-/* ############################################ */
-/* Forms */
 form {
   margin: 0 auto;
   text-align: center;
