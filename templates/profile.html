@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<img src="{{user.avatar.url}}" width="100px" height="100px"/>
+<p>{{user.username}}</p>
+<p>{{user.get_platform_choice_field_display}}</p>
+<br>
+<h2>Favorite Games:</h2>
+{% for items in user.favorite_games %}
+<li>{{items}} </li>
+{% endfor %}
+
+{% endblock %}

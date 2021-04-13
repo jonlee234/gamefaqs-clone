@@ -8,12 +8,8 @@ from authentication import views as auth_view
 from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
 from error_pages.views import error_404_view, error_500_view
-from accounts.views import (
-    favorite_game_view,
-    follower_view,
-    unfavorite_game_view,
-    unfollow_view,
-)
+from accounts.views import (favorite_game_view, follower_view, profile_view, unfavorite_game_view,
+    unfollow_view)
 
 from post.views import PostCreate, PostDetailView, PostListView
 from accounts.views import favorite_game_view
@@ -37,6 +33,7 @@ urlpatterns = [
     path("favorite_game/<int:game_id>", favorite_game_view),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
+    path("profile/<int:user_id>/", profile_view, name="profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

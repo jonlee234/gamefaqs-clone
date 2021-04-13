@@ -42,4 +42,9 @@ def unfavorite_game_view(request, game_id):
     request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))
     return HttpResponseRedirect(reverse("homepage"))
 
-   
+
+def profile_view(request, user_id):
+    user = CustomUser.objects.get(id=user_id)
+    return render(request, 'profile.html', {
+        'user': user
+    }) 
