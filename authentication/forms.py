@@ -28,6 +28,7 @@ class SignupForm(forms.Form):
         ("18", "RetoPy"),
         ("19", "Other Systems"),
     )
+    avatar = forms.ImageField()
     email = forms.EmailField()
     username = forms.CharField(max_length=50)
     password = forms.CharField(widget=forms.PasswordInput())
@@ -37,4 +38,3 @@ class SignupForm(forms.Form):
         max_length=2,
         widget=forms.Select(choices=PLATFORM_CHOICES),
     )
-    avatar = forms.ImageField()
