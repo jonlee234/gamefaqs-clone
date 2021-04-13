@@ -5,6 +5,7 @@
     <div class="col-md-12">
       <div class="search-template">
         {% for items in games %}
+        <img src='{{items.cover_art.url}}' width="100px" height="100px"/>
         <a href="/viewGames/{{items.id}}">{{ items.title.title }}<br /></a>
         {% endfor %}
       </div>
