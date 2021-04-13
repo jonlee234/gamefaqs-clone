@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 from post.models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
 from post.forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -39,6 +40,7 @@ class PostListView(ListView):
         return context
 
 
+@login_required
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
