@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
-from accounts.models import CustomUser
-from post.models import Post
-from game.models import Game
 from django.contrib.auth.decorators import login_required
 import random
 
 from accounts.models import CustomUser
+from accounts.models import CustomUser
+from post.models import Post
+from game.models import Game
 
 
 @login_required

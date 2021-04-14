@@ -22,7 +22,8 @@
 >
 {% else %}
 <p>
-  You have to be logged in to Make Comments <a href="/login/">Login Here</a>
+  You must be logged in to leave a comments <a href="/login/">Login Here</a>
+  <a href="/singup/">Signup Here</a>
 </p>
 
 {%endif%} {% for comment in post.comments.all %}
@@ -32,5 +33,5 @@
   <p>{{ comment.text|linebreaks }}</p>
 </div>
 {% empty %}
-<p>No comments here yet :(</p>
+<p>Claim Firsties!</p>
 {% endfor %} {% endblock %}

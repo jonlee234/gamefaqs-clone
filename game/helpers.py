@@ -1,12 +1,13 @@
 import re
+
 from game.models import Game
 
 
 def searchBy(title):
     game = []
-    search = ''
+    search = ""
 
-    regex = r'([\s\w\d+]+)'
+    regex = r"([\s\w\d+]+)"
 
     find = re.findall(regex, title)
 
@@ -24,4 +25,3 @@ def searchBy(title):
                 id = items.id
                 game.append(Game.objects.get(id=id))
             return game
- 
