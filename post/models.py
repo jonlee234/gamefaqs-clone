@@ -1,9 +1,9 @@
 from django.db import models
+from django.utils import timezone
+from django.urls import reverse
 
 from accounts.models import CustomUser
 from game.models import Game
-from django.utils import timezone
-from django.urls import reverse
 
 # Create your models here.
 PLATFORM_CHOICES = (

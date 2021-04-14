@@ -15,7 +15,6 @@ from accounts.views import (
     unfollow_view,
     user_profile_view,
 )
-
 from post.views import PostCreate, PostDetailView, PostListView, add_comment_to_post
 from accounts.views import favorite_game_view
 
@@ -41,7 +40,6 @@ urlpatterns = [
     path("posts/", PostListView.as_view(), name="post-list"),
     path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 handler404 = "error_pages.views.error_404_view"
 handler500 = "error_pages.views.error_500_view"

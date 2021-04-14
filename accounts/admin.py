@@ -3,11 +3,8 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import CustomUser
 
-# import auth forms
-
 
 class CustomUserAdmin(UserAdmin):
-    # add auth forms
     model = CustomUser
     list_display = [
         "username",

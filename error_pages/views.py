@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-
+# TODO add other errors
 def error_404_view(request, exception):
     data = {}
     return render(request, "404.html", data)

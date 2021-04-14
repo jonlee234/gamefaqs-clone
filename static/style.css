@@ -1,6 +1,9 @@
-* {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
@@ -264,12 +267,21 @@ label {
 /* ############################################ */
 /* Games */
 /* ############################################ */
-.game-info-template,
-p {
-  color: #fff;
+.game-info-template {
   margin: auto;
   padding: 10px;
-  /* width: 50%; */
+  width: 50%;
+}
+
+.game-title-detail {
+   color: #fff !important;
+   font-size: 5rem;
+   font-weight: bold !important;
+}
+
+.game-detail {
+   color: #fff !important;
+   font-size: 3.5rem;
 }
 
 .game-info-container {
@@ -279,12 +291,12 @@ p {
 /* ############################################ */
 /* Posts */
 /* ############################################ */
-.post-detail-template,
-p {
+.post-detail-template {
   color: #fff;
   margin: auto;
   padding: 10px;
-  /* width: 50%; */
+  width: 50%;
+  font-size: 35rem;
 }
 
 .post-detail-container {
@@ -525,7 +537,56 @@ input[type="submit"]:active {
   opacity: 0.4;
 }
 /* ############################################ */
+/* Comments */
+/* ############################################ */
 
 .comment {
   margin: 20px 0px 20px 20px;
+}
+
+/* ############################################ */
+/* Error Pages */
+/* ############################################ */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+#error-containter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin: auto;
+  width: 50%;
+  padding-top: 1.75em;
+}
+
+.four04 {
+  color: #337ab7;
+  font-size: 35rem;
+  letter-spacing: 0.1em;
+  margin: 0.025em 0;
+  text-shadow: 0.05em 0.05em 0 #00000040;
+  white-space: nowrap;
+}
+
+.red-404 {
+  color: red;
+}
+
+.ghost {
+  animation: spooky 1.5s alternate infinite linear;
+  color: #face02;
+  display: inline-block;
+}
+
+@keyframes spooky {
+  from {
+    transform: translatey(0.15em) scaley(0.95);
+  }
+
+  to {
+    transform: translatey(-0.15em);
+  }
 }
