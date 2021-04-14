@@ -1,56 +1,85 @@
+<!-- TODO Blockers -->
+<!-- remove margin 20 above profile -->
+<!-- Get Avatar to show instead of URL -->
+<!-- Set Proper Follow URL -->
+<!-- STRETCH GOAL show recent posts by user in content box -->
+
 {% extends "base.html" %} {% block content %}
+<body>
+  <div class="container-img">
+    <div class="container">
+      <div class="row profile">
+        <div class="col-md-3">
+          <div class="profile-sidebar" style="background-color: #b3b3b3">
+            <!-- SIDEBAR USERPIC -->
+            <!-- #####TODO make avatar###### -->
+            <div class="profile-userpic">
+              <!-- <div class="img-responsive">{{user.avatar}}</div> -->
+              <img
+                src="/static/assets/images/hs.jpeg"
+                class="img-responsive"
+                alt=""
+              />
+            </div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+              <div class="profile-usertitle-name">{{user.username}}</div>
+              <div class="profile-usertitle-job">{{user.fullname}}</div>
+            </div>
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- ##### TODO proper follow link ###### -->
+            <!-- SIDEBAR BUTTONS -->
+            <div class="profile-userbuttons">
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                href="/follow/1"
+              >
+                Follow
+              </button>
+              <!-- Non-functional, Style Purposes only -->
+              <button type="button" class="btn btn-danger btn-sm">
+                Message
+              </button>
+            </div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{user.username}}'s Profile</title>
-  </head>
-  <body>
-    <div className="profile-title-container">
-      <h1 className="profile-title">
-        {{user.username}}'s Profile {{user.avatar}}
-      </h1>
+            <div class="portlet light bordered">
+              <!-- STATS -->
+              <div class="row list-separated profile-stat">
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">3</div>
+                  <div class="uppercase profile-stat-text">Posts</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">12</div>
+                  <div class="uppercase profile-stat-text">Games</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                  <div class="uppercase profile-stat-title">7</div>
+                  <div class="uppercase profile-stat-text">Votes</div>
+                </div>
+              </div>
+              <!-- END STATS -->
+              <div>
+                <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
+                <span class="profile-desc-text"> {{user.bio}} </span>
+                <div class="margin-top-20 profile-desc-link">
+                  <i class="fa fa-globe"></i>
+                  <span> Homepage:{{user.homepage}} </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- #####TODO add most recent posts##### -->
+        <div class="col-md-9" style="background-color: #b3b3b3">
+          <div class="profile-content" style="background-color: #b3b3b3">
+            Most Recent Posts
+          </div>
+        </div>
+      </div>
+      {% endblock %}
     </div>
-    <br />
-    <div className="status-container">
-      <label for="online_status">Set your online status:</label>
-      <select className="online_status">
-        <option value="offline">Offline</option>
-        <option value="online">Online</option>
-        <option value="lfg">Looking For Group</option>
-        <option value="dnd">Do Not Disturb</option>
-        <!-- another invisable extra credit location -->
-        <option value="can">Drinking Verification Can</option>
-      </select>
-    </div>
-    <!-- temp HR for help visualizating -->
-    <hr />
-    <div class="profile-container">
-      <h3>User Bio:</h3>
-      {{user.bio}}
-      <br />
-      <h3>Post's by {{user.username}}:</h3>
-      <ul className="profile-posts">
-        {% for item in post.post_detail.all %}
-        <li>
-          <a href="posts/<int:pk>">{{item.topic}}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      <br />
-      <h3>{{user.username}}'s Platform of choice:</h3>
-      <!-- Returning the id number and not string -->
-      <span className="profile-platform">{{user.platform_choice_field}}</span>
-      <br />
-      <h4>
-        {{user.username}} has been a member since
-        <span className="profile_date_joined"> {{user.date_joined}}</span>
-      </h4>
-    </div>
-  </body>
-</html>
-{% endblock %}
-
+  </div>
+</body>

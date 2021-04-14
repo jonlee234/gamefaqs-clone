@@ -320,6 +320,22 @@
         "documentation": {}
     },
     {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "CustomUser",
         "importPath": "accounts.models",
         "description": "accounts.models",
@@ -365,6 +381,22 @@
         "description": "post.models",
         "isExtraImport": true,
         "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comment",
+        "importPath": "post.models",
+        "description": "post.models",
+        "isExtraImport": true,
+        "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -698,14 +730,6 @@
         "documentation": {}
     },
     {
-        "label": "profile_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
         "label": "unfavorite_game_view",
         "importPath": "accounts.views",
         "description": "accounts.views",
@@ -722,7 +746,7 @@
         "documentation": {}
     },
     {
-        "label": "user_list_view",
+        "label": "user_profile_view",
         "importPath": "accounts.views",
         "description": "accounts.views",
         "isExtraImport": true,
@@ -755,6 +779,14 @@
     },
     {
         "label": "PostListView",
+        "importPath": "post.views",
+        "description": "post.views",
+        "isExtraImport": true,
+        "detail": "post.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_comment_to_post",
         "importPath": "post.views",
         "description": "post.views",
         "isExtraImport": true,
@@ -807,6 +839,14 @@
         "description": "django.views.generic.list",
         "isExtraImport": true,
         "detail": "django.views.generic.list",
+        "documentation": {}
+    },
+    {
+        "label": "CommentForm",
+        "importPath": "post.forms",
+        "description": "post.forms",
+        "isExtraImport": true,
+        "detail": "post.forms",
         "documentation": {}
     },
     {
@@ -868,7 +908,16 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(request, \"index.html\", {\"user\": user, \"games\": games, 'posts':posts, \"users_list\":users_list})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n<<<<<<< HEAD\n=======\n>>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(\n        request,",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_profile_view",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def user_profile_view(request, CustomUser_id):\n    my_Custom_User = CustomUser.objects.get(id=CustomUser_id)\n    return render(request, \"user_profile.html\", {\"user\": my_Custom_User})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -886,7 +935,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))",
+        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n<<<<<<< HEAD",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -895,7 +944,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {",
+        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n<<<<<<< HEAD\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -904,7 +953,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n<<<<<<< HEAD\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -922,7 +971,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })",
+        "peekOfCode": "def profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })\n=======\n    request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"homepage\"))\n>>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -1111,7 +1160,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = False\nALLOWED_HOSTS = [\"*\"]",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1120,7 +1169,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
+        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1129,7 +1178,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = True\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1210,7 +1259,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1219,7 +1268,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1228,7 +1277,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1237,7 +1286,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1246,7 +1295,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1255,7 +1304,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1264,7 +1313,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nAUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1273,7 +1322,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "AUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "AUTH_USER_MODEL = \"accounts.CustomUser\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1282,7 +1331,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1291,7 +1340,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nLOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1300,7 +1349,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "LOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "LOGIN_URL = \"/login\"\nDEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1309,7 +1358,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.AutoField\"\nVENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1318,7 +1367,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "VENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "VENV_PATH = os.path.dirname(BASE_DIR)\nSTATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1327,7 +1376,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')",
+        "peekOfCode": "STATIC_ROOT = os.path.join(VENV_PATH, \"static_root\")",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1381,7 +1430,16 @@
         "kind": 6,
         "importPath": "post.forms",
         "description": "post.forms",
-        "peekOfCode": "class CreatePostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = [\"topic\", \"game\", \"platforms\", \"text\", \"post_date\", \"thumbnail\"]",
+        "peekOfCode": "class CreatePostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = [\"topic\", \"game\", \"platforms\", \"text\", \"post_date\", \"thumbnail\"]\nclass CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment\n        fields = (\"text\",)",
+        "detail": "post.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CommentForm",
+        "kind": 6,
+        "importPath": "post.forms",
+        "description": "post.forms",
+        "peekOfCode": "class CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment\n        fields = (\"text\",)",
         "detail": "post.forms",
         "documentation": {}
     },
@@ -1391,6 +1449,15 @@
         "importPath": "post.models",
         "description": "post.models",
         "peekOfCode": "class Post(models.Model):\n    text = models.TextField(max_length=1000)\n    post_date = models.DateTimeField(default=timezone.now)\n    topic = models.CharField(max_length=40)\n    game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True, blank=True, upload_to=\"media/\")\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)\n    def get_absolute_url(self):\n        return reverse(\"post_detail\", kwargs={\"pk\": self.pk})",
+        "detail": "post.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comment",
+        "kind": 6,
+        "importPath": "post.models",
+        "description": "post.models",
+        "peekOfCode": "class Comment(models.Model):\n    class Meta:\n        ordering = [\"-created_date\"]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"comments\")\n    author = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now)\n    approved_comment = models.BooleanField(default=False)\n    def approve(self):\n        self.approved_comment = True",
         "detail": "post.models",
         "documentation": {}
     },
@@ -1426,7 +1493,16 @@
         "kind": 6,
         "importPath": "post.views",
         "description": "post.views",
-        "peekOfCode": "class PostListView(ListView):\n    template_name = \"post_list.html\"\n    model = Post\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context",
+        "peekOfCode": "class PostListView(ListView):\n    template_name = \"post_list.html\"\n    model = Post\n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        return context\n@login_required\ndef add_comment_to_post(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == \"POST\":",
+        "detail": "post.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_comment_to_post",
+        "kind": 2,
+        "importPath": "post.views",
+        "description": "post.views",
+        "peekOfCode": "def add_comment_to_post(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == \"POST\":\n        form = CommentForm(request.POST)\n        if form.is_valid():\n            comment = form.save(commit=False)\n            comment.post = post\n            comment.author = request.user\n            comment.save()\n            return redirect(\"post_detail\", pk=post.pk)",
         "detail": "post.views",
         "documentation": {}
     },

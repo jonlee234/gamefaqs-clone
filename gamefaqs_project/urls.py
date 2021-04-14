@@ -7,10 +7,15 @@ from authentication import views as auth_view
 from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
 from error_pages.views import error_404_view, error_500_view
-from accounts.views import (favorite_game_view, follower_view, profile_view, unfavorite_game_view,
-    unfollow_view, user_list_view)
+from accounts.views import (
+    favorite_game_view,
+    follower_view,
+    unfavorite_game_view,
+    unfollow_view,
+    user_profile_view,
+)
 
-from post.views import PostCreate, PostDetailView, PostListView
+from post.views import PostCreate, PostDetailView, PostListView, add_comment_to_post
 from accounts.views import favorite_game_view
 
 
@@ -27,12 +32,13 @@ urlpatterns = [
     path("post/add/", PostCreate.as_view(), name="post-create"),
     path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
     path("admin/", admin.site.urls),
-    path("follow/<int:user_id>/", follower_view),
-    path("unfollow/<int:user_id>/", unfollow_view),
-    path("favorite_game/<int:game_id>/", favorite_game_view),
-    path("unfavorite_game/<int:game_id>/", unfavorite_game_view),
+    path("follow/<int:user_id>", follower_view),
+    path("unfollow/<int:user_id>", unfollow_view),
+    path("user/<int:CustomUser_id>/", user_profile_view),
+    path("favorite_game/<int:game_id>", favorite_game_view),
+    path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
-    path("viewUsers/", user_list_view, name='users'),
+    path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
     path("viewProfile/<str:username>/", profile_view, name="profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

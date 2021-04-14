@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -16,20 +17,48 @@
       type="text/css"
       href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
     />
-    <script src="{% static 'app.js' %}"></script>
+    <!-- / -->
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/assets/favicon_io/favicon-16x16.png"
+    />
+    <!-- / -->
+    <!-- JAVASCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{% static 'app.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- / -->
     <title>{% block title %} GAMR {% endblock %}</title>
   </head>
-
-  <body>
-    <!-- Navigation Block -->
+  {% block navBar %}
+  <header>
     <div class="bloc l-bloc" id="nav-bloc">
       <div class="container">
         <nav class="navbar row">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">GAMR</a>
-            <!-- Mobile Hamburger -->
+            <a href="/"
+              ><img
+                src="/static/assets/logos/logo5.png"
+                width="150"
+                height="125"
+                title="GAMR PacAttack"
+                alt="GAMR PacAttack"
+            /></a>
+            <!-- HAMBURGER -->
             <button
               id="nav-toggle"
               type="button"
@@ -37,76 +66,66 @@
               data-toggle="collapse"
               data-target=".navbar-1"
             >
-              <!-- Accessablility  -->
+              <!-- ACCESSIBILITY  -->
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span><span class="icon-bar"></span
               ><span class="icon-bar"></span>
             </button>
           </div>
+          <!-- NAVLINKS -->
           <div class="collapse navbar-collapse navbar-1">
             <ul class="site-navigation nav">
               <li>
-                <a href="/viewGames">games</a>
+                <a class="nav-link" href="/">home</a>
               </li>
               <li>
-                <a href="/post/add/">post</a>
+                <a class="nav-link" href="/viewGames/">games</a>
               </li>
               <li>
-                <a href="/viewUsers/">players</a>
+                <a class="nav-link" href="#">players</a>
               </li>
               <li>
-                <a href="/posts/">feed</a>
+                <a class="nav-link" href="/posts/">feed</a>
               </li>
               <li>
-                <a href="/logout/">logout</a>
+                <a class="nav-link" href="/logout/">logout</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
     </div>
-    <!-- Navigation Block END -->
-
-    <!-- Carousel -->
+    {% endblock %}{% block carousel %}
     <div class="container">
       <div class="row">
-        <!-- Carousel -->
-        <div
-          id="carousel-example-generic"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <!-- Indicators -->
+        <div id="carousel-generic" class="carousel slide" data-ride="carousel">
+          <!-- SLIDE INDICATIORS -->
           <ol class="carousel-indicators">
             <li
-              data-target="#carousel-example-generic"
+              data-target="#carousel-generic"
               data-slide-to="0"
               class="active"
             ></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-generic" data-slide-to="5"></li>
+            <li data-target="#carousel-generic" data-slide-to="6"></li>
+            <li data-target="#carousel-generic" data-slide-to="7"></li>
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
+            <!-- Slide 1 -->
             <div class="item active">
-              <img src="/media/media/Farcry6.jpeg" alt="First slide" />
-              <!-- Static Header -->
-              <div class="header-text hidden-xs">
-                <div class="col-md-12 text-center">
-                  <h2>
-                    <span>GAMR</span>
-                  </h2>
-                  <br />
-                  <div class="">
-                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
-                      >Read More</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- /header-text -->
+              <img
+                src="/static/assets/images/Dying_light2.jpeg"
+                alt="Dying light 2"
+              />
             </div>
+            <!-- Slide 2 -->
             <div class="item">
+<<<<<<< HEAD
               <img src="/media/media/Mario_world.jpeg" alt="Second slide" />
               <!-- Static Header -->
               <div class="header-text hidden-xs">
@@ -123,37 +142,64 @@
                 </div>
               </div>
               <!-- /header-text -->
+=======
+              <img
+                src="/static/assets/images/Halo_Infinite.jpeg"
+                alt="Halo Infinite"
+              />
+>>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58
             </div>
+            <!-- Slide 3 -->
             <div class="item">
-              <img src="/media/media/Valheim.jpeg" alt="Third slide" />
-              <!-- Static Header -->
-              <div class="header-text hidden-xs">
-                <div class="col-md-12 text-center">
-                  <h2>
-                    <span>GAMR</span>
-                  </h2>
-                  <br />
-                  <div class="">
-                    <a class="btn btn-theme btn-sm btn-min-block" href="#"
-                      >Read More</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- /header-text -->
+              <img src="/static/assets/images/Hitman3.jpeg" alt="Hitman 3" />
+            </div>
+            <!-- Slide 4 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Mario_world.jpeg"
+                alt="Mario World"
+              />
+            </div>
+            <!-- Slide 5 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/new-pokemon-snap-switch.jpeg"
+                alt="Pokemon Snap"
+              />
+            </div>
+            <!-- Slide 6 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Mass_Effect.jpeg"
+                alt="Mass Effect"
+              />
+            </div>
+            <!-- Slide 8 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Deathloop.jpeg"
+                alt="Horizon Forbidden West"
+              />
+            </div>
+            <!-- Slide 9 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Doritos-Mountain-Dew.jpeg"
+                alt="Horizon Forbidden West"
+              />
             </div>
           </div>
           <!-- Controls -->
           <a
             class="left carousel-control"
-            href="#carousel-example-generic"
+            href="#carousel-generic"
             data-slide="prev"
           >
             <span class="glyphicon glyphicon-chevron-left"></span>
           </a>
           <a
             class="right carousel-control"
-            href="#carousel-example-generic"
+            href="#carousel-generic"
             data-slide="next"
           >
             <span class="glyphicon glyphicon-chevron-right"></span>
@@ -162,16 +208,12 @@
         <!-- Carousel END -->
       </div>
     </div>
-
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- Nav Bar Ends -->
-
+  </header>
+  {% endblock %}{% block body %}
+  <body>
     <!-- DO NOT EDIT THIS LINE -->
     <!-- Other pages as body  -->
+<<<<<<< HEAD
     <div class="content">{% block content %}{% endblock %}</div>
 
     <!-- Start of Footer -->
@@ -259,6 +301,91 @@
         <!-- </body> -->
         <!-- </html> -->
       </footer>
+=======
+    <div class="content" style="background-color: #282d32">
+      {% block content %}{% endblock %}
+>>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58
     </div>
   </body>
+  <!-- /Other pages as body  -->
+  {% endblock %} {% block Footer %}
+  <div class="footer-dark">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <!-- footer nav-->
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="/"><span class="footer_link1">Home</span></a>
+              </li>
+              <li>
+                <a href="/user/1/"><span class="footer_link2">Players</span></a>
+              </li>
+              <li>
+                <a href="/viewGames/"
+                  ><span class="footer_link3">Games</span></a
+                >
+              </li>
+              <li>
+                <a href="/posts/"><span class="footer_link5"></span>Posts</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>GAMES</h3>
+            <ul>
+              <li>
+                <a href="https://github.com/jonlee234"
+                  ><span class="footer_game_link1"></span>Jonathane Leavell</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/codeNameGizzie"
+                  ><span class="footer_game_link2"></span>Shavonne Carson</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/RMHavelaar"
+                  ><span class="footer_game_link3"></span>Robert Havelaar</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/delpercio"
+                  ><span class="footer_game_link4"></span>Steven Delpercio</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- /footer nav-->
+          <div class="col-md-6 item text">
+            <h3>Kenzie Academy Team Charity Capstone</h3>
+            <p class="about-us">
+              After a year an intense year of studying at Kenzie Academy we are
+              finally at the end and to show off what all we have learned. We
+              present to you Gamr. Gamr is a website dedicated to listing games
+              and user-written walkthroughs / cheats for those games.
+            </p>
+          </div>
+          <!-- Might remove.  Personal github links -->
+          <div class="col item social">
+            <a href="https://github.com/jonlee234"
+              ><i class="icon ion-social-github"></i></a
+            ><a href="https://github.com/delpercio"
+              ><i class="icon ion-social-github"></i></a
+            ><a href="https://github.com/RMHavelaar"
+              ><i class="icon ion-social-github"></i></a
+            ><a href="https://github.com/codeNameGizzie"
+              ><i class="icon ion-social-github"></i
+            ></a>
+          </div>
+          <p class="copyright">GAMR &#169; 2021</p>
+        </div>
+        <!-- </footer> -->
+      </div>
+      {% endblock %}
+    </footer>
+    <!-- End Of Footer -->
+  </div>
 </html>

@@ -1,4 +1,113 @@
 {% extends "base.html" %} {% block content %}
+<nav class="navbar navbar-light bg-white">
+  <form
+    class="form-inline"
+    action=""
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} {{search}}
+    <div class="input-group">
+      <input type="submit" value="Search" />
+    </div>
+  </form>
+</nav>
+
+<div class="container-fluid gedf-wrapper">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body" style="color: #fff">
+          <div class="h5">GAMR</div>
+          <div class="h7 text-muted">Gaming Community</div>
+          <div class="h7">Connect, Share, Guide, Play.</div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="h6 text-muted">Post by Gamrs</div>
+            <div class="h5">76,427</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Online Members</div>
+            <div class="h5">112</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Game Guides</div>
+            <div class="h5">1,732</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 gedf-main">
+      <!--- \\\\\\\Post-->
+      <div class="card gedf-card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="posts-tab"
+                href="/newGame/"
+                role="tab"
+                >Add a game</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="posts" role="tabpanel">
+              <div class="form-group">
+                <label class="sr-only" for="message">post</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="3"
+                  placeholder="What do you want to tell the world?"
+                ></textarea>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="images" role="tabpanel">
+              <div class="py-4"></div>
+            </div>
+          </div>
+          <div class="btn-toolbar justify-content-between">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary">share</button>
+            </div>
+            <div class="btn-group">
+              <button
+                id="btnGroupDrop1"
+                type="button"
+                class="btn btn-link dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-globe"></i>
+              </button>
+            </div>
+          </div> -->
+          <ul style="color: #fff">
+            {% for items in games %}
+            <li>
+              <a href="/viewGames/{{items.id}}">
+                {{ items.title.title }}<br />
+              </a>
+              platform:
+              <a href="/viewGames/platform/{{items.platform}}"
+                >{{items.platform}}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <!-- Post /////-->
+    </div>
+  </div>
+  {% endblock %}
+</div>
+
+<!-- 
 
 <div className="game-view-container">
   <div class="row">
@@ -9,7 +118,6 @@
           {% csrf_token %} {{search}}
           <input type="submit" value="Search" />
         </form>
-        <!-- Temp HR  -->
         <hr />
         Don't see the game you are looking for? <a href="/newGame/">add new game</a>
         {% for items in games %}
@@ -27,4 +135,4 @@
   </div>
 </div>
 
-{% endblock %}
+ -->

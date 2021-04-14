@@ -1,14 +1,68 @@
+<!-- TODOS/Blockers -->
+
+<!-- Get Post Feature working here. -->
 {% extends "base.html" %} {% block content %}
 
-<h1>Posts</h1>
-<ul>
-  {% for post in object_list %}
-  <li>
-    {{ post.post_date }} - <a href="/posts/{{post.id}}">{{ post.topic }}</a>
-  </li>
-  {% empty %}
-  <li>No posts yet.</li>
-  {% endfor %}
-</ul>
+<nav class="navbar navbar-light bg-white">
+<!-- I deleted the search bar but removing this div messes up the whole pages style so leave it in -->
+</nav>
 
+<div class="container-fluid gedf-wrapper">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body" style="color: #fff">
+          <div class="h5">GAMR</div>
+          <div class="h7 text-muted">Gaming Community</div>
+          <div class="h7">Connect, Share, Guide, Play.</div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="h6 text-muted">Post by Gamrs</div>
+            <div class="h5">76,427</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Online Members</div>
+            <div class="h5">112</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Game Guides</div>
+            <div class="h5">1,732</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 gedf-main">
+      <!--- \\\\\\\Post-->
+      <div class="card gedf-card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="posts-tab"
+                href="/post/add/"
+                role="tab"
+                >Add a post</a
+              >
+            </li>
+          </ul>
+        </div>
+          <div class="post-feed">
+          <ul style="color: #fff">
+            {% for post in object_list %}
+            <li>
+              <a href="/posts/{{post.id}}" style="color: #c702f8">{{ post.topic }}</a> -
+              <span class="post-date">{{ post.post_date }}<a href="{% url 'post_detail' pk=post.id %}">Comments: {{ post.comments.count }}</a></span> 
+            </li>
+            {% empty %}
+            <li>No posts yet.<a href="/post/add/">Be the First!</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <!-- Post /////-->
+    </div>
+  </div>
+</div>
 {% endblock %}

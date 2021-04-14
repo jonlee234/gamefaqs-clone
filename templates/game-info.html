@@ -1,21 +1,22 @@
 {% extends "base.html" %} {% block content %}
 
-<head>
-  <title>{{game.title.title}}</title>
-</head>
-<div className="game-info-container">
+<div class="game-info-container">
   <div class="row">
     <div class="col-md-12">
       <div class="game-info-template">
         <img src="{{game.cover_art.url}}" /><br />
-        {{game.title}}<br />
-        {{game.description}}<br />
+        {{platform}}
+        <h1>{{game.title}}</h1>
+        <br />
+        <p style="color: #fff">
+          Game Info: <br />
+          {{game.description}}
+        </p>
         <a href="/favorite_game/{{game.id}}">
           <button>
             add to favorite
           </button>
         </a>
-        {{platform}}
       </div>
     </div>
   </div>

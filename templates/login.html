@@ -4,10 +4,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="login-template">
-        <h1>GameFaqs</h1>
         <form className="signup-form" method="post">
           {% csrf_token %} {{ form.as_p }}
-          <input type="submit" value="submit" />
+          <input type="submit" value="Login" />
           <p><a href="/signup/">Not a GAMR yet? Join the crew.</a></p>
         </form>
       </div>
