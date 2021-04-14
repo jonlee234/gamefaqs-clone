@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from django.conf.urls import handler404, handler500
+
 from authentication import views as auth_view
 from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
