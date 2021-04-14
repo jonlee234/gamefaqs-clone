@@ -49,7 +49,6 @@ def unfollow_view(request, user_id):
 
 @login_required
 def unfavorite_game_view(request, game_id):
-<<<<<<< HEAD
     request.user.favorite_games.remove(Game.objects.get(id=game_id))
     return HttpResponseRedirect(reverse("game-title", args=[game_id]))
 
@@ -66,7 +65,3 @@ def profile_view(request, username):
     return render(request, 'user_profile.html', {
         'user': user
     })
-=======
-    request.user.favorite_game.remove(CustomUser.objects.get(id=game_id))
-    return HttpResponseRedirect(reverse("homepage"))
->>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58
