@@ -14,7 +14,11 @@ class AllGameView(View):
         search_bar = SearchBar()
 
         games = Game.objects.all()
-        return render(request, template, {"games": games, "search": search_bar})
+
+        return render(request, template, {
+            'games': games,
+            'search': search_bar,
+        })
 
     def post(self, request):
         search_bar = SearchBar(request.POST)
@@ -31,7 +35,11 @@ class AllGameView(View):
 def GameTitleView(request, game_id):
     template = "game-info.html"
     game = Game.objects.get(id=game_id)
-    return render(request, template, {"game": game})
+    platform = game.get_platform_display()
+    return render(request, template, {
+        'game': game,
+        'platform': platform
+    })
 
 
 class AddGameView(LoginRequiredMixin, View):

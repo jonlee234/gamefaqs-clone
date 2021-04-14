@@ -3,7 +3,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from django.conf.urls import handler404, handler500
-
 from authentication import views as auth_view
 from accounts import views as user_view
 from game.views import AddGameView, AllGameView, GameTitleView, PlatformView, Search
@@ -30,7 +29,7 @@ urlpatterns = [
     path("logout/", auth_view.logout_view),
     path("viewGames/search/<str:title>/", Search, name="search"),
     path("post/add/", PostCreate.as_view(), name="post-create"),
-    path("posts/<int:pk>", PostDetailView.as_view(), name="post_detail"),
+    path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
     path("admin/", admin.site.urls),
     path("follow/<int:user_id>", follower_view),
     path("unfollow/<int:user_id>", unfollow_view),
@@ -39,6 +38,7 @@ urlpatterns = [
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
     path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
+    path("viewProfile/<str:username>/", profile_view, name="profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = "error_pages.views.error_404_view"

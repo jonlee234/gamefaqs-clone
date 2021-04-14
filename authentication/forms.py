@@ -28,7 +28,7 @@ class SignupForm(forms.Form):
         ("18", "RetoPy"),
         ("19", "Other Systems"),
     )
-    avatar = forms.ImageField()
+    avatar = forms.ImageField(required=False)
     email = forms.EmailField()
     username = forms.CharField(max_length=50)
     password = forms.CharField(widget=forms.PasswordInput())

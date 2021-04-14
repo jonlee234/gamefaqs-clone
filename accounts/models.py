@@ -36,6 +36,11 @@ class CustomUser(AbstractUser):
     avatar = models.ImageField(null=True, blank=True, upload_to="media/")
     followers = models.ManyToManyField("self", symmetrical=False)
     favorite_games = models.ManyToManyField(Game, symmetrical=False)
-
+    is_online = models.BooleanField(default=False)
     def __str__(self):
         return self.username
+
+
+class OnlineUsers(models.Model):
+    user_list = models.ManyToManyField(CustomUser, symmetrical=False)
+

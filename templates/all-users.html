@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+
+{% for items in user %}
+<h1>View online users</h1>
+<li>
+    <a href="viewProfile/{{items.username}}">
+        {{items.username}}
+    </a>
+</li>
+
+{% endfor %}
+{% endblock %}
