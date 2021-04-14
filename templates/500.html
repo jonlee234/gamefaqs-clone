@@ -1,22 +1,18 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="error-container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="error-template">
-        <h1>500</h1>
-        <h2>Internal Server Error</h2>
-        <div class="error-details">
-          It's not you its us. Please try again in a little bit.
-        </div>
-        <div class="error-actions">
-          <a href="http://localhost:8000/" class="btn btn-primary btn-lg">
-            Teleport Me Back Home
-          </a>
-        </div>
-      </div>
-    </div>
+<div class="container" id="error-containter">
+  <h1 class="four04">
+    5<span class="ghost"><i class="fas fa-ghost"></i></span
+    ><span class="ghost"><i class="fas fa-ghost"></i></span>
+  </h1>
+  <h2 class="not-found">Error: 500 internal error.</h2>
+  <p>
+    It's us not you. Please try again later., please drink a verification can
+    and return home.
+  </p>
+  <div class="error-actions">
+    <a href="/" class="btn btn-primary btn-lg"> Teleport Me Back Home </a>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>
