@@ -46,3 +46,10 @@ def user_list_view(request):
     return render(request, 'all-users.html', {
         'user': user
     })
+
+
+def profile_view(request, username):
+    user = CustomUser.objects.get(username=username)
+    return render(request, 'user_profile.html', {
+        'user': user
+    })

@@ -698,6 +698,14 @@
         "documentation": {}
     },
     {
+        "label": "profile_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
         "label": "unfavorite_game_view",
         "importPath": "accounts.views",
         "description": "accounts.views",
@@ -896,7 +904,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -905,7 +913,16 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
+        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })",
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "profile_view",
+        "kind": 2,
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "peekOfCode": "def profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })",
         "detail": "accounts.views",
         "documentation": {}
     },
