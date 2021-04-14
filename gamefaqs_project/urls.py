@@ -38,7 +38,7 @@ urlpatterns = [
     path("unfavorite_game/<int:game_id>", unfavorite_game_view),
     path("posts/", PostListView.as_view(), name="post-list"),
     path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
-    path("viewProfile/<str:username>/", profile_view, name="profile"),
+    # path("viewProfile/<str:username>/", user_profile_view, name="profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = "error_pages.views.error_404_view"
