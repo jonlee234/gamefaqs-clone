@@ -10,7 +10,7 @@ def index(request):
     user = CustomUser.objects.get(id=request.user.id)
 
     posts = Post.objects.all().order_by("-post_date")[:10]
-    users_list= CustomUser.objects.all().order_by("-date_joined")[:10]
+    users_list = CustomUser.objects.all().order_by("-date_joined")[:10]
     games = Game.objects.all()
     return render(request, "index.html", {"user": user, "games": games, 'posts':posts, "users_list":users_list})
  
@@ -35,24 +35,14 @@ def unfollow_view(request, user_id):
     return HttpResponseRedirect(reverse("profile", args=[user_id]))
 
 
-
 @login_required
 def unfavorite_game_view(request, game_id):
     request.user.favorite_games.remove(Game.objects.get(id=game_id))
     return HttpResponseRedirect(reverse("game-title", args=[game_id]))
 
 
-
-
-def profile_view(request, user_id):
-    user = CustomUser.objects.get(id=user_id)
-    return render(request, 'profile.html', {
-        'user': user,
-    })
-
-
 def user_list_view(request):
-    user = CustomUser.objects.all()
+    user = CustomUser.objects.filter(is_online=True)
     return render(request, 'all-users.html', {
         'user': user
     })

@@ -1,15 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
-{% for users in user %}
-{% if users.is_active %}
+{% for items in user %}
+<!-- {% if items.is_online %} -->
 <li>
-    <a href="profile/{{user.id}}">
-        {{users.username}}
+    <a href="profile/{{items.id}}">
+        {{items.username}}
     </a>
-    {{user.platform_choice_field}}
 </li>
 
-
-{% endif %}
+<!-- {% endif %} -->
 {% endfor %}
 {% endblock %}

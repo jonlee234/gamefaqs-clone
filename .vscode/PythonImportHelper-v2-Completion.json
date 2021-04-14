@@ -1,103 +1,5 @@
 [
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "django.utils.timezone",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "detail": "django.utils.timezone",
-        "documentation": {}
-    },
-    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -191,6 +93,54 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -379,6 +329,14 @@
     },
     {
         "label": "CustomUser",
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "isExtraImport": true,
+        "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
+        "label": "OnlineUsers",
         "importPath": "accounts.models",
         "description": "accounts.models",
         "isExtraImport": true,
@@ -588,6 +546,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -732,14 +698,6 @@
         "documentation": {}
     },
     {
-        "label": "profile_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
         "label": "unfavorite_game_view",
         "importPath": "accounts.views",
         "description": "accounts.views",
@@ -853,15 +811,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "accounts.migrations.0001_initial",
-        "description": "accounts.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('game', '__first__'),\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[",
-        "detail": "accounts.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "accounts.admin",
@@ -889,6 +838,15 @@
         "documentation": {}
     },
     {
+        "label": "OnlineUsers",
+        "kind": 6,
+        "importPath": "accounts.models",
+        "description": "accounts.models",
+        "peekOfCode": "class OnlineUsers(models.Model):\n    user_list = models.ManyToManyField(CustomUser, symmetrical=False)",
+        "detail": "accounts.models",
+        "documentation": {}
+    },
+    {
         "label": "PLATFORM_CHOICES",
         "kind": 5,
         "importPath": "accounts.models",
@@ -902,7 +860,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list= CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(request, \"index.html\", {\"user\": user, \"games\": games, 'posts':posts, \"users_list\":users_list})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(request, \"index.html\", {\"user\": user, \"games\": games, 'posts':posts, \"users_list\":users_list})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -929,7 +887,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {",
+        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -938,16 +896,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user,\n    })\ndef user_list_view(request):\n    user = CustomUser.objects.all()",
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "profile_view",
-        "kind": 2,
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "peekOfCode": "def profile_view(request, user_id):\n    user = CustomUser.objects.get(id=user_id)\n    return render(request, 'profile.html', {\n        'user': user,\n    })\ndef user_list_view(request):\n    user = CustomUser.objects.all()\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -956,7 +905,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.all()\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
+        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -992,7 +941,7 @@
         "kind": 2,
         "importPath": "authentication.views",
         "description": "authentication.views",
-        "peekOfCode": "def login_view(request):\n    if request.method == \"POST\":\n        form = LoginForm(request.POST)\n        if form.is_valid():\n            data = form.cleaned_data\n            user = authenticate(\n                request, username=data[\"username\"], password=data[\"password\"]\n            )\n        if user:\n            login(request, user)",
+        "peekOfCode": "def login_view(request):\n    if request.method == \"POST\":\n        form = LoginForm(request.POST)\n        if form.is_valid():\n            data = form.cleaned_data\n            user = authenticate(\n                request,\n                username=data[\"username\"],\n                password=data[\"password\"],\n            )",
         "detail": "authentication.views",
         "documentation": {}
     },
@@ -1010,7 +959,7 @@
         "kind": 2,
         "importPath": "authentication.views",
         "description": "authentication.views",
-        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return HttpResponseRedirect(reverse(\"homepage\"))",
+        "peekOfCode": "def logout_view(request):\n    users = CustomUser.objects.get(username=request.user)\n    users.is_online = False\n    users.save()\n    logout(request)\n    return HttpResponseRedirect(reverse(\"homepage\"))",
         "detail": "authentication.views",
         "documentation": {}
     },

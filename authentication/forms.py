@@ -37,4 +37,4 @@ class SignupForm(forms.Form):
         max_length=2,
         widget=forms.Select(choices=PLATFORM_CHOICES),
     )
-    avatar = forms.ImageField()
+    avatar = forms.ImageField(required=False)

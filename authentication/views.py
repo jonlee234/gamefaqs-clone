@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from authentication.forms import LoginForm, SignupForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from accounts.models import CustomUser
+from accounts.models import CustomUser, OnlineUsers
 
 # Create your views here.
 
@@ -14,9 +14,14 @@ def login_view(request):
         if form.is_valid():
             data = form.cleaned_data
             user = authenticate(
-                request, username=data["username"], password=data["password"]
+                request,
+                username=data["username"],
+                password=data["password"],
             )
         if user:
+            users = CustomUser.objects.get(username=user.username)
+            users.is_online = True
+            users.save()
             login(request, user)
             return HttpResponseRedirect(request.GET.get("next", reverse("homepage")))
     form = LoginForm()
@@ -43,5 +48,8 @@ def signup_view(request):
 
 @login_required
 def logout_view(request):
+    users = CustomUser.objects.get(username=request.user)
+    users.is_online = False
+    users.save()
     logout(request)
     return HttpResponseRedirect(reverse("homepage"))
