@@ -267,12 +267,21 @@ label {
 /* ############################################ */
 /* Games */
 /* ############################################ */
-.game-info-template,
-p {
-  color: #fff;
+.game-info-template {
   margin: auto;
   padding: 10px;
-  /* width: 50%; */
+  width: 50%;
+}
+
+.game-title-detail {
+   color: #fff !important;
+   font-size: 5rem;
+   font-weight: bold !important;
+}
+
+.game-detail {
+   color: #fff !important;
+   font-size: 3.5rem;
 }
 
 .game-info-container {
@@ -282,12 +291,12 @@ p {
 /* ############################################ */
 /* Posts */
 /* ############################################ */
-.post-detail-template,
-p {
+.post-detail-template {
   color: #fff;
   margin: auto;
   padding: 10px;
-  /* width: 50%; */
+  width: 50%;
+  font-size: 35rem;
 }
 
 .post-detail-container {
@@ -554,7 +563,7 @@ input[type="submit"]:active {
 }
 
 .four04 {
-  color: #337AB7;
+  color: #337ab7;
   font-size: 35rem;
   letter-spacing: 0.1em;
   margin: 0.025em 0;
@@ -568,7 +577,7 @@ input[type="submit"]:active {
 
 .ghost {
   animation: spooky 1.5s alternate infinite linear;
-  color: #FACE02;
+  color: #face02;
   display: inline-block;
 }
 
