@@ -15,9 +15,10 @@ class AllGameView(View):
         search_bar = SearchBar()
 
         games = Game.objects.all()
+
         return render(request, template, {
             'games': games,
-            'search': search_bar
+            'search': search_bar,
         })
 
     def post(self, request):
@@ -39,8 +40,10 @@ class AllGameView(View):
 def GameTitleView(request, game_id):
     template = 'game-info.html'
     game = Game.objects.get(id=game_id)
+    platform = game.get_platform_display()
     return render(request, template, {
-        'game': game
+        'game': game,
+        'platform': platform
     })
 
 
