@@ -754,6 +754,14 @@
         "documentation": {}
     },
     {
+        "label": "profile_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
         "label": "favorite_game_view",
         "importPath": "accounts.views",
         "description": "accounts.views",

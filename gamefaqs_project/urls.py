@@ -13,6 +13,7 @@ from accounts.views import (
     unfavorite_game_view,
     unfollow_view,
     user_profile_view,
+    profile_view,
 )
 
 from post.views import PostCreate, PostDetailView, PostListView, add_comment_to_post
