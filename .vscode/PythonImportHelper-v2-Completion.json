@@ -908,7 +908,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n<<<<<<< HEAD\n=======\n>>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(\n        request,",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(\n        request,\n        \"index.html\",\n        {\"user\": user, \"games\": games, \"posts\": posts, \"users_list\": users_list},\n    )",
         "detail": "accounts.views",
         "documentation": {}
     },

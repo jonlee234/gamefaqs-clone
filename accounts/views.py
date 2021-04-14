@@ -8,10 +8,6 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
-<<<<<<< HEAD
-
-=======
->>>>>>> d6e1c839c5f3a830124cd30cb60c2adf81869c58
     posts = Post.objects.all().order_by("-post_date")[:10]
     users_list = CustomUser.objects.all().order_by("-date_joined")[:10]
     games = Game.objects.all()
