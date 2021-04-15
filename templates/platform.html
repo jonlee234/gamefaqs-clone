@@ -1,15 +1,15 @@
 {% extends "base.html" %} {% block content %}
 
-<div className="platform-container">
+<div class="platform-container">
   <div class="row">
     <div class="col-md-12">
       <div class="platform-template">
-        <h1>View by Platform</h1>
+        <h1 class="platform-title">View by Platform</h1>
         {% for items in games %}
         <li>
-          <a href="/viewGames/{{items.id}}">
-            {{items.title.title}}<br />
+          <a class="platform-list" href="/viewGames/{{items.id}}">
             {{items.get_platform_display}}
+            {{items.title.title}}
           </a>
         </li>
         {% endfor %}

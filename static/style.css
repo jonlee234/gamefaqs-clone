@@ -318,13 +318,17 @@ form {
 }
 
 .game-title-detail {
-  color: #fff !important;
-  font-size: 5rem;
+  font-size: 8rem;
   font-weight: bold !important;
+  color: #f9cf16 !important;
 }
 
 .platform-detail-title {
-  color: #fff !important;
+  color: #7eaa41 !important;
+}
+
+#id_platform_choice_field {
+  color: #333;
 }
 
 .game-detail {
@@ -343,10 +347,10 @@ form {
 }
 
 .game-info-container {
-  background-image: url(assets/images/ghosts.jpeg);
+  /* background-image: url(assets/images/ghosts.jpeg); */
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .add-game-form-container {
@@ -364,17 +368,15 @@ form {
 }
 
 #id_description {
-    color: #333;
-    width: 100%;
-    font-size: 2rem;
+  color: #333;
+  width: 100%;
+  font-size: 2rem;
 }
 
 #id_platform {
   color: #333;
   font-size: 2rem;
 }
-
-
 
 /* ############################################ */
 /* Posts */
@@ -427,11 +429,22 @@ form {
   color: #fff;
   font-size: 3rem;
 }
+/* ############################################ */
+/* Online User List */
+.user-list-title {
+  font-size: 8rem;
+  color: #fff;
+}
 
-/* TODObackground img */
-/* .post-detail-container {
-} */
+.user-list-container {
+  text-align: center;
+}
 
+.online-users {
+  font-size: 6rem;
+  color: #f9cf16;
+}
+/* ############################################ */
 /* ############################################ */
 /* PROFILE PAGE */
 /* ############################################ */
@@ -441,6 +454,14 @@ form {
   margin: 0;
 }
 
+.profile-sidebar {
+  text-align: center;
+}
+
+.porifle-desc-text {
+  word-wrap: break-word;
+}
+
 .container-img {
   background-color: #394047c4;
 }
@@ -448,7 +469,6 @@ form {
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-  background-color: rgb(230, 6, 6);
 }
 
 .profile-userpic img {
@@ -507,7 +527,7 @@ form {
   padding: 20px;
   min-height: 460px;
 }
-/* ############################################ */
+
 /* Post Page */
 textarea {
   color: #333;
@@ -516,6 +536,43 @@ textarea {
   margin-top: 0.97rem;
 }
 /* ############################################ */
+
+/* Platform View */
+/* ############################################ */
+
+.platform-container {
+  text-align: center;
+  color: #fff;
+}
+
+.platform-title {
+  font-size: 5rem;
+}
+
+.platform-list {
+  font-size: 3rem;
+  color: #f9cf16;
+}
+/* ############################################ */
+
+/* Search View */
+
+.search-results-container {
+  text-align: center;
+  color: #fff;
+}
+
+.search-result {
+  font-size: 6rem;
+  color: #f9cf16;
+}
+
+.search-results-title {
+  font-size: 8rem;
+}
+
+/* ############################################ */
+
 /* FOOTER */
 .footer-dark {
   padding: 50px 0;
