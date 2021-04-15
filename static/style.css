@@ -274,14 +274,14 @@ label {
 }
 
 .game-title-detail {
-   color: #fff !important;
-   font-size: 5rem;
-   font-weight: bold !important;
+  color: #fff !important;
+  font-size: 5rem;
+  font-weight: bold !important;
 }
 
 .game-detail {
-   color: #fff !important;
-   font-size: 3.5rem;
+  color: #fff !important;
+  font-size: 3.5rem;
 }
 
 .game-info-container {
@@ -478,6 +478,11 @@ textarea {
   opacity: 0.3;
   font-size: 13px;
   margin-bottom: 0;
+  color: #fff !important;
+}
+
+.id_avatar {
+  background-color: #fff !important;
 }
 
 /* ############################################ */
@@ -485,7 +490,9 @@ textarea {
 /* ############################################ */
 
 .signup-form-container {
-  color: cadetblue;
+  background-image: url(assets/images/Nintendo_Wallpaper.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 form {
   margin: 0 auto;
