@@ -390,6 +390,19 @@ form {
   word-wrap: break-word !important;
 }
 
+#id_game {
+  color: #333 !important;
+}
+
+#id_text {
+  color: #333 !important;
+  width: 100%;
+}
+
+#id_platforms {
+  color: #333 !important;
+}
+
 .comment-container {
   color: #fff !important;
   text-align: center;
@@ -413,7 +426,7 @@ form {
 }
 
 .post-text {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
 }
 
