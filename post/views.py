@@ -3,13 +3,11 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from post.models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
-from post.forms import CommentForm
 from django.contrib.auth.decorators import login_required
 
-
-# Create your views here.
+from post.forms import CommentForm
+from post.models import Post, Comment
 
 
 class PostCreate(LoginRequiredMixin, CreateView):

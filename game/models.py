@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Game(models.Model):
     PLATFORM_CHOICES = (
@@ -29,11 +27,11 @@ class Game(models.Model):
     description = models.TextField()
     platform = models.CharField(max_length=2, choices=PLATFORM_CHOICES)
     cover_art = models.ImageField(
-        upload_to='cover-art/',
+        upload_to="cover-art/",
         blank=True,
         null=True,
-        default='cover-art/cover-art-default.png'
-        )
+        default="cover-art/cover-art-default.png",
+    )
 
     def __str__(self):
-        return f'{self.title} | {self.platform}'
+        return f"{self.title} | {self.platform}"

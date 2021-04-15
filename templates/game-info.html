@@ -4,21 +4,28 @@
   <div class="row">
     <div class="col-md-12">
       <div class="game-info-template">
-        <img src="{{game.cover_art.url}}" /><br />
-        {{platform}}
-        <h1>{{game.title}}</h1>
+        <h1 class="game-title-detail">{{game.title}}</h1>
+        <span class="platform-detail-title">On: {{platform}}</span>
         <br />
-        <p style="color: #fff">
-          Game Info: <br />
+               <!-- TODO FIXME -->
+          <span class="game-detail">Poster: {{ object.user_posted }}</span>
+          <br />
+        <img src="{{game.cover_art.url}}" />
+        <div class="game-detail">
+          About {{game.title}}: <br />
           {{game.description}}
-          
+   </div>
         </p>
         <a href="/favorite_game/{{game.id}}">
-          <button>
-            add to favorite
-          </button>
+          <input type="submit" value="Favorite" />
         </a>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   </div>
 </div>

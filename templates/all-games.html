@@ -1,42 +1,41 @@
 {% extends "base.html" %} {% block content %}
-<nav class="navbar navbar-light bg-white">
-  <form
-    class="form-inline"
-    action=""
-    method="post"
-    enctype="multipart/form-data"
-  >
-    {% csrf_token %} {{search}}
-    <div class="input-group">
-      <input type="submit" value="Search" />
-    </div>
-  </form>
-</nav>
 
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
-      <div class="card">
+      <div class="gamr-card">
         <div class="card-body" style="color: #fff">
-          <div class="h5">GAMR</div>
-          <div class="h7 text-muted">Gaming Community</div>
-          <div class="h7">Connect, Share, Guide, Play.</div>
+          <div class="card-title">GAMR Community</div>
+          <div class="card-subtitle">Connect, Share, Play</div>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <div class="h6 text-muted">Post by Gamrs</div>
-            <div class="h5">76,427</div>
+            <div class="h6 text-muted" id="gamr">Posts by Gamrs</div>
+            <div class="h5" id="gamr-count">96</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Online Members</div>
-            <div class="h5">112</div>
+            <div class="h6 text-muted" id="gamr">Online Members</div>
+            <div class="h5" id="gamr-count">7</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Game Guides</div>
-            <div class="h5">1,732</div>
+            <div class="h6 text-muted" id="gamr">Game Guides</div>
+            <div class="h5" id="gamr-count">240</div>
           </li>
         </ul>
       </div>
+    </div>
+    <div class="game-search">
+      <form
+        class="form-inline"
+        action=""
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {{search}}
+        <div class="input-group">
+          <input type="submit" value="Search" />
+        </div>
+      </form>
     </div>
     <div class="col-md-6 gedf-main">
       <!--- \\\\\\\Post-->
@@ -44,9 +43,14 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
+              <a class="nav-link active" id="game-tab" href="#" role="tab"
+                >Game Feed</a
+              >
+            </li>
+            <li class="nav-item">
               <a
                 class="nav-link active"
-                id="posts-tab"
+                id="game-tab"
                 href="/newGame/"
                 role="tab"
                 >Add a game</a
@@ -54,48 +58,19 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="card-body">
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="posts" role="tabpanel">
-              <div class="form-group">
-                <label class="sr-only" for="message">post</label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  rows="3"
-                  placeholder="What do you want to tell the world?"
-                ></textarea>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="images" role="tabpanel">
-              <div class="py-4"></div>
-            </div>
-          </div>
-          <div class="btn-toolbar justify-content-between">
-            <div class="btn-group">
-              <button type="submit" class="btn btn-primary">share</button>
-            </div>
-            <div class="btn-group">
-              <button
-                id="btnGroupDrop1"
-                type="button"
-                class="btn btn-link dropdown-toggle"
-                data-toggle="dropdown"
-              >
-                <i class="fa fa-globe"></i>
-              </button>
-            </div>
-          </div> -->
-          <ul style="color: #fff">
+        <div class="game-feed">
+          <ul>
             {% for items in games %}
             <li>
-              <a href="/viewGames/{{items.id}}">
-                {{ items.title.title }}<br />
+              <a href="/viewGames/{{items.id}}" id="game-feed-title">
+                {{ items.title.title }}
               </a>
-              platform:
+              on:
               <a href="/viewGames/platform/{{items.platform}}"
                 >{{items.get_platform_display}}</a
-              >
+              by:
+              <!-- TODO FIXME -->
+              <a href="/user/{{user.id}}/" id="game-feed-title">{{user.username}}</a>
             </li>
             {% endfor %}
           </ul>
@@ -106,33 +81,3 @@
   </div>
   {% endblock %}
 </div>
-
-<!-- 
-
-<div className="game-view-container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="games-template">
-        <h1>view all games</h1>
-        <form action="" method="post" enctype="multipart/form-data">
-          {% csrf_token %} {{search}}
-          <input type="submit" value="Search" />
-        </form>
-        <hr />
-        Don't see the game you are looking for? <a href="/newGame/">add new game</a>
-        {% for items in games %}
-        <li>
-          <img src="{{items.cover_art.url}}" width="100px" height="100px"/>
-          <a href="/viewGames/{{items.id}}"> {{ items.title.title }}<br /> </a>
-          platform:
-          <a href="/viewGames/platform/{{items.platform}}"
-            >{{items.get_platform_display}}</a>
-          
-        </li>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-
- -->

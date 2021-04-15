@@ -1,11 +1,10 @@
 from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
-from authentication.forms import LoginForm, SignupForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from accounts.models import CustomUser, OnlineUsers
 
-# Create your views here.
+from accounts.models import CustomUser, OnlineUsers
+from authentication.forms import LoginForm, SignupForm
 
 
 def login_view(request):

@@ -5,8 +5,8 @@
 __pycache__
 db.sqlite3
 media
-.env
 migrations/
+.env
 
 # Backup files # 
 *.bak 
@@ -120,3 +120,6 @@ GitHub.sublime-settings
 *.pyc
 
 gamefaqs_project/__pycache__/urls.cpython-39.pyc
+gamefaqs_project/__pycache__/urls.cpython-39.pyc
+gamefaqs_project/__pycache__/urls.cpython-39.pyc
+db.sqlite3

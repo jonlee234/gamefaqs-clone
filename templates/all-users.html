@@ -1,13 +1,11 @@
 {% extends "base.html" %} {% block content %}
-
-{% for items in user %}
-<h1>View online users</h1>
-<li>
-    <img src="{{items.avatar.url}}" />
-    <a href="viewProfile/{{items.username}}">
-        {{items.username}}
-    </a>
-</li>
-
-{% endfor %}
-{% endblock %}
+<div class="user-list-container">
+    <br />
+  {% for items in user %}
+  <h1 class="user-list-title">View online users</h1>
+  <li>
+    <img src="{{items.avatar.url}}" width="100px" height="100px"/>
+    <a class="online-users" href="viewProfile/{{items.username}}"> {{items.username}} </a>
+  </li>
+</div>
+{% endfor %} {% endblock %}

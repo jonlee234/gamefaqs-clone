@@ -4,17 +4,14 @@ version = "0.1.0"
 description = "Clone of Gamefaqs with added features"
 authors = ["Steven Delpercio <stevendelpercio1992@hotmail.com>"]
 
+
 [tool.poetry.dependencies]
 python = "^3.9"
 Django = "^3.1.7"
 Pillow = "^8.2.0"
 python-decouple = "^3.4"
-django-fontawesome-5 = "^1.0.18"
 django-bootstrap4 = "^2.3.1"
-django-bootstrap = "^0.2.4"
-django-forms-bootstrap = "^3.1.0"
 fontawesome = "^5.10.1"
-fontawesome-free = "^5.15.3"
 django-jquery = "^3.1.0"
 django-online-users = "^0.1"
 

@@ -1,15 +1,12 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<div className="generic-form-container">
-  <form
-    action=""
-    method="post"
-    enctype="multipart/form-data"
-    style="color: #fff"
-  >
-    {% csrf_token %} {{form.as_p}}
-    <input type="submit" value="Submit!" />
-  </form>
+<div class="generic-form-container">
+  <div class="gen-form-temp">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{form.as_p}}
+      <input type="submit" value="Submit!" />
+    </form>
+  </div>
 </div>
 
 {% endblock %}

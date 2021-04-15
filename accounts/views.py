@@ -1,16 +1,26 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
+from django.contrib.auth.decorators import login_required
+import random
+
 from accounts.models import CustomUser
 from post.models import Post
 from game.models import Game
-from django.contrib.auth.decorators import login_required
 
 
 @login_required
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
+<<<<<<< HEAD
     posts = Post.objects.all().order_by("-post_date")[:10]
     users_list = CustomUser.objects.all().order_by("-date_joined")[:10]
     games = Game.objects.all()
+=======
+    posts = Post.objects.filter(user_posted=request.user.id).order_by("-post_date")[:10]
+    users_list = CustomUser.objects.all().order_by("-date_joined")[:5]
+    count = Game.objects.all().count()
+    slice = random.random() * (count - 1)
+    games = Game.objects.all()[slice: slice+1]
+>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d
     return render(
         request,
         "index.html",
@@ -36,7 +46,6 @@ def favorite_game_view(request, game_id):
     return HttpResponseRedirect(reverse("game-title", args=[game_id]))
 
 
-
 @login_required
 def unfollow_view(request, user_id):
     request.user.followers.remove(CustomUser.objects.get(id=user_id))
@@ -51,13 +60,9 @@ def unfavorite_game_view(request, game_id):
 
 def user_list_view(request):
     user = CustomUser.objects.filter(is_online=True)
-    return render(request, 'all-users.html', {
-        'user': user
-    })
+    return render(request, "all-users.html", {"user": user})
 
 
 def profile_view(request, username):
     user = CustomUser.objects.get(username=username)
-    return render(request, 'user_profile.html', {
-        'user': user
-    })
+    return render(request, "user_profile.html", {"user": user})

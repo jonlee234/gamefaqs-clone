@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
+
 from game.models import Game
 
 PLATFORM_CHOICES = (
@@ -35,7 +36,6 @@ class CustomUser(AbstractUser):
     avatar = models.ImageField(null=True, blank=True, upload_to="media/", default='media/default.png')
     followers = models.ManyToManyField("self", symmetrical=False)
     favorite_games = models.ManyToManyField(Game, symmetrical=False)
-    # update to anything else you'd like to show here
     is_online = models.BooleanField(default=False)
     def __str__(self):
         return self.username

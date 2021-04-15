@@ -1,9 +1,9 @@
 from django.db import models
+from django.utils import timezone
+from django.urls import reverse
 
 from accounts.models import CustomUser
 from game.models import Game
-from django.utils import timezone
-from django.urls import reverse
 
 # Create your models here.
 PLATFORM_CHOICES = (
@@ -46,11 +46,14 @@ class Comment(models.Model):
     class Meta:
         ordering = ["-created_date"]
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, max_length=1200, related_name="comments"
+    )
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
+    # comment_photo = models.ImageField(null=True, blank=True, upload_to="media/")
 
     def approve(self):
         self.approved_comment = True

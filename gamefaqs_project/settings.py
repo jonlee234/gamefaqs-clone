@@ -7,14 +7,15 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
+=======
+# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure
+>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
@@ -34,7 +35,6 @@ INSTALLED_APPS = [
     "game",
     "error_pages",
     "bootstrap4",
-    "django_forms_bootstrap",
     "fontawesome",
     "jquery",
 ]

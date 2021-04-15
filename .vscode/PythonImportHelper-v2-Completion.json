@@ -136,14 +136,6 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "timezone",
         "importPath": "django.utils",
         "description": "django.utils",
@@ -336,6 +328,39 @@
         "documentation": {}
     },
     {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
         "label": "CustomUser",
         "importPath": "accounts.models",
         "description": "accounts.models",
@@ -392,30 +417,6 @@
         "documentation": {}
     },
     {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
         "label": "forms",
         "importPath": "django",
         "description": "django",
@@ -448,22 +449,6 @@
         "documentation": {}
     },
     {
-        "label": "LoginForm",
-        "importPath": "authentication.forms",
-        "description": "authentication.forms",
-        "isExtraImport": true,
-        "detail": "authentication.forms",
-        "documentation": {}
-    },
-    {
-        "label": "SignupForm",
-        "importPath": "authentication.forms",
-        "description": "authentication.forms",
-        "isExtraImport": true,
-        "detail": "authentication.forms",
-        "documentation": {}
-    },
-    {
         "label": "login",
         "importPath": "django.contrib.auth",
         "description": "django.contrib.auth",
@@ -485,6 +470,22 @@
         "description": "django.contrib.auth",
         "isExtraImport": true,
         "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "LoginForm",
+        "importPath": "authentication.forms",
+        "description": "authentication.forms",
+        "isExtraImport": true,
+        "detail": "authentication.forms",
+        "documentation": {}
+    },
+    {
+        "label": "SignupForm",
+        "importPath": "authentication.forms",
+        "description": "authentication.forms",
+        "isExtraImport": true,
+        "detail": "authentication.forms",
         "documentation": {}
     },
     {
@@ -578,22 +579,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "static",
-        "importPath": "django.conf.urls.static",
-        "description": "django.conf.urls.static",
-        "isExtraImport": true,
-        "detail": "django.conf.urls.static",
-        "documentation": {}
-    },
-    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -626,6 +611,22 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "handler404",
         "importPath": "django.conf.urls",
         "description": "django.conf.urls",
@@ -655,6 +656,62 @@
         "description": "accounts",
         "isExtraImport": true,
         "detail": "accounts",
+        "documentation": {}
+    },
+    {
+        "label": "favorite_game_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "follower_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "unfavorite_game_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "unfollow_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_profile_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "favorite_game_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_list_view",
+        "importPath": "accounts.views",
+        "description": "accounts.views",
+        "isExtraImport": true,
+        "detail": "accounts.views",
         "documentation": {}
     },
     {
@@ -711,62 +768,6 @@
         "description": "error_pages.views",
         "isExtraImport": true,
         "detail": "error_pages.views",
-        "documentation": {}
-    },
-    {
-        "label": "favorite_game_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "follower_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "unfavorite_game_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "unfollow_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "user_profile_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "profile_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
-        "documentation": {}
-    },
-    {
-        "label": "favorite_game_view",
-        "importPath": "accounts.views",
-        "description": "accounts.views",
-        "isExtraImport": true,
-        "detail": "accounts.views",
         "documentation": {}
     },
     {
@@ -871,7 +872,7 @@
         "kind": 6,
         "importPath": "accounts.admin",
         "description": "accounts.admin",
-        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    # add auth forms\n    model = CustomUser\n    list_display = [\n        \"username\",\n        \"email\",\n        \"bio\",\n        \"platform_choice_field\",\n        \"avatar\",\n    ]",
+        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    model = CustomUser\n    list_display = [\n        \"username\",\n        \"email\",\n        \"bio\",\n        \"platform_choice_field\",\n        \"avatar\",\n    ]\n    add_fieldsets = UserAdmin.add_fieldsets + (",
         "detail": "accounts.admin",
         "documentation": {}
     },
@@ -880,7 +881,7 @@
         "kind": 6,
         "importPath": "accounts.apps",
         "description": "accounts.apps",
-        "peekOfCode": "class AccountsConfig(AppConfig):\n    name = 'accounts'",
+        "peekOfCode": "class AccountsConfig(AppConfig):\n    name = \"accounts\"",
         "detail": "accounts.apps",
         "documentation": {}
     },
@@ -889,7 +890,7 @@
         "kind": 6,
         "importPath": "accounts.models",
         "description": "accounts.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\", default='media/default.png')\n    followers = models.ManyToManyField(\"self\", symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    # update to anything else you'd like to show here",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\", default='media/default.png')\n    followers = models.ManyToManyField(\"self\", symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    is_online = models.BooleanField(default=False)",
         "detail": "accounts.models",
         "documentation": {}
     },
@@ -916,7 +917,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n    return render(\n        request,\n        \"index.html\",\n        {\"user\": user, \"games\": games, \"posts\": posts, \"users_list\": users_list},\n    )",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n<<<<<<< HEAD\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n=======\n    posts = Post.objects.filter(user_posted=request.user.id).order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:5]\n    count = Game.objects.all().count()",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -952,7 +953,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {",
+        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -961,7 +962,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, \"user_profile.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -970,7 +971,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, 'all-users.html', {\n        'user': user\n    })\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })",
+        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})\ndef profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, \"user_profile.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -979,7 +980,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, 'user_profile.html', {\n        'user': user\n    })",
+        "peekOfCode": "def profile_view(request, username):\n    user = CustomUser.objects.get(username=username)\n    return render(request, \"user_profile.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -988,7 +989,7 @@
         "kind": 6,
         "importPath": "authentication.apps",
         "description": "authentication.apps",
-        "peekOfCode": "class AuthenticationConfig(AppConfig):\n    name = 'authentication'",
+        "peekOfCode": "class AuthenticationConfig(AppConfig):\n    name = \"authentication\"",
         "detail": "authentication.apps",
         "documentation": {}
     },
@@ -1042,7 +1043,7 @@
         "kind": 6,
         "importPath": "error_pages.apps",
         "description": "error_pages.apps",
-        "peekOfCode": "class ErrorPagesConfig(AppConfig):\n    name = 'error_pages'",
+        "peekOfCode": "class ErrorPagesConfig(AppConfig):\n    name = \"error_pages\"",
         "detail": "error_pages.apps",
         "documentation": {}
     },
@@ -1069,7 +1070,7 @@
         "kind": 6,
         "importPath": "game.apps",
         "description": "game.apps",
-        "peekOfCode": "class GameConfig(AppConfig):\n    name = 'game'",
+        "peekOfCode": "class GameConfig(AppConfig):\n    name = \"game\"",
         "detail": "game.apps",
         "documentation": {}
     },
@@ -1096,7 +1097,7 @@
         "kind": 2,
         "importPath": "game.helpers",
         "description": "game.helpers",
-        "peekOfCode": "def searchBy(title):\n    game = []\n    search = ''\n    regex = r'([\\s\\w\\d+]+)'\n    find = re.findall(regex, title)\n    if find:\n        for words in find:\n            search = words\n    get = Game.objects.all()\n    for items in get:",
+        "peekOfCode": "def searchBy(title):\n    game = []\n    search = \"\"\n    regex = r\"([\\s\\w\\d+]+)\"\n    find = re.findall(regex, title)\n    if find:\n        for words in find:\n            search = words\n    get = Game.objects.all()\n    for items in get:",
         "detail": "game.helpers",
         "documentation": {}
     },
@@ -1114,7 +1115,7 @@
         "kind": 6,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "class AllGameView(View):\n    def get(self, request):\n        template = 'all-games.html'\n        search_bar = SearchBar()\n        games = Game.objects.all()\n        return render(request, template, {\n            'games': games,\n            'search': search_bar,\n        })\n    def post(self, request):",
+        "peekOfCode": "class AllGameView(View):\n    def get(self, request):\n        template = \"all-games.html\"\n        search_bar = SearchBar()\n        games = Game.objects.all()\n        return render(request, template, {\n            'games': games,\n            'search': search_bar,\n        })\n    def post(self, request):",
         "detail": "game.views",
         "documentation": {}
     },
@@ -1123,7 +1124,7 @@
         "kind": 6,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "class AddGameView(LoginRequiredMixin, View):\n    def get(self, request):\n        template = 'generic-form.html'\n        form = game_form()\n        return render(request, template, {\n            'form': form\n        })\n    def post(self, request):\n        form = game_form(request.POST, request.FILES)\n        if form.is_valid():",
+        "peekOfCode": "class AddGameView(LoginRequiredMixin, View):\n    def get(self, request):\n        template = \"add-game.html\"\n        form = game_form()\n        return render(request, template, {\"form\": form})\n    def post(self, request):\n        form = game_form(request.POST, request.FILES)\n        if form.is_valid():\n            data = form.cleaned_data\n            if data[\"cover_art\"]:",
         "detail": "game.views",
         "documentation": {}
     },
@@ -1132,7 +1133,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def GameTitleView(request, game_id):\n    template = 'game-info.html'\n    game = Game.objects.get(id=game_id)\n    platform = game.get_platform_display()\n    return render(request, template, {\n        'game': game,\n        'platform': platform\n    })\nclass AddGameView(LoginRequiredMixin, View):\n    def get(self, request):",
+        "peekOfCode": "def GameTitleView(request, game_id):\n    template = \"game-info.html\"\n    game = Game.objects.get(id=game_id)\n    platform = game.get_platform_display()\n    return render(request, template, {\n        'game': game,\n        'platform': platform\n    })\nclass AddGameView(LoginRequiredMixin, View):\n    def get(self, request):",
         "detail": "game.views",
         "documentation": {}
     },
@@ -1141,7 +1142,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def PlatformView(request, platform):\n    template = 'platform.html'\n    string = str(platform)\n    if len(string) < 2:\n        string = '0' + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\n        'games': games\n    })\ndef Search(request, title):",
+        "peekOfCode": "def PlatformView(request, platform):\n    template = \"platform.html\"\n    string = str(platform)\n    if len(string) < 2:\n        string = \"0\" + str(platform)\n    games = Game.objects.filter(platform=string)\n    return render(request, template, {\"games\": games})\ndef Search(request, title):\n    template = \"search.html\"\n    games = searchBy(title)",
         "detail": "game.views",
         "documentation": {}
     },
@@ -1150,7 +1151,7 @@
         "kind": 2,
         "importPath": "game.views",
         "description": "game.views",
-        "peekOfCode": "def Search(request, title):\n    template = 'search.html'\n    games = searchBy(title)\n    return render(request, template, {\n        'games': games\n    })",
+        "peekOfCode": "def Search(request, title):\n    template = \"search.html\"\n    games = searchBy(title)\n    return render(request, template, {\"games\": games})",
         "detail": "game.views",
         "documentation": {}
     },
@@ -1168,7 +1169,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n<<<<<<< HEAD\n=======\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\n>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1177,7 +1178,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n<<<<<<< HEAD\n=======\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\n>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1393,7 +1394,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"viewGames/\", AllGameView.as_view(), name=\"games\"),\n    path(\"viewGames/<int:game_id>/\", GameTitleView, name=\"game-title\"),\n    path(\"newGame/\", AddGameView.as_view(), name=\"add-game\"),\n    path(\"viewGames/platform/<int:platform>/\", PlatformView, name=\"platform\"),\n    path(\"login/\", auth_view.login_view),\n    path(\"signup/\", auth_view.signup_view),\n    path(\"logout/\", auth_view.logout_view),\n    path(\"viewGames/search/<str:title>/\", Search, name=\"search\"),",
+        "peekOfCode": "urlpatterns = [\n    # Core links\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"admin/\", admin.site.urls, name=\"admin\"),\n    # Game Related Links\n    path(\"viewGames/\", AllGameView.as_view(), name=\"games\"),\n    path(\"viewGames/<int:game_id>/\", GameTitleView, name=\"game-title\"),\n    path(\"newGame/\", AddGameView.as_view(), name=\"add-game\"),\n    path(\"viewGames/platform/<int:platform>/\", PlatformView, name=\"platform\"),\n    path(\"viewGames/search/<str:title>/\", Search, name=\"search\"),",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },
@@ -1429,7 +1430,7 @@
         "kind": 6,
         "importPath": "post.apps",
         "description": "post.apps",
-        "peekOfCode": "class PostConfig(AppConfig):\n    name = 'post'",
+        "peekOfCode": "class PostConfig(AppConfig):\n    name = \"post\"",
         "detail": "post.apps",
         "documentation": {}
     },
@@ -1465,7 +1466,7 @@
         "kind": 6,
         "importPath": "post.models",
         "description": "post.models",
-        "peekOfCode": "class Comment(models.Model):\n    class Meta:\n        ordering = [\"-created_date\"]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"comments\")\n    author = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now)\n    approved_comment = models.BooleanField(default=False)\n    def approve(self):\n        self.approved_comment = True",
+        "peekOfCode": "class Comment(models.Model):\n    class Meta:\n        ordering = [\"-created_date\"]\n    post = models.ForeignKey(\n        Post, on_delete=models.CASCADE, max_length=1200, related_name=\"comments\"\n    )\n    author = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now)\n    approved_comment = models.BooleanField(default=False)",
         "detail": "post.models",
         "documentation": {}
     },
@@ -1519,7 +1520,7 @@
         "kind": 2,
         "importPath": "manage",
         "description": "manage",
-        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gamefaqs_project.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"gamefaqs_project.settings\")\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "manage",
         "documentation": {}
     }

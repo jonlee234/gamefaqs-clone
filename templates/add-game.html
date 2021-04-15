@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="add-post-form-container" style="color: #fff">
+<div class="add-game-form-container">
   <div class="row">
     <div class="col-md-12">
-      <div class="add-post-template">
-        <h1 class="add-post-title">Add a post</h1>
-        <form method="post" enctype="multipart/form-data" style="color: #fff">
+      <div class="add-game-template">
+        <h1 class="add-game-title">Add a new game</h1>
+        <form method="post" enctype="multipart/form-data">
           {% csrf_token %} {{form.media}} {{form.as_p}}
           <input type="submit" value="submit" />
         </form>
