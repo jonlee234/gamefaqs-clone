@@ -3,6 +3,7 @@
 {% for items in user %}
 <h1>View online users</h1>
 <li>
+    <img src="{{items.avatar.url}}" />
     <a href="viewProfile/{{items.username}}">
         {{items.username}}
     </a>
