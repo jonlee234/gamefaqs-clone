@@ -1,13 +1,15 @@
 {% extends "base.html" %} {% block content %}
 
-<div className="signup-form-container">
+<div class="login-form-container">
   <div class="row">
     <div class="col-md-12">
       <div class="login-template">
-        <form className="signup-form" method="post">
+        <form class="signup-form" method="post">
           {% csrf_token %} {{ form.as_p }}
           <input type="submit" value="Login" />
-          <p><a href="/signup/">Not a GAMR yet? Join the crew!</a></p>
+          <p>
+            <a class="signup-form-link" href="/signup/">Become a GAMR</a>
+          </p>
         </form>
       </div>
     </div>

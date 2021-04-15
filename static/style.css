@@ -493,7 +493,18 @@ textarea {
   background-image: url(assets/images/Nintendo_Wallpaper.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 3rem;
 }
+.login-form-container {
+  background-image: url(assets/images/tronish.jpeg);
+  background-size: cover;
+  font-size: 3rem;
+}
+.signup-form-link {
+  color: #F9CF16 !important;
+  font-size: 2rem;
+}
+
 form {
   margin: 0 auto;
   text-align: center;
@@ -542,6 +553,16 @@ input[type="submit"]:hover {
 
 input[type="submit"]:active {
   opacity: 0.4;
+}
+.add-post-title {
+  text-align: center;
+  font-size: 8rem;
+}
+.add-post-form-container {
+  background-image: url(assets/images/evil_pacattack.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 3rem;
 }
 /* ############################################ */
 /* Comments */
