@@ -52,11 +52,14 @@ form {
 /* NavBar */
 /* ############################################ */
 
-#nav-bloc {
-  margin-top: 30px;
-  width: 100%;
-  background-color: #282d32;
-}
+/* #nav-bloc {
+
+  width: 100% !important;
+
+  background-image: url(assets/images/nyancat.gif) !important;
+  background-repeat: no-repeat;
+  background-size:contain
+} */
 
 .navbar {
   margin-bottom: 0;
@@ -457,12 +460,11 @@ form {
   font-size: 6rem;
   color: #f9cf16;
 }
-/* ############################################ */
+
 /* ############################################ */
 /* PROFILE PAGE */
 /* ############################################ */
 
-/* Profile container */
 .profile {
   margin: 0;
 }
@@ -479,7 +481,7 @@ form {
   background-color: #394047c4;
 }
 
-/* Profile sidebar */
+
 .profile-sidebar {
   padding: 20px 0 10px 0;
 }
