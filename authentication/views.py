@@ -45,6 +45,13 @@ def signup_view(request):
     return render(request, "signup.html", {"form": form})
 
 
+def singup_handler(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/")
+    else:
+        return HttpResponseRedirect("/signup/")
+
+
 @login_required
 def logout_view(request):
     users = CustomUser.objects.get(username=request.user)
