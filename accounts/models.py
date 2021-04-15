@@ -32,7 +32,7 @@ class CustomUser(AbstractUser):
     bio = models.CharField(max_length=500)
     date_joined = models.DateField(default=timezone.now)
     platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)
-    avatar = models.ImageField(null=True, blank=True, upload_to="media/")
+    avatar = models.ImageField(null=True, blank=True, upload_to="media/", default='media/default.png')
     followers = models.ManyToManyField("self", symmetrical=False)
     favorite_games = models.ManyToManyField(Game, symmetrical=False)
     # update to anything else you'd like to show here
