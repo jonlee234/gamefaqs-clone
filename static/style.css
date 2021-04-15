@@ -3,7 +3,9 @@
 *:before {
   box-sizing: border-box;
 }
-
+.content {
+  background-color: #282d32 !important;
+}
 html,
 body {
   height: 100%;
@@ -267,10 +269,40 @@ label {
 /* ############################################ */
 /* Games */
 /* ############################################ */
+.card-title {
+  font-size: 3rem;
+}
+
+.card-subtitle {
+ font-size: 2rem;
+}
+
+.game-feed {
+font-size: 4rem;
+color: #fff;
+}
+
+.gamr-card {
+  text-align: center;
+}
+
+#gamr {
+  font-size: 3rem;
+}
+
+#gamr-count {
+  font-size: 2rem;
+}
+
+.game-search {
+  float: left !important;
+}
+
 .game-info-template {
   margin: auto;
   padding: 10px;
   width: 50%;
+  text-align: center;
 }
 
 .game-title-detail {
@@ -278,14 +310,29 @@ label {
   font-size: 5rem;
   font-weight: bold !important;
 }
-
+.platform-detail-title {
+  color: #fff !important;
+}
 .game-detail {
   color: #fff !important;
   font-size: 3.5rem;
+  word-wrap: break-word !important;
+  text-align: center;
+}
+
+#game-tab {
+  font-size: 5rem;
+}
+
+#game-feed-title {
+  color: #f9cf16 !important;
 }
 
 .game-info-container {
-  /* TODO background img */
+  background-image: url(assets/images/ghosts.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 3rem;
 }
 
 /* ############################################ */
@@ -495,13 +542,15 @@ textarea {
   background-size: cover;
   font-size: 3rem;
 }
+
 .login-form-container {
   background-image: url(assets/images/tronish.jpeg);
   background-size: cover;
   font-size: 3rem;
 }
+
 .signup-form-link {
-  color: #F9CF16 !important;
+  color: #f9cf16 !important;
   font-size: 2rem;
 }
 
