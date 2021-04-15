@@ -1,64 +1,84 @@
 {% extends "base.html" %} {% block content %}
 
 <nav class="navbar navbar-light bg-white">
-<!-- I deleted the search bar but removing this div messes up the whole pages style so leave it in -->
+  <!-- I deleted the search bar but removing this div messes up the whole pages style so leave it in -->
 </nav>
 
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
-      <div class="card">
+      <div class="gamr-card">
         <div class="card-body" style="color: #fff">
-          <div class="h5">GAMR</div>
-          <div class="h7 text-muted">Gaming Community</div>
-          <div class="h7">Connect, Share, Guide, Play.</div>
+          <div class="card-title">GAMR Community</div>
+          <div class="card-subtitle">Connect, Share, Play</div>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <div class="h6 text-muted">Post by Gamrs</div>
-            <div class="h5">76,427</div>
+            <div class="h6 text-muted" id="gamr">Posts by Gamrs</div>
+            <div class="h5" id="gamr-count">96</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Online Members</div>
-            <div class="h5">112</div>
+            <div class="h6 text-muted" id="gamr">Online Members</div>
+            <div class="h5" id="gamr-count">7</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Game Guides</div>
-            <div class="h5">1,732</div>
+            <div class="h6 text-muted" id="gamr">Game Guides</div>
+            <div class="h5" id="gamr-count">240</div>
           </li>
         </ul>
       </div>
     </div>
     <div class="col-md-6 gedf-main">
-      <!--- \\\\\\\Post-->
+      <!---Post-->
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
+              <a class="nav-link active" id="game-tab" href="#" role="tab"
+                >Post Feed</a
+              >
+            </li>
+
+            <li class="nav-item">
               <a
                 class="nav-link active"
-                id="posts-tab"
-                href="/post/add/"
+                id="game-tab"
+                href="/newGame/"
                 role="tab"
-                >Add a post</a
+                >Make a Post</a
               >
             </li>
           </ul>
         </div>
-          <div class="post-feed">
-          <ul style="color: #fff">
+        <div class="post-feed">
+          <ul>
             {% for post in object_list %}
-            <li>
-              <a href="/posts/{{post.id}}" style="color: #c702f8">{{ post.topic }}</a> -
-              <span class="post-date">{{ post.post_date }}<a href="{% url 'post_detail' pk=post.id %}">Comments: {{ post.comments.count }}</a></span> 
+            <li class="game-feed-li">
+              <a href="/posts/{{post.id}}" id="game-feed-title"
+                >{{ post.topic }}</a
+              >
+              -
+              <span class="post-date"
+                ><a
+                  href="{% url 'post_detail' pk=post.id %}"
+                  id="game-feed-title"
+                  >Comments: {{ post.comments.count }}</a
+                >
+              </span>
+
+              by:
+              <!-- TODO FIXME -->
+              <a href="#" id="game-feed-title">{{user.username}}</a>
+              - @
+              <span class="post-date">{{ post.post_date }}</span>
             </li>
             {% empty %}
-            <li>No posts yet.<a href="/post/add/">Be the First!</li>
-            {% endfor %}
+            <li>
+              No posts yet.<a href="/post/add/">Be the First! {% endfor %} </a>
+            </li>
           </ul>
         </div>
       </div>
-      <!-- Post /////-->
     </div>
   </div>
 </div>

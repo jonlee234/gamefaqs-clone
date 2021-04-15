@@ -274,12 +274,12 @@ label {
 }
 
 .card-subtitle {
- font-size: 2rem;
+  font-size: 2rem;
 }
 
 .game-feed {
-font-size: 4rem;
-color: #fff;
+  font-size: 4rem;
+  color: #fff;
 }
 
 .gamr-card {
@@ -305,6 +305,9 @@ color: #fff;
   text-align: center;
 }
 
+.post-date {
+  color: #fff;
+}
 .game-title-detail {
   color: #fff !important;
   font-size: 5rem;
@@ -346,12 +349,19 @@ color: #fff;
   font-size: 35rem;
 }
 
-.post-detail-container {
-  /* TODObackground img */
+.game-feed-li {
+  color: #fff;
+  font-size: 3rem;
 }
+
+/* TODObackground img */
+/* .post-detail-container {
+} */
+
 /* ############################################ */
 /* PROFILE PAGE */
 /* ############################################ */
+
 /* Profile container */
 .profile {
   margin: 0;
