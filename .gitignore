@@ -121,3 +121,5 @@ GitHub.sublime-settings
 
 gamefaqs_project/__pycache__/urls.cpython-39.pyc
 gamefaqs_project/__pycache__/urls.cpython-39.pyc
+gamefaqs_project/__pycache__/urls.cpython-39.pyc
+db.sqlite3

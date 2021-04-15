@@ -1,42 +1,41 @@
 {% extends "base.html" %} {% block content %}
-<nav class="navbar navbar-light bg-white">
-  <form
-    class="form-inline"
-    action=""
-    method="post"
-    enctype="multipart/form-data"
-  >
-    {% csrf_token %} {{search}}
-    <div class="input-group">
-      <input type="submit" value="Search" />
-    </div>
-  </form>
-</nav>
 
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
-      <div class="card">
+      <div class="gamr-card">
         <div class="card-body" style="color: #fff">
-          <div class="h5">GAMR</div>
-          <div class="h7 text-muted">Gaming Community</div>
-          <div class="h7">Connect, Share, Guide, Play.</div>
+          <div class="card-title">GAMR Community</div>
+          <div class="card-subtitle">Connect, Share, Play</div>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <div class="h6 text-muted">Post by Gamrs</div>
-            <div class="h5">96</div>
+            <div class="h6 text-muted" id="gamr">Posts by Gamrs</div>
+            <div class="h5" id="gamr-count">96</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Online Members</div>
-            <div class="h5">7</div>
+            <div class="h6 text-muted" id="gamr">Online Members</div>
+            <div class="h5" id="gamr-count">7</div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Game Guides</div>
-            <div class="h5">240</div>
+            <div class="h6 text-muted" id="gamr">Game Guides</div>
+            <div class="h5" id="gamr-count">240</div>
           </li>
         </ul>
       </div>
+    </div>
+    <div class="game-search">
+      <form
+        class="form-inline"
+        action=""
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {{search}}
+        <div class="input-group">
+          <input type="submit" value="Search" />
+        </div>
+      </form>
     </div>
     <div class="col-md-6 gedf-main">
       <!--- \\\\\\\Post-->
@@ -44,9 +43,14 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
+              <a class="nav-link active" id="game-tab" href="#" role="tab"
+                >Game Feed</a
+              >
+            </li>
+            <li class="nav-item">
               <a
                 class="nav-link active"
-                id="posts-tab"
+                id="game-tab"
                 href="/newGame/"
                 role="tab"
                 >Add a game</a
@@ -54,16 +58,22 @@
             </li>
           </ul>
         </div>
-          <ul style="color: #fff">
+        <div class="game-feed">
+          <ul>
             {% for items in games %}
             <li>
-              <a href="/viewGames/{{items.id}}">
-                {{ items.title.title }}<br />
+              <a href="/viewGames/{{items.id}}" id="game-feed-title">
+                {{ items.title.title }}
               </a>
-              platform:
-              <a href="/viewGames/platform/{{items.platform}}"
+              on:
+              <a
+                href="/viewGames/platform/{{items.platform}}"
+                id="game-feed-title"
                 >{{items.platform}}</a
               >
+              by:
+              <!-- TODO FIXME -->
+              <a href="#" id="game-feed-title">{{user.username}}</a>
             </li>
             {% endfor %}
           </ul>
@@ -74,4 +84,3 @@
   </div>
   {% endblock %}
 </div>
-
