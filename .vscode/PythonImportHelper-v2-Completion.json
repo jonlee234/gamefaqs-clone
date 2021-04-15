@@ -1169,7 +1169,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n<<<<<<< HEAD\n=======\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\n>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1178,7 +1178,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n<<<<<<< HEAD\n=======\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\n>>>>>>> fde1f91298a33b86ca6ad005b827ef776576163d\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1187,7 +1187,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
