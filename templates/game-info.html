@@ -7,10 +7,14 @@
         <h1 class="game-title-detail">{{game.title}}</h1>
         <span class="platform-detail-title">On: {{platform}}</span>
         <br />
+               <!-- TODO FIXME -->
+          <span class="game-detail">Poster: {{ object.user_posted }}</span>
+          <br />
         <img src="{{game.cover_art.url}}" />
-        <p class="game-detail">
+        <div class="game-detail">
           About {{game.title}}: <br />
           {{game.description}}
+   </div>
         </p>
         <a href="/favorite_game/{{game.id}}">
           <input type="submit" value="Favorite" />

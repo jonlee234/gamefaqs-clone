@@ -44,7 +44,7 @@ def GameTitleView(request, game_id):
 
 class AddGameView(LoginRequiredMixin, View):
     def get(self, request):
-        template = "generic-form.html"
+        template = "add-game.html"
         form = game_form()
         return render(request, template, {"form": form})
 

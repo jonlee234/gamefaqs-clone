@@ -31,14 +31,22 @@ h3,
 h4,
 h5,
 h6,
-p,
 .btn,
+p,
 a {
   font-family: "Open Sans", sans-serif;
-  color: #333;
+  color: #fff;
 }
 label {
   color: #fff;
+}
+
+.id_description {
+  color: #333;
+}
+
+form {
+  color: #333;
 }
 /* ############################################ */
 /* NavBar */
@@ -308,14 +316,17 @@ label {
 .post-date {
   color: #fff;
 }
+
 .game-title-detail {
   color: #fff !important;
   font-size: 5rem;
   font-weight: bold !important;
 }
+
 .platform-detail-title {
   color: #fff !important;
 }
+
 .game-detail {
   color: #fff !important;
   font-size: 3.5rem;
@@ -335,18 +346,81 @@ label {
   background-image: url(assets/images/ghosts.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 3rem;
+  font-size: 2rem;
 }
+
+.add-game-form-container {
+  background-image: url(/static/assets/images/tronish.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 3rem;
+  color: #333;
+}
+
+.add-game-title {
+  font-size: 6rem;
+  color: #f9cf16 !important;
+  text-align: center;
+}
+
+#id_description {
+    color: #333;
+    width: 100%;
+    font-size: 2rem;
+}
+
+#id_platform {
+  color: #333;
+  font-size: 2rem;
+}
+
+
 
 /* ############################################ */
 /* Posts */
 /* ############################################ */
 .post-detail-template {
-  color: #fff;
+  color: #fff !important;
   margin: auto;
   padding: 10px;
-  width: 50%;
-  font-size: 35rem;
+  font-size: 3rem;
+  text-align: center;
+  word-wrap: break-word !important;
+}
+
+.comment-container {
+  color: #fff !important;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.comment-text {
+  color: #fff !important;
+}
+
+.login-here {
+  color: #f9cf16;
+}
+
+.post-title {
+  font-size: 5rem;
+}
+
+.author {
+  color: #f9cf16;
+}
+
+.post-text {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.date {
+  font-size: 1.5rem;
+}
+
+.signup-here {
+  color: #7eaa41;
 }
 
 .game-feed-li {

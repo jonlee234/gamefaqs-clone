@@ -4,34 +4,49 @@
   <div class="row">
     <div class="col-md-12">
       <div class="post-detail-template">
-        <h1>{{ object.topic }}</h1>
-        <h2>{{ object.game }}</h2>
-        <p>{{ object.text }}</p>
-        <img src="{{object.thumbnail.url}}" />
+        <h1 class="post-title">Topic: {{ object.topic }}</h1>
         <p>Poster: {{ object.user_posted }}</p>
-        <p>Published: {{ object.post_date }}</p>
+        <h2>{{ object.game }}</h2>
+        <img src="{{object.thumbnail.url}}" />
+        <p class="post-text">{{ object.text }}</p>
+        <p class="date">Published: {{ object.post_date }}</p>
       </div>
     </div>
   </div>
 </div>
-<hr />
-{ {% if user.is_authenticated %}
+<!-- <hr /> -->
+<div class="comment-container">
+  {% if user.is_authenticated %}
+  <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"
+    >Leave your comment</a
+  >
 
-<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}"
-  >Add comment</a
->
-{% else %}
-<p>
-  You must be logged in to leave a comments <a href="/login/">Login Here</a>
-  <a href="/singup/">Signup Here</a>
-</p>
+  {% else %}
 
-{%endif%} {% for comment in post.comments.all %}
-<div class="comment">
-  <div class="date">{{ comment.created_date }}</div>
-  <strong>{{ comment.author }}</strong>
-  <p>{{ comment.text|linebreaks }}</p>
+  <p>
+    You must be logged in to leave a comment <br /><a
+      class="login-here"
+      href="/login/"
+      >Login Here</a
+    >
+    --
+    <a class="signup-here" href="/singup/">Signup Here</a>
+  </p>
+
+  {%endif%}
+
+  <hr />
+
+  {% for comment in post.comments.all %}
+  <div class="comment">
+    <span class="author"><strong>{{ comment.author }}</strong></span>
+    <span class="comment-text" style="color: #fff"
+      ><p>{{ comment.text|linebreaks }}</p></span
+    >
+    <div class="date">{{ comment.created_date }}</div>
+    <hr />
+  </div>
+  {% empty %}
+  <p>Claim Firsties!</p>
 </div>
-{% empty %}
-<p>Claim Firsties!</p>
 {% endfor %} {% endblock %}
