@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block content %}
 <div class="user-list-container">
-    <br />
+  <br />
   {% for items in user %}
   <h1 class="user-list-title">View online users</h1>
   <li>
-    <a class="online-users" href="viewProfile/{{items.username}}"> {{items.username}} </a>
+    <a class="online-users" href="/user/{{items.id}}"> {{items.username}} </a>
   </li>
 </div>
 {% endfor %} {% endblock %}
