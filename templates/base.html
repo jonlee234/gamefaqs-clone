@@ -84,10 +84,10 @@
               <li>
                 <a class="nav-link" href="/">home</a>
               </li>
-              <li>
+              <!-- Reactivae upon page completion -->
+              <!-- <li>
                 <a class="nav-link" href="/viewGames/platform/">platforms</a>
-              </li>
-
+              </li> -->
               <li>
                 <a class="nav-link" href="/viewGames/">games</a>
               </li>
@@ -202,11 +202,12 @@
   </header>
   {% endblock %}{% block body %}
   <!-- DO NOT EDIT THE BODY PLEASE!! -->
+  <!-- ###################################### -->
   <body>
     <!-- Other pages as body  -->
     <div class="content">{% block content %}{% endblock %}</div>
   </body>
-  <!-- / -->
+  <!-- ###################################### -->
   {% endblock %} {% block Footer %}
   <div class="footer-dark">
     <footer>
@@ -220,18 +221,11 @@
                 <a href="/"><span class="footer_link1">Home</span></a>
               </li>
               <li>
-                <a href="/viewUsers/"
-                  ><span class="footer_link2">Players</span></a
-                >
+                <a href="/user/1/"><span class="footer_link2">Players</span></a>
               </li>
               <li>
                 <a href="/viewGames/"
                   ><span class="footer_link3">Games</span></a
-                >
-              </li>
-              <li>
-                <a href="/viewGames/platform/"
-                  ><span class="footer_link3">Platforms</span></a
                 >
               </li>
               <li>
@@ -243,34 +237,22 @@
             <h3>GAMES</h3>
             <ul>
               <li>
-                <a
-                  href="https://github.com/jonlee234"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://github.com/jonlee234"
                   ><span class="footer_game_link1"></span>Jonathane Leavell</a
                 >
               </li>
               <li>
-                <a
-                  href="https://github.com/codeNameGizzie"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://github.com/codeNameGizzie"
                   ><span class="footer_game_link2"></span>Shavonne Carson</a
                 >
               </li>
               <li>
-                <a
-                  href="https://github.com/RMHavelaar"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://github.com/RMHavelaar"
                   ><span class="footer_game_link3"></span>Robert Havelaar</a
                 >
               </li>
               <li>
-                <a
-                  href="https://github.com/delpercio"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://github.com/delpercio"
                   ><span class="footer_game_link4"></span>Steven Delpercio</a
                 >
               </li>
@@ -286,12 +268,10 @@
               and user-written walkthroughs / cheats for those games.
             </p>
           </div>
-          <p class="copyright" style="color: #fff">GAMR &#169; 2021</p>
         </div>
-        {% endblock %}
-
-        <!-- End Of Footer -->
       </div>
+      {% endblock %}
     </footer>
+    <!-- End Of Footer -->
   </div>
 </html>
