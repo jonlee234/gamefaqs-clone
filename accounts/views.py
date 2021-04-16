@@ -14,13 +14,9 @@ def index(request):
     users_list = CustomUser.objects.all().order_by("-date_joined")[:5]
     count = Game.objects.all().count()
     slice = random.random() * (count - 1)
-<<<<<<< HEAD
-    games = Game.objects.all()[slice: slice+1]
-=======
     games = Game.objects.all()[slice : slice + 1]
 
 
->>>>>>> c45f338d7c5955cbf79f68e83e53fab39ec43a96
     return render(
         request,
         "index.html",
@@ -43,7 +39,7 @@ def follower_view(request, user_id):
 @login_required
 def favorite_game_view(request, game_id):
     request.user.favorite_games.add(Game.objects.get(id=game_id))
-    return HttpResponseRedirect(reverse("game-title", args=[game_id]))
+    return HttpResponseRedirect(reverse("profile", args=[request.user.id]))
 
 
 @login_required

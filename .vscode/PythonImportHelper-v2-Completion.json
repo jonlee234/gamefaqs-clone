@@ -925,7 +925,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.filter(user_posted=request.user.id).order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:5]\n    count = Game.objects.all().count()\n    slice = random.random() * (count - 1)\n<<<<<<< HEAD\n    games = Game.objects.all()[slice: slice+1]\n=======\n    games = Game.objects.all()[slice : slice + 1]",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.filter(user_posted=request.user.id).order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:5]\n    count = Game.objects.all().count()\n    slice = random.random() * (count - 1)\n    games = Game.objects.all()[slice : slice + 1]\n    return render(\n        request,\n        \"index.html\",",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -943,7 +943,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))",
+        "peekOfCode": "def follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[request.user.id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -952,7 +952,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))",
+        "peekOfCode": "def favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[request.user.id]))\n@login_required\ndef unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))",
         "detail": "accounts.views",
         "documentation": {}
     },
