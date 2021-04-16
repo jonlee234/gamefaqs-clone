@@ -6,7 +6,7 @@
         <h1 class="post-title">Topic: {{ object.topic }}</h1>
         <p>Poster: {{ object.user_posted }}</p>
         <h2>{{ object.game }}</h2>
-        <img src="{{object.thumbnail.url}}" />
+        <img src="{{object.thumbnail.url}}" height="100px" width="100px" />
         <p class="post-text">{{ object.text }}</p>
         <p class="date">Published: {{ object.post_date }}</p>
       </div>
@@ -15,16 +15,10 @@
 </div>
 <div class="comment-container">
   {% if user.is_authenticated %}
-  <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"
-    >Leave your comment</a
-  >
+  <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave your comment</a>
   {% else %}
   <p>
-    You must be logged in to leave a comment <br /><a
-      class="login-here"
-      href="/login/"
-      >Login Here</a
-    >
+    You must be logged in to leave a comment <br /><a class="login-here" href="/login/">Login Here</a>
     --
     <a class="signup-here" href="/singup/">Signup Here</a>
   </p>
@@ -33,9 +27,9 @@
   {% for comment in post.comments.all %}
   <div class="comment">
     <span class="author"><strong>{{ comment.author }}</strong></span>
-    <span class="comment-text" style="color: #fff"
-      ><p>{{ comment.text|linebreaks }}</p></span
-    >
+    <span class="comment-text" style="color: #fff">
+      <p>{{ comment.text|linebreaks }}</p>
+    </span>
     <div class="date">{{ comment.created_date }}</div>
     <hr />
   </div>
