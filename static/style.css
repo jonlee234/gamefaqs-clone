@@ -516,10 +516,6 @@ form {
   color: var(--global-color-white);
 }
 
-.user-list-container {
-  text-align: center;
-}
-
 .online-users {
   font-size: 6rem;
   color: var(--global-color-yellow);
