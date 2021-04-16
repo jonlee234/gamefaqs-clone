@@ -318,6 +318,7 @@ form {
 
 .post-date {
   color: #fff;
+  font-size: 1.5rem;
 }
 
 .game-title-detail {
@@ -347,6 +348,7 @@ form {
 
 #game-feed-title {
   color: #f9cf16 !important;
+  font-size: 2rem;
 }
 
 .game-info-container {
@@ -392,7 +394,12 @@ form {
   text-align: center;
   word-wrap: break-word !important;
 }
-
+.comments-title-1 {
+  font-size: 2.5rem;
+}
+.by {
+  font-size: 2rem;
+}
 #id_game {
   color: #333 !important;
 }
@@ -480,7 +487,6 @@ form {
 .container-img {
   background-color: #282d32;
 }
-
 
 .profile-sidebar {
   padding: 20px 0 10px 0;

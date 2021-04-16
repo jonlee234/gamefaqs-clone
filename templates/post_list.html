@@ -58,7 +58,7 @@
                 >{{ post.topic }}</a
               >
               -
-              <span class="post-date"
+              <span class="comments-title-1"
                 ><a
                   href="{% url 'post_detail' pk=post.id %}"
                   id="game-feed-title"
@@ -66,11 +66,12 @@
                 >
               </span>
 
-              by:
               <!-- TODO FIXME -->
-              <a href="#" id="game-feed-title">{{user.username}}</a>
-              - @
-              <span class="post-date">{{ post.post_date }}</span>
+              <a href="/user/{{user.id}}/" id="game-feed-title"
+                >by: {{user.username}}</a
+              >
+
+              <span class="post-date">- @{{ post.post_date }}</span>
             </li>
             {% empty %}
             <li>
