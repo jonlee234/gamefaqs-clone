@@ -54,15 +54,15 @@ urlpatterns = [
     path("posts/", PostListView.as_view(), name="post-list"),
     path("post/<int:pk>/comment/", add_comment_to_post, name="add_comment_to_post"),
     # Follow Links
-    path("follow/<int:user_id>", follower_view, name="follow"),
-    path("unfollow/<int:user_id>", unfollow_view, name="unfollow"),
+    path("follow/<int:user_id>/", follower_view, name="follow"),
+    path("unfollow/<int:user_id>/", unfollow_view, name="unfollow"),
     # User/Profile Links
     path("user/<int:CustomUser_id>/", user_profile_view, name="user-profile"),
     path("viewProfile/<str:username>/", user_profile_view, name="profile"),
     path("viewUsers/", user_list_view, name="users"),
     # Favorites
-    path("favorite_game/<int:game_id>", favorite_game_view, name="favorite_game"),
-    path("unfavorite_game/<int:game_id>", unfavorite_game_view, name="unfavorite_game"),
+    path("favorite_game/<int:game_id>/", favorite_game_view, name="favorite_game"),
+    path("unfavorite_game/<int:game_id>/", unfavorite_game_view, name="unfavorite_game"),
     # Statics
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
