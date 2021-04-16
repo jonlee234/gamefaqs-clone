@@ -66,14 +66,11 @@
                 {{ items.title.title }}
               </a>
               on:
-              <a
-                href="/viewGames/platform/{{items.platform}}"
-                id="game-feed-title"
-                >{{items.platform}}</a
-              >
+              <a href="/viewGames/platform/{{items.platform}}"
+                >{{items.get_platform_display}}</a
               by:
               <!-- TODO FIXME -->
-              <a href="#" id="game-feed-title">{{user.username}}</a>
+              <a href="/user/{{user.id}}/" id="game-feed-title">{{user.username}}</a>
             </li>
             {% endfor %}
           </ul>

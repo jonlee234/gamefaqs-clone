@@ -10,11 +10,14 @@ from game.models import Game
 @login_required
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
+
     posts = Post.objects.filter(user_posted=request.user.id).order_by("-post_date")[:10]
     users_list = CustomUser.objects.all().order_by("-date_joined")[:5]
     count = Game.objects.all().count()
     slice = random.random() * (count - 1)
     games = Game.objects.all()[slice : slice + 1]
+
+
     return render(
         request,
         "index.html",
