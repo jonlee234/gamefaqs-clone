@@ -1,3 +1,4 @@
+// JQuery for Carosuel
 $(document).ready(function () {
   $(".hero").css(
     "height",
@@ -15,7 +16,7 @@ $(window).resize(function () {
     $(window).height() - $("header").outerHeight() + "px"
   );
 });
-
+// Cookie Consent
 window.addEventListener("load", function () {
   window.cookieconsent.initialise({
     palette: {
