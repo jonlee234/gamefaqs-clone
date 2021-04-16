@@ -1,14 +1,10 @@
 {% extends "base.html" %} {% block content %}
-
-<nav class="navbar navbar-light bg-white">
-  <!-- I deleted the search bar but removing this div messes up the whole pages style so leave it in -->
-</nav>
-
+<br />
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
       <div class="gamr-card">
-        <div class="card-body" style="color: #fff">
+        <div class="card-body">
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
@@ -29,7 +25,6 @@
       </div>
     </div>
     <div class="col-md-6 gedf-main">
-      <!---Post-->
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -59,12 +54,9 @@
                   >Comments: {{ post.comments.count }}</a
                 >
               </span>
-
-              <!-- TODO FIXME -->
               <a href="/user/{{user.id}}/" id="game-feed-title"
                 >by: {{user.username}}</a
               >
-
               <span class="post-date">- @{{ post.post_date }}</span>
             </li>
             {% empty %}

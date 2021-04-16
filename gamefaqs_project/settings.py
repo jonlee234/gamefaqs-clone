@@ -12,7 +12,6 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 

@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-3">
       <div class="gamr-card">
-        <div class="card-body" style="color: #fff">
+        <div class="card-body">
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
@@ -38,7 +38,6 @@
       </form>
     </div>
     <div class="col-md-6 gedf-main">
-      <!--- \\\\\\\Post-->
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -67,7 +66,6 @@
               >
                 on: {{items.get_platform_display}}</a
               >
-
               <a href="/user/{{user.id}}/" id="post-feed-user">
                 by: {{user.username}}</a
               >
@@ -76,8 +74,7 @@
           </ul>
         </div>
       </div>
-      <!-- Post /////-->
     </div>
   </div>
-  {% endblock %}
 </div>
+{% endblock %}

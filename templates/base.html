@@ -22,7 +22,6 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-
     <!-- / -->
     <!-- Favicon -->
     <link
@@ -201,12 +200,14 @@
     </div>
   </header>
   {% endblock %}{% block body %}
+  <!-- ###################################### -->
   <!-- DO NOT EDIT THE BODY PLEASE!! -->
   <!-- ###################################### -->
   <body>
-    <!-- Other pages as body  -->
     <div class="content">{% block content %}{% endblock %}</div>
   </body>
+  <!-- ###################################### -->
+  <!-- Footer -->
   <!-- ###################################### -->
   {% endblock %} {% block Footer %}
   <div class="footer-dark">
@@ -270,8 +271,8 @@
           </div>
         </div>
       </div>
-      {% endblock %}
     </footer>
     <!-- End Of Footer -->
+    {% endblock %}
   </div>
 </html>

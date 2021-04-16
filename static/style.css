@@ -473,6 +473,10 @@ form {
   color: var(--global-color-white) !important;
 }
 
+.card-body {
+  color: var(--global-color-white);
+}
+
 .login-here {
   color: var(--global-color-yellow);
 }
