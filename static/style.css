@@ -314,16 +314,18 @@ form {
 }
 
 #post-feed-title {
-  font-size: 3.5;
-  color: var(--global-color-yellow);
+  color: var(--global-color-yellow) !important;
+  font-size: 2rem;
 }
 
 #post-feed-platform {
-  color: var(--global-color-brawndo);
+  color: var(--global-color-yellow) !important;
+  font-size: 2rem;
 }
 
 #post-feed-user {
-  color: var(--global-color-yellow);
+  color: var(--global-color-white) !important;
+  font-size: 2rem;
 }
 
 .card-subtitle {
@@ -898,6 +900,7 @@ input[type="submit"]:active {
 }
 
 .bottom-div {
+  text-align: center !important;
   color: white;
   text-align: center;
   display: flex;
@@ -905,8 +908,16 @@ input[type="submit"]:active {
   margin-top: 10px;
 }
 
+#home-post {
+  color: var(--global-color-white);
+}
+
 .no-recent {
   font-size: 40px;
+}
+
+.landing-games-list {
+  color: var(--global-color-white);
 }
 
 /* ############################################ */
