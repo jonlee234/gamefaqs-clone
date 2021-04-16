@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-
+<br />
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
@@ -58,22 +58,24 @@
             </li>
           </ul>
         </div>
-        <div class="game-feed">
+        <div class="post-feed">
           <ul>
             {% for items in games %}
             <li>
-              <a href="/viewGames/{{items.id}}" id="game-feed-title">
+              <a href="/viewGames/{{items.id}}" id="post-feed-title">
                 {{ items.title.title }}
               </a>
-              on:
+
               <a
                 href="/viewGames/platform/{{items.platform}}"
-                id="game-feed-title"
-                >{{items.platform}}</a
+                id="post-feed-platform"
               >
-              by:
-              <!-- TODO FIXME -->
-              <a href="/user/{{user.id}}/" id="game-feed-title">{{user.username}}</a>
+                on: {{items.get_platform_display}}</a
+              >
+
+              <a href="/user/{{user.id}}/" id="post-feed-user">
+                by: {{user.username}}</a
+              >
             </li>
             {% endfor %}
           </ul>

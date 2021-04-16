@@ -1,7 +1,18 @@
+:root {
+  --global-color-background: #282d32;
+  --global-color-white: #fff;
+  --global-color-black: #333;
+  --global-color-yellow: #face02;
+  --global-color-brawndo: #7eaa41;
+}
+
 *,
 *:after,
 *:before {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 .content {
   background-color: #282d32 !important;
@@ -12,14 +23,13 @@ body {
   margin: 0;
   padding: 0;
   background: #282d32;
-  -webkit-font-smoothing: antialiased;
 }
 a:hover {
   text-decoration: none;
 }
 
 header {
-  background-color: #394047c4;
+  background-color: #282d32;
   background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,11 +43,9 @@ h5,
 h6,
 .btn,
 p,
+label,
 a {
   font-family: "Open Sans", sans-serif;
-  color: #fff;
-}
-label {
   color: #fff;
 }
 
@@ -51,15 +59,6 @@ form {
 /* ############################################ */
 /* NavBar */
 /* ############################################ */
-
-/* #nav-bloc {
-
-  width: 100% !important;
-
-  background-image: url(assets/images/nyancat.gif) !important;
-  background-repeat: no-repeat;
-  background-size:contain
-} */
 
 .navbar {
   margin-bottom: 0;
@@ -284,6 +283,24 @@ form {
   font-size: 3rem;
 }
 
+.post-feed {
+  font-size: 3rem;
+  color: #fff;
+}
+
+#post-feed-title {
+  font-size: 3.5;
+  color: #face02;
+}
+
+#post-feed-platform {
+  color: #7eaa41;
+}
+
+#post-feed-user {
+  color: #face02;
+}
+
 .card-subtitle {
   font-size: 2rem;
 }
@@ -324,7 +341,7 @@ form {
 .game-title-detail {
   font-size: 8rem;
   font-weight: bold !important;
-  color: #f9cf16 !important;
+  color: #face02 !important;
 }
 
 .platform-detail-title {
@@ -347,7 +364,7 @@ form {
 }
 
 #game-feed-title {
-  color: #f9cf16 !important;
+  color: #face02 !important;
   font-size: 2rem;
 }
 
@@ -368,7 +385,7 @@ form {
 
 .add-game-title {
   font-size: 6rem;
-  color: #f9cf16 !important;
+  color: #face02 !important;
   text-align: center;
 }
 
@@ -424,7 +441,7 @@ form {
 }
 
 .login-here {
-  color: #f9cf16;
+  color: #face02;
 }
 
 .post-title {
@@ -432,7 +449,7 @@ form {
 }
 
 .author {
-  color: #f9cf16;
+  color: #face02;
 }
 
 .post-text {
@@ -465,7 +482,7 @@ form {
 
 .online-users {
   font-size: 6rem;
-  color: #f9cf16;
+  color: #face02;
 }
 
 /* ############################################ */
@@ -572,7 +589,7 @@ textarea {
 
 .platform-list {
   font-size: 3rem;
-  color: #f9cf16;
+  color: #face02;
 }
 /* ############################################ */
 
@@ -585,7 +602,7 @@ textarea {
 
 .search-result {
   font-size: 6rem;
-  color: #f9cf16;
+  color: #face02;
 }
 
 .search-results-title {
@@ -712,7 +729,7 @@ textarea {
 }
 
 .signup-form-link {
-  color: #f9cf16 !important;
+  color: #face02 !important;
   font-size: 2rem;
 }
 
@@ -723,7 +740,7 @@ form {
   width: 400px;
   height: auto;
   overflow: hidden;
-  color: white;
+  color: #fff;
   border-radius: 10px;
 }
 form input {
