@@ -14,7 +14,7 @@ def index(request):
     users_list = CustomUser.objects.all().order_by("-date_joined")[:5]
     count = Game.objects.all().count()
     slice = random.random() * (count - 1)
-    games = Game.objects.all()[slice: slice+1]
+    games = Game.objects.all()[slice : slice + 1]
     return render(
         request,
         "index.html",
@@ -57,6 +57,6 @@ def user_list_view(request):
     return render(request, "all-users.html", {"user": user})
 
 
-def profile_view(request, username):
-    user = CustomUser.objects.get(username=username)
-    return render(request, "user_profile.html", {"user": user})
+# def profile_view(request, username):
+#     user = CustomUser.objects.get(username=username)
+#     return render(request, "user_profile.html", {"user": user})
