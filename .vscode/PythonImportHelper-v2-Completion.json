@@ -917,7 +917,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n<<<<<<< HEAD\n    posts = Post.objects.all().order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:10]\n    games = Game.objects.all()\n=======\n    posts = Post.objects.filter(user_posted=request.user.id).order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:5]\n    count = Game.objects.all().count()",
+        "peekOfCode": "def index(request):\n    user = CustomUser.objects.get(id=request.user.id)\n    posts = Post.objects.filter(user_posted=request.user.id).order_by(\"-post_date\")[:10]\n    users_list = CustomUser.objects.all().order_by(\"-date_joined\")[:5]\n    count = Game.objects.all().count()\n    slice = random.random() * (count - 1)\n    games = Game.objects.all()[slice: slice+1]\n    return render(\n        request,\n        \"index.html\",",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -1169,7 +1169,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1178,7 +1178,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\n# This must remain off for error pages to work.  If you are having issues running the server run python manage.py runserver --insecure\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1187,7 +1187,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
