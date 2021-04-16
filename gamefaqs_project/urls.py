@@ -58,7 +58,7 @@ urlpatterns = [
     path("unfollow/<int:user_id>/", unfollow_view, name="unfollow"),
     # User/Profile Links
     path("user/<int:CustomUser_id>/", user_profile_view, name="user-profile"),
-    path("viewProfile/<str:username>/", user_profile_view, name="profile"),
+    # path("viewProfile/<str:username>/", user_profile_view, name="profile"),
     path("viewUsers/", user_list_view, name="users"),
     # Favorites
     path("favorite_game/<int:game_id>/", favorite_game_view, name="favorite_game"),

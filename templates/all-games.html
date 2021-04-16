@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block content %}
-
+<br />
 <div class="container-fluid gedf-wrapper">
   <div class="row">
     <div class="col-md-3">
       <div class="gamr-card">
-        <div class="card-body" style="color: #fff">
+        <div class="card-body">
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
@@ -25,12 +25,7 @@
       </div>
     </div>
     <div class="game-search">
-      <form
-        class="form-inline"
-        action=""
-        method="post"
-        enctype="multipart/form-data"
-      >
+      <form class="form-inline" action="" method="post" enctype="multipart/form-data">
         {% csrf_token %} {{search}}
         <div class="input-group">
           <input type="submit" value="Search" />
@@ -38,46 +33,32 @@
       </form>
     </div>
     <div class="col-md-6 gedf-main">
-      <!--- \\\\\\\Post-->
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="game-tab" href="#" role="tab"
-                >Game Feed</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="game-tab"
-                href="/newGame/"
-                role="tab"
-                >Add a game</a
-              >
+              <a class="nav-link active" id="game-tab" href="/newGame/" role="tab">Add a game</a>
             </li>
           </ul>
         </div>
-        <div class="game-feed">
+        <div class="post-feed">
           <ul>
             {% for items in games %}
             <li>
-              <a href="/viewGames/{{items.id}}" id="game-feed-title">
+              <a href="/viewGames/{{items.id}}" id="post-feed-title">
                 {{ items.title.title }}
               </a>
-              on:
-              <a href="/viewGames/platform/{{items.platform}}"
-                >{{items.get_platform_display}}</a
-              by:
-              <!-- TODO FIXME -->
-              <a href="/user/{{user.id}}/" id="game-feed-title">{{user.username}}</a>
+
+              <a href="/viewGames/platform/{{items.platform}}" id="post-feed-platform">
+                on: {{items.get_platform_display}}</a>
+              <a href="/user/{{user.id}}/" id="post-feed-user">
+                by: {{user.username}}</a>
             </li>
             {% endfor %}
           </ul>
         </div>
       </div>
-      <!-- Post /////-->
     </div>
   </div>
-  {% endblock %}
 </div>
+{% endblock %}

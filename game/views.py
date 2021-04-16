@@ -10,25 +10,23 @@ from game.helpers import searchBy
 class AllGameView(View):
     def get(self, request):
         template = "all-games.html"
-
         search_bar = SearchBar()
-
         games = Game.objects.all()
-
-        return render(request, template, {
-            'games': games,
-            'search': search_bar,
-        })
+        return render(
+            request,
+            template,
+            {
+                "games": games,
+                "search": search_bar,
+            },
+        )
 
     def post(self, request):
         search_bar = SearchBar(request.POST)
         title = ""
-
         if search_bar.is_valid():
             data = search_bar.cleaned_data
-
             title = data["search"]
-
             return HttpResponseRedirect(reverse("search", args=[title]))
 
 
@@ -36,10 +34,7 @@ def GameTitleView(request, game_id):
     template = "game-info.html"
     game = Game.objects.get(id=game_id)
     platform = game.get_platform_display()
-    return render(request, template, {
-        'game': game,
-        'platform': platform
-    })
+    return render(request, template, {"game": game, "platform": platform})
 
 
 class AddGameView(LoginRequiredMixin, View):

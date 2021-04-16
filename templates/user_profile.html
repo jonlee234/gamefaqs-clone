@@ -1,11 +1,5 @@
-<!-- TODO Blockers -->
-
-<!-- Get Avatar to show instead of URL -->
-<!-- Set Proper Follow URL -->
-
-<!-- STRETCH GOAL show recent posts by user in content box -->
-
 {% extends "base.html" %} {% block content %}
+
 <body>
   <br />
   <div class="container-img">
@@ -17,11 +11,7 @@
             <!-- #####TODO make avatar###### -->
             <div class="profile-userpic">
               <!-- <div class="img-responsive">{{user.avatar}}</div> -->
-              <img
-                src="/static/assets/images/hs.jpeg"
-                class="img-responsive"
-                alt=""
-              />
+              <img src="/static/assets/images/hs.jpeg" class="img-responsive" alt="" />
             </div>
             <!-- END SIDEBAR USERPIC -->
             <!-- SIDEBAR USER TITLE -->
@@ -33,11 +23,7 @@
             <!-- SIDEBAR BUTTONS -->
             <div class="profile-userbuttons">
               <!-- ##### TODO proper follow link ###### -->
-              <button
-                type="button"
-                class="btn btn-success btn-sm"
-                href="/follow/1"
-              >
+              <button type="button" class="btn btn-success btn-sm" href="/follow/1">
                 Follow
               </button>
               <!-- Non-functional, Style Purposes only -->
@@ -70,11 +56,14 @@
             </div>
           </div>
         </div>
-        <!-- #####TODO STRETCH GOAL add most recent posts##### -->
+        <!-- #####TODO STRETCH GOAL add most recent posts for who evers profile you are viewing.##### -->
         <div class="col-md-9" style="background-color: #b3b3b3">
           <div class="profile-content" style="background-color: #b3b3b3">
             Most Recent Posts
           </div>
+
+
+
         </div>
       </div>
       {% endblock %}

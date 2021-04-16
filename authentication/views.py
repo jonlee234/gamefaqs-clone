@@ -1,10 +1,11 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 
 from accounts.models import CustomUser, OnlineUsers
 from authentication.forms import LoginForm, SignupForm
+
 
 
 def login_view(request):
@@ -43,6 +44,13 @@ def signup_view(request):
             return HttpResponseRedirect(request.GET.get("next", reverse("homepage")))
     form = SignupForm()
     return render(request, "signup.html", {"form": form})
+
+
+def singup_handler(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/")
+    else:
+        return HttpResponseRedirect("/signup/")
 
 
 @login_required

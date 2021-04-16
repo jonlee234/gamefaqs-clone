@@ -1,10 +1,10 @@
-from django.shortcuts import render, HttpResponseRedirect, reverse
-from django.contrib.auth.decorators import login_required
 import random
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, HttpResponseRedirect, reverse
 
-from accounts.models import CustomUser
 from post.models import Post
 from game.models import Game
+from accounts.models import CustomUser
 
 
 @login_required
@@ -14,7 +14,13 @@ def index(request):
     users_list = CustomUser.objects.all().order_by("-date_joined")[:5]
     count = Game.objects.all().count()
     slice = random.random() * (count - 1)
+<<<<<<< HEAD
     games = Game.objects.all()[slice: slice+1]
+=======
+    games = Game.objects.all()[slice : slice + 1]
+
+
+>>>>>>> c45f338d7c5955cbf79f68e83e53fab39ec43a96
     return render(
         request,
         "index.html",
@@ -57,6 +63,6 @@ def user_list_view(request):
     return render(request, "all-users.html", {"user": user})
 
 
-def profile_view(request, username):
-    user = CustomUser.objects.get(username=username)
-    return render(request, "user_profile.html", {"user": user})
+# def profile_view(request, username):
+#     user = CustomUser.objects.get(username=username)
+#     return render(request, "user_profile.html", {"user": user})
