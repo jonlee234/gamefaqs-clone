@@ -1,5 +1,4 @@
 {% extends "base.html" %} {% block content %}
-
 <div className="post-detail-container">
   <div class="row">
     <div class="col-md-12">
@@ -14,15 +13,12 @@
     </div>
   </div>
 </div>
-<!-- <hr /> -->
 <div class="comment-container">
   {% if user.is_authenticated %}
   <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"
     >Leave your comment</a
   >
-
   {% else %}
-
   <p>
     You must be logged in to leave a comment <br /><a
       class="login-here"
@@ -32,11 +28,8 @@
     --
     <a class="signup-here" href="/singup/">Signup Here</a>
   </p>
-
   {%endif%}
-
   <hr />
-
   {% for comment in post.comments.all %}
   <div class="comment">
     <span class="author"><strong>{{ comment.author }}</strong></span>

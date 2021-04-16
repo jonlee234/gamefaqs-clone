@@ -53,7 +53,6 @@ class Comment(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
-    # comment_photo = models.ImageField(null=True, blank=True, upload_to="media/")
 
     def approve(self):
         self.approved_comment = True
