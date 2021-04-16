@@ -14,22 +14,25 @@
   -moz-box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
+
 .content {
-  background-color: #282d32 !important;
+  background-color: var(--global-color-background) !important;
 }
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #282d32;
+  background: var(--global-color-background);
 }
+
 a:hover {
   text-decoration: none;
 }
 
 header {
-  background-color: #282d32;
+  background-color: var(--global-color-background);
   background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,16 +49,17 @@ p,
 label,
 a {
   font-family: "Open Sans", sans-serif;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .id_description {
-  color: #333;
+  color: var(--global-color-black);
 }
 
 form {
-  color: #333;
+  color: var(--global-color-black);
 }
+
 /* ############################################ */
 /* NavBar */
 /* ############################################ */
@@ -63,19 +67,23 @@ form {
 .navbar {
   margin-bottom: 0;
 }
+
 .navbar-brand img {
   width: auto;
   max-height: 40px;
   margin: -12px 5px 0 0;
 }
+
 .navbar-brand {
   padding: 15px 15px;
 }
+
 .navbar .nav {
   padding-top: -4px;
   margin-right: -16px;
   float: right;
 }
+
 .nav > li {
   float: left;
   margin-top: 15px;
@@ -87,34 +95,42 @@ form {
 }
 
 .nav-link {
-  color: #fff;
+  color: var(--global-color-white);
 }
+
 .navbar-toggle {
   margin: 12px;
   border: 0px;
 }
+
 .navbar-toggle:hover {
   background: transparent !important;
 }
+
 .navbar-toggle .icon-bar {
   background-color: #00000080;
   width: 26px;
 }
+
 .navbar-collapse.in {
   overflow-y: visible;
   float: left;
   width: 100%;
 }
+
 .navbar-1 {
   float: right;
   color: red;
 }
+
 .site-navigation:first-child {
   float: left;
 }
+
 .site-navigation:nth-child(2) {
   float: right;
 }
+
 .site-navigation:nth-child(2) a {
   color: #ccc;
   font-size: 85%;
@@ -122,8 +138,9 @@ form {
 }
 
 .site-navigation .nav > .active {
-  color: red;
+  color: #ff0000;
 }
+
 /* ############################################ */
 /* Carousel */
 /* ############################################ */
@@ -132,9 +149,8 @@ form {
   margin-top: 20px;
 }
 
-/* Carousel Styles */
 .carousel-indicators .active {
-  background-color: #282d32;
+  background-color: var(--global-color-background);
 }
 
 .carousel-inner img {
@@ -189,21 +205,20 @@ form {
   filter: alpha(opacity=70);
 }
 
-/* Carousel Header Styles */
 .header-text {
   position: absolute;
   top: 30%;
   left: 1.8%;
   right: auto;
   width: 96.666%;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .header-text h2 {
   font-size: 6em;
   font-weight: bold;
   padding: 10px;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .btn-min-block {
@@ -212,9 +227,9 @@ form {
 }
 
 .btn-theme {
-  color: #fff;
+  color: var(--global-color-white);
   background-color: transparent;
-  border-color: #fff;
+  border-color: var(--global-color-white);
   margin-right: 15px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -222,10 +237,11 @@ form {
 }
 
 .btn-theme:hover {
-  color: #fff;
+  color: var(--global-color-white);
   background-color: transparent;
-  border-color: #fff;
+  border-color: var(--global-color-white);
 }
+
 /* ############################################ */
 /* Mobile adjustments */
 /* ############################################ */
@@ -238,6 +254,7 @@ form {
     -o-background-size: auto 200%;
     background-size: auto 200%;
   }
+
   .navbar .nav {
     padding-top: 0;
     border-top: 1px solid #00000033;
@@ -250,21 +267,26 @@ form {
     text-align: left;
     width: 100%;
   }
+
   .nav > li:hover {
     background: #00000014;
   }
+
   .navbar-collapse {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+
   .btn.pull-left,
   .btn.pull-right {
     float: none !important;
   }
+
   .bloc-xl,
   .bloc-lg {
     padding: 40px 0;
   }
+
   .a-block {
     text-align: center;
   }
@@ -272,33 +294,36 @@ form {
     padding-left: 4rem;
     padding-right: 4rem;
   }
+
   .gedf-card {
     margin-bottom: 2.77rem;
   }
 }
+
 /* ############################################ */
 /* Games */
 /* ############################################ */
+
 .card-title {
   font-size: 3rem;
 }
 
 .post-feed {
   font-size: 3rem;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 #post-feed-title {
   font-size: 3.5;
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 #post-feed-platform {
-  color: #7eaa41;
+  color: var(--global-color-brawndo);
 }
 
 #post-feed-user {
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 .card-subtitle {
@@ -307,7 +332,7 @@ form {
 
 .game-feed {
   font-size: 4rem;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .gamr-card {
@@ -334,26 +359,26 @@ form {
 }
 
 .post-date {
-  color: #fff;
+  color: var(--global-color-white);
   font-size: 1.5rem;
 }
 
 .game-title-detail {
   font-size: 8rem;
   font-weight: bold !important;
-  color: #face02 !important;
+  color: var(--global-color-yellow) !important;
 }
 
 .platform-detail-title {
-  color: #7eaa41 !important;
+  color: var(--global-color-brawndo) !important;
 }
 
 #id_platform_choice_field {
-  color: #333;
+  color: var(--global-color-black);
 }
 
 .game-detail {
-  color: #fff !important;
+  color: var(--global-color-white) !important;
   font-size: 3.5rem;
   word-wrap: break-word !important;
   text-align: center;
@@ -364,12 +389,11 @@ form {
 }
 
 #game-feed-title {
-  color: #face02 !important;
+  color: var(--global-color-yellow) !important;
   font-size: 2rem;
 }
 
 .game-info-container {
-  /* background-image: url(assets/images/ghosts.jpeg); */
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 3rem;
@@ -380,37 +404,44 @@ form {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 3rem;
-  color: #333;
+  color: var(--global-color-black);
 }
 
 .add-game-title {
   font-size: 6rem;
-  color: #face02 !important;
+  color: var(--global-color-yellow) !important;
   text-align: center;
 }
 
 #id_description {
-  color: #333;
+  color: var(--global-color-black);
   width: 100%;
   font-size: 2rem;
 }
 
 #id_platform {
-  color: #333;
+  color: var(--global-color-black);
   font-size: 2rem;
 }
 
 /* ############################################ */
 /* Posts */
 /* ############################################ */
+
 .post-detail-template {
-  color: #fff !important;
+  color: var(--global-color-white) !important;
   margin: auto;
   padding: 10px;
   font-size: 3rem;
   text-align: center;
   word-wrap: break-word !important;
 }
+
+.comment-title {
+  text-align: center;
+  color: var(--global-color-yellow);
+}
+
 .comments-title-1 {
   font-size: 2.5rem;
 }
@@ -418,30 +449,30 @@ form {
   font-size: 2rem;
 }
 #id_game {
-  color: #333 !important;
+  color: var(--global-color-black) !important;
 }
 
 #id_text {
-  color: #333 !important;
+  color: var(--global-color-black) !important;
   width: 100%;
 }
 
 #id_platforms {
-  color: #333 !important;
+  color: var(--global-color-black) !important;
 }
 
 .comment-container {
-  color: #fff !important;
+  color: var(--global-color-white) !important;
   text-align: center;
   font-size: 3rem;
 }
 
 .comment-text {
-  color: #fff !important;
+  color: var(--global-color-white) !important;
 }
 
 .login-here {
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 .post-title {
@@ -449,7 +480,7 @@ form {
 }
 
 .author {
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 .post-text {
@@ -462,18 +493,21 @@ form {
 }
 
 .signup-here {
-  color: #7eaa41;
+  color: var(--global-color-brawndo);
 }
 
 .game-feed-li {
-  color: #fff;
+  color: var(--global-color-white);
   font-size: 3rem;
 }
+
 /* ############################################ */
 /* Online User List */
+/* ############################################ */
+
 .user-list-title {
   font-size: 8rem;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .user-list-container {
@@ -482,7 +516,7 @@ form {
 
 .online-users {
   font-size: 6rem;
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 /* ############################################ */
@@ -502,7 +536,7 @@ form {
 }
 
 .container-img {
-  background-color: #282d32;
+  background-color: var(--global-color-background);
 }
 
 .profile-sidebar {
@@ -560,27 +594,24 @@ form {
   border-bottom: none;
 }
 
-/* Profile Content */
 .profile-content {
   padding: 20px;
   min-height: 460px;
 }
 
-/* Post Page */
 textarea {
-  color: #333;
+  color: var(--global-color-black);
 }
 .gedf-wrapper {
   margin-top: 0.97rem;
 }
 /* ############################################ */
-
 /* Platform View */
 /* ############################################ */
 
 .platform-container {
   text-align: center;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .platform-title {
@@ -589,20 +620,21 @@ textarea {
 
 .platform-list {
   font-size: 3rem;
-  color: #face02;
+  color: var(--global-color-yellow);
 }
-/* ############################################ */
 
+/* ############################################ */
 /* Search View */
+/* ############################################ */
 
 .search-results-container {
   text-align: center;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 .search-result {
   font-size: 6rem;
-  color: #face02;
+  color: var(--global-color-yellow);
 }
 
 .search-results-title {
@@ -610,12 +642,13 @@ textarea {
 }
 
 /* ############################################ */
-
 /* FOOTER */
+/* ############################################ */
+
 .footer-dark {
   padding: 50px 0;
   color: #f0f9ff;
-  background-color: #282d32;
+  background-color: var(--global-color-background);
 }
 
 .footer-dark h3 {
@@ -632,9 +665,11 @@ textarea {
   font-size: 14px;
   margin-bottom: 0;
 }
+
 .about-us {
-  color: #fff;
+  color: var(--global-color-white);
 }
+
 .footer-dark ul a {
   color: inherit;
   text-decoration: none;
@@ -654,13 +689,13 @@ textarea {
 
 .footer-dark .item.text {
   margin-bottom: 36px;
-  color: #fff;
+  color: var(--global-color-white);
 }
 
 @media (max-width: 767px) {
   .footer-dark .item.text {
     margin-bottom: 0;
-    color: #fff;
+    color: var(--global-color-white);
   }
 }
 
@@ -688,9 +723,9 @@ textarea {
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #ffffff66;
+  box-shadow: 0 0 0 1px var(--global-color-white) fff66;
   margin: 0 8px;
-  color: #fff;
+  color: var(--global-color-white);
   opacity: 0.75;
 }
 
@@ -704,11 +739,11 @@ textarea {
   opacity: 0.3;
   font-size: 13px;
   margin-bottom: 0;
-  color: #fff !important;
+  color: var(--global-color-white) !important;
 }
 
 .id_avatar {
-  background-color: #fff !important;
+  background-color: var(--global-color-white) !important;
 }
 
 /* ############################################ */
@@ -740,32 +775,32 @@ form {
   width: 400px;
   height: auto;
   overflow: hidden;
-  color: #fff;
+  color: var(--global-color-white);
   border-radius: 10px;
 }
+
 form input {
   margin: 15px 0;
   padding: 15px 10px;
   width: 100%;
-  color: #333;
+  color: var(--global-color-black);
   outline: none;
   border: 1px solid #bbb;
   border-radius: 20px;
   display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -ms-transition: 0.2s ease all;
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
+
 input[type="submit"] {
   width: 300px;
-  background: #1abc9c;
+  /* background: #1abc9c; */
+  background-color: var(--global-color-brawndo);
   border: none;
-  color: white;
+  color: var(--global-color-white);
   cursor: pointer;
   display: inline-block;
   -webkit-transition: 0.2s ease all;
@@ -782,10 +817,12 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   opacity: 0.4;
 }
+
 .add-post-title {
   text-align: center;
   font-size: 8rem;
 }
+
 .add-post-form-container {
   background-image: url(assets/images/evil_pacattack.jpeg);
   background-repeat: no-repeat;
@@ -803,53 +840,63 @@ input[type="submit"]:active {
   display: flex;
   justify-content: space-between;
 }
+
 .landing-template {
   color: white;
   text-align: center;
 }
+
 .landing-profile-view {
   color: white;
-  border: 1px solid #fff;
+  border: 1px solid var(--global-color-white);
   width: fit-content;
-  background-color: #201f1f;
+  background-color: var(--global-color-background);
   padding: 10px;
   margin-top: 10px;
   margin-right: 2px;
   margin-left: 4px;
 }
+
 .landing-profile-view > p {
-  color: white;
+  color: var(--global-color-white);
 }
+
 .small-posts-box {
-  color: white;
+  color: var(--global-color-white);
 }
+
 .small-posts-box > p {
-  color: white;
+  color: var(--global-color-white);
 }
+
 .small-users-box {
-  color: white;
+  color: var(--global-color-white);
 }
+
 .posts-div {
-  color: white;
-  border: 1px solid #fff;
+  color: var(--global-color-white);
+  border: 1px solid var(--global-color-white);
   width: 100%;
-  background-color: #201f1f;
+  background-color: var(--global-color-background);
   margin-top: 10px;
   margin-right: 2px;
 }
+
 .posts-div-2 {
-  color: white;
-  border: 1px solid #fff;
-  background-color: #201f1f;
+  color: var(--global-color-white);
+  border: 1px solid var(--global-color-white);
+  background-color: var(--global-color-background);
   width: 50%;
   text-align: left;
   padding-left: 25px;
   margin-right: 2px;
   margin-left: 2px;
 }
+
 .homepage-title {
-  color: #ffa500;
+  color: var(--global-color-yellow);
 }
+
 .bottom-div {
   color: white;
   text-align: center;
@@ -861,6 +908,7 @@ input[type="submit"]:active {
 .no-recent {
   font-size: 40px;
 }
+
 /* ############################################ */
 /* Comments */
 /* ############################################ */
@@ -881,7 +929,7 @@ input[type="submit"]:active {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--global-color-white);
   margin: auto;
   width: 50%;
   padding-top: 1.75em;
@@ -902,7 +950,7 @@ input[type="submit"]:active {
 
 .ghost {
   animation: spooky 1.5s alternate infinite linear;
-  color: #face02;
+  color: var(--global-color-yellow);
   display: inline-block;
 }
 
