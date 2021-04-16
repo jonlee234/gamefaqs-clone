@@ -4,9 +4,12 @@
 *.pyc
 __pycache__
 db.sqlite3
+.db.sqlite3
 media
 migrations/
 .env
+gamefaqs_project/__pycache__/urls.cpython-39.pyc
+.gamefaqs_project/__pycache__/urls.cpython-39.pyc
 
 # Backup files # 
 *.bak 
