@@ -1,5 +1,4 @@
 {% extends "base.html" %} {% block content %}
-
 <div class="platform-container">
   <div class="row">
     <div class="col-md-12">
@@ -8,8 +7,7 @@
         {% for items in games %}
         <li>
           <a class="platform-list" href="/viewGames/{{items.id}}">
-            {{items.get_platform_display}}
-            {{items.title.title}}
+            {{items.get_platform_display}} {{items.title.title}}
           </a>
         </li>
         {% endfor %}
@@ -17,5 +15,4 @@
     </div>
   </div>
 </div>
-
 {% endblock %}

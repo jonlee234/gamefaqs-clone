@@ -7,7 +7,11 @@ django-bootstrap4==2.3.1
 django-online-users==0.1
 fontawesome==5.10.1.post1
 
+# In the same dir as settings.py please place a .env file, in this file please save string as follows.
 
+# SECRET_KEY=thisisyoursecretkey
+
+# NOTICE: do not use quotes at anypoint in this string, please ensure your .gitignore file contains .env before pushing repo.
 
 
 

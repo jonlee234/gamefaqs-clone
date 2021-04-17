@@ -21,7 +21,6 @@ def searchBy(title):
         if filter:
             print(filter)
             if str(search).lower() in str(items.title).lower():
-                # print(str(search))
                 id = items.id
                 game.append(Game.objects.get(id=id))
             return game

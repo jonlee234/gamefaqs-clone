@@ -1,10 +1,10 @@
-from django.shortcuts import render, HttpResponseRedirect, reverse
-from django.contrib.auth.decorators import login_required
 import random
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, HttpResponseRedirect, reverse
 
-from accounts.models import CustomUser
 from post.models import Post
 from game.models import Game
+from accounts.models import CustomUser
 
 
 @login_required
@@ -15,6 +15,8 @@ def index(request):
     count = Game.objects.all().count()
     slice = random.random() * (count - 1)
     games = Game.objects.all()[slice : slice + 1]
+
+
     return render(
         request,
         "index.html",
