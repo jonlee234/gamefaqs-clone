@@ -514,11 +514,19 @@ form {
 .user-list-title {
   font-size: 8rem;
   color: var(--global-color-white);
+  margin: 0px;
+  text-align: center;
+}
+
+.user-list-container {
+  margin: 0px;
+  text-align: center;
 }
 
 .online-users {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--global-color-yellow);
+  margin: 0px;
 }
 
 /* ############################################ */

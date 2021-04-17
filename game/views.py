@@ -54,7 +54,6 @@ class AddGameView(LoginRequiredMixin, View):
                     description=data["description"],
                     platform=data["platform"],
                     cover_art=data["cover_art"],
-                    alt=["Cover Art"],
                 )
                 game.save()
                 return HttpResponseRedirect(reverse("game-title", args=[game.id]))
