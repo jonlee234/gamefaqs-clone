@@ -43,6 +43,7 @@
           <ul>
             {% for post in object_list %}
             <li class="game-feed-li">
+                <img src="{{user.thumbnail.url}}" width="50" height="50"/>
               <a href="/posts/{{post.id}}" id="game-feed-title"
                 >{{ post.topic }}</a
               >
