@@ -4,6 +4,7 @@
   --global-color-black: #333;
   --global-color-yellow: #face02;
   --global-color-brawndo: #7eaa41;
+  font-family: "Roboto", sans-serif !important;
 }
 
 *,
@@ -17,6 +18,7 @@
 
 .content {
   background-color: var(--global-color-background) !important;
+
 }
 
 html,
@@ -25,6 +27,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--global-color-background);
+
 }
 
 a:hover {
@@ -36,6 +39,7 @@ header {
   background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 h1,
@@ -48,7 +52,7 @@ h6,
 p,
 label,
 a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   color: var(--global-color-white);
 }
 
