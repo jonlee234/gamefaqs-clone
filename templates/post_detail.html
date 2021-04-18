@@ -6,7 +6,12 @@
         <h1 class="post-title">Topic: {{ object.topic }}</h1>
         <p>Poster: {{ object.user_posted }}</p>
         <h2>{{ object.game }}</h2>
-        <img src="{{object.thumbnail.url}}" alt="post thumbnail" height="500px" width="500px" />
+        <img
+          src="{{object.thumbnail.url}}"
+          alt="post thumbnail"
+          height="500px"
+          width="500px"
+        />
         <p class="post-text">{{ object.text }}</p>
         <p class="date">Published: {{ object.post_date }}</p>
       </div>
@@ -15,10 +20,16 @@
 </div>
 <div class="comment-container">
   {% if user.is_authenticated %}
-  <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}">Leave your comment</a>
+  <a class="btn btn-warning" href="{% url 'add_comment_to_post' pk=post.pk %}"
+    >Leave your comment</a
+  >
   {% else %}
   <p>
-    You must be logged in to leave a comment <br /><a class="login-here" href="/login/">Login Here</a>
+    You must be logged in to leave a comment <br /><a
+      class="login-here"
+      href="/login/"
+      >Login Here</a
+    >
     --
     <a class="signup-here" href="/singup/">Signup Here</a>
   </p>
@@ -37,6 +48,3 @@
   <p>Claim Firsties!</p>
 </div>
 {% endfor %} {% endblock %}
-<!-- <a class="all-users" href="/user/{{comment.author_id}}">
-  {{comment.author}}
-</a> -->

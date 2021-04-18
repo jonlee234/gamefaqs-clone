@@ -31,7 +31,7 @@ PLATFORM_CHOICES = (
 
 class Post(models.Model):
     text = models.TextField(max_length=1000)
-    post_date = models.DateField(default=timezone.now)
+    post_date = models.DateTimeField(default=timezone.now)
     topic = models.CharField(max_length=40)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

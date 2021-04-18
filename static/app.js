@@ -32,8 +32,7 @@ window.addEventListener("load", function () {
     content: {
       message:
         "Cookie Notice: We and our partners use Cookies to improve and personalize your experience on the Site, measure the effectiveness of our Services, and show you ads and other content tailored to your interests as you navigate the web or interact with us across devices",
-      href:
-        "/static/assets/images/cookies.gif",
+      href: "/static/assets/images/cookies.gif",
     },
   });
 });

@@ -504,7 +504,7 @@ form {
   color: var(--global-color-yellow) !important;
   font-size: 2rem !important;
   text-transform: uppercase;
-  list-style:none;
+  list-style: none;
 }
 
 .author {
@@ -970,6 +970,7 @@ input[type="submit"]:active {
 
 #home-post {
   color: var(--global-color-white);
+  font-size: 2rem;
 }
 
 .no-recent {
