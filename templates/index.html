@@ -7,7 +7,7 @@
           <div class="landing-profile-view">
             <h1 class="homepage-title">{{user.username}}</h1>
             {% if user.avatar %}
-            <img src="{{user.avatar.url}}" alt=" User Avatar" width="100" height="100" />
+            <img src="{{user.avatar.url}}" alt=" User Avatar" width="100" height="100" style="border-radius: 50%;" />
             {% else %}
             <img src="https://vectorified.com/images/facebook-no-profile-picture-icon-26.jpg" alt=" User Avatar"
               width="100" height="100" />
@@ -44,6 +44,7 @@
             <div class="landing-games-list">
               <a class="landing-games-list">
                 <p>
+                  <img src="{{game.cover_art.url}}" alt="" width="75" height="75" />
                   <a style="font-size: 40px;" class="landing-games-list" href="viewGames/{{game.id}}">{{game.title}}</a>
                   <a style="font-size: 40px;" class="landing-games-list" href="viewGames/platform/{{game.platform}}/">
                     {{game.get_platform_display}}</a>
