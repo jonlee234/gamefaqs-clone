@@ -35,6 +35,6 @@ class SignupForm(forms.Form):
     bio = forms.CharField(max_length=140)
     platform_choice_field = forms.CharField(
         label="Favorite Platform",
-        max_length=2,
+        max_length=200,
         widget=forms.Select(choices=PLATFORM_CHOICES),
     )
