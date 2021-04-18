@@ -1021,3 +1021,8 @@ input[type="submit"]:active {
     transform: translatey(-0.15em);
   }
 }
+
+
+#gif {
+  width: 300px !important;
+}
