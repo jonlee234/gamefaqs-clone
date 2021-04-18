@@ -40,6 +40,7 @@
           </div>
           <div class="posts-div-2">
             <h4 class="homepage-title">Suggested Game</h4>
+            {% if games %}
             {% for game in games %}
             <div class="landing-games-list">
               <a class="landing-games-list">
@@ -52,6 +53,7 @@
                 {%endfor%}
               </a>
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
