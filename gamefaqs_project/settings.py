@@ -31,8 +31,8 @@ INSTALLED_APPS = [
     "game",
     "error_pages",
     "bootstrap4",
-    "fontawesome",
-    "jquery",
+    # "fontawesome",
+    # "jquery",
 ]
 
 MIDDLEWARE = [

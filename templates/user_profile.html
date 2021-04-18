@@ -9,7 +9,11 @@
             <!-- #####TODO make avatar Show###### -->
             <div class="profile-userpic">
               <!-- <div class="img-responsive">{{user.avatar}}</div> -->
-              <img src="{{user.avatar.url}}" class="img-responsive" alt="aavi" />
+              <img
+                src="{{user.avatar.url}}"
+                class="img-responsive"
+                alt="aavi"
+              />
             </div>
             <div class="profile-usertitle">
               <div class="profile-usertitle-name">{{user.username}}</div>
@@ -17,36 +21,48 @@
             </div>
 
             <div class="profile-userbuttons">
-              <!-- ##### TODO proper follow link ###### -->
-              <button type="button" class="btn btn-success btn-sm" href="/follow/1">
-                Follow
-              </button>
-              <!-- TODO Fix Users Email.  Users email is adding at the end of the sites url  I.E  http://localhost:8000/user/4/sdasdad@gmail.com-->
-              <button type="button" class="btn btn-danger btn-sm">
-                <a id="email-link" href="{{user.email}}" target="_blank">{{user.email}}</a>
-              </button>
-            </div>
+              <!-- ##### TODO Set this up or remove it.###### -->
 
-            <div class="portlet light bordered">
-              <div class="row list-separated profile-stat">
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-text">Online</div>
-                  <div class="uppercase profile-stat-title">{{user.is_online}}</div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">{{user.followers.count}}</div>
-                  <div class="uppercase profile-stat-text">Followers</div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">{{user.platform_choice_field}}</div>
-                  <div class="uppercase profile-stat-text">Platform </div>
-                </div>
-              </div>
-              <div>
-                <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
-                <span class="profile-desc-text"> {{user.bio}} </span>
-              </div>
+              <!-- <button type="button" class="btn btn-success btn-sm" href="/follow/1">
+                Follow
+              </button> -->
+
+              <!-- TODO Fix Users Email.  Users email is adding at the end of the sites url  I.E  http://localhost:8000/user/4/sdasdad@gmail.com-->
+
+              <button type="button" class="btn btn-success btn-sm">
+                <a id="email-link" href="{{user.email}}" target="_blank"
+                  >{{user.email}}</a
+                >
+              </button>
             </div>
+            <div >
+              <div class="portlet light bordered" id="stats">
+                <div class="row list-separated profile-stat">
+                  <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="uppercase profile-stat-text">Online</div>
+                    <div class="uppercase profile-stat-title">
+                      {{user.is_online}}
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="uppercase profile-stat-title">
+                      {{user.followers.count}}
+                    </div>
+                    <div class="uppercase profile-stat-text">Followers</div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="uppercase profile-stat-title">
+                      {{user.platform_choice_field}}
+                    </div>
+                    <div class="uppercase profile-stat-text">Platform</div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
+                  <span class="profile-desc-text"> {{user.bio}} </span>
+                </div>
+              </div>
+              </div>
           </div>
         </div>
         <div class="col-md-9" id="profile-hero">
