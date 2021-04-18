@@ -547,14 +547,14 @@ form {
 /* PROFILE PAGE */
 /* ############################################ */
 
-.profile {
-  margin: 0;
-}
+
 
 .profile-sidebar {
   text-align: center;
   background-color: #c2932e !important;
+  border: 2px inset var(--global-color-brawndo);
 }
+
 
 .porifle-desc-text {
   word-wrap: break-word;
@@ -564,10 +564,11 @@ form {
   background-image: url(/static/assets/images/pc-gaming-pc.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+   border: 2px outset var(--global-color-brawndo);
 }
 
 .profile-sidebar {
-  padding: 70px 0 70px 0;
+  padding: 20px 5px 55px 5px;
 }
 
 #email-link {
@@ -599,8 +600,11 @@ form {
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px !important;
 }
-
+#stats {
+  margin-bottom: 20px !important;
+}
 .profile-userbuttons .btn {
   text-transform: uppercase;
   font-size: 11px;
@@ -1016,4 +1020,9 @@ input[type="submit"]:active {
   to {
     transform: translatey(-0.15em);
   }
+}
+
+
+#gif {
+  width: 300px !important;
 }
