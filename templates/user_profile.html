@@ -5,14 +5,12 @@
     <div class="container">
       <div class="row profile">
         <div class="col-md-3">
-          <div class="profile-sidebar" style="background-color: #b3b3b3">
-            <!-- #####TODO make avatar Show###### -->
+          <div class="profile-sidebar">
             <div class="profile-userpic">
-              <!-- <div class="img-responsive">{{user.avatar}}</div> -->
               <img
                 src="{{user.avatar.url}}"
                 class="img-responsive"
-                alt="aavi"
+                alt="Avatar"
               />
             </div>
             <div class="profile-usertitle">
@@ -35,7 +33,7 @@
                 >
               </button>
             </div>
-            <div >
+            <div>
               <div class="portlet light bordered" id="stats">
                 <div class="row list-separated profile-stat">
                   <div class="col-md-4 col-sm-4 col-xs-6">
@@ -62,7 +60,7 @@
                   <span class="profile-desc-text"> {{user.bio}} </span>
                 </div>
               </div>
-              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-9" id="profile-hero">

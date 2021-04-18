@@ -9,7 +9,7 @@
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
         <div class="card-gif">
-          <img src="/static/assets/images/mariogif.gif" />
+          <img alt="Mario Gif" src="/static/assets/images/mariogif.gif" />
         </div>
       </div>
     </div>
@@ -47,7 +47,12 @@
             <li>
               <a class="landing-games-list">
                 <p class="game-post">
-                  <img src="{{game.cover_art.url}}" width="50" height="50" />
+                  <img
+                    src="{{game.cover_art.url}}"
+                    alt="Game Cover Art"
+                    width="50"
+                    height="50"
+                  />
                   <a class="landing-games-list" href="/viewGames/{{game.id}}"
                     >{{game.title}}</a
                   >
@@ -67,8 +72,6 @@
               >
                 {{items.get_platform_display}}</a
               >
-              <!-- <a href="/user/{{user.id}}/" id="post-feed-user">
-                by: {{user.username}}</a> -->
             </li>
           </ul>
           {% endfor %}

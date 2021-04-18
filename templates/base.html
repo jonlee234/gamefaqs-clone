@@ -22,7 +22,11 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
+    />
     <!-- / -->
     <!-- Favicon -->
     <link
@@ -85,156 +89,192 @@
               <li>
                 <a class="nav-link" href="/">home</a>
               </li>
-              <!-- Reactivae upon page completion -->
-              <!-- <li>
-
-                <a class="nav-link" href="/viewGames/platform/">platforms</a>
-              </li> -->
-            <li>
-              <a class="nav-link" href="/viewGames/">games</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/viewUsers/">players</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/posts/">feed</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/logout/">logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  {% endblock %}{% block carousel %}
-  <div class="container">
-    <div class="row">
-      <div id="carousel-generic" class="carousel slide" data-ride="carousel">
-        <!-- SLIDE INDICATIORS -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-generic" data-slide-to="3"></li>
-          <li data-target="#carousel-generic" data-slide-to="4"></li>
-          <li data-target="#carousel-generic" data-slide-to="5"></li>
-          <li data-target="#carousel-generic" data-slide-to="6"></li>
-          <li data-target="#carousel-generic" data-slide-to="7"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <!-- Slide 1 -->
-          <div class="item active">
-            <img src="/static/assets/images/Dying_light2.jpeg" alt="Dying light 2" />
+              <li>
+                <a class="nav-link" href="/viewGames/">games</a>
+              </li>
+              <li>
+                <a class="nav-link" href="/viewUsers/">players</a>
+              </li>
+              <li>
+                <a class="nav-link" href="/posts/">feed</a>
+              </li>
+              <li>
+                <a class="nav-link" href="/logout/">logout</a>
+              </li>
+            </ul>
           </div>
-          <!-- Slide 2 -->
-          <div class="item">
-            <img src="/static/assets/images/Halo_Infinite.jpeg" alt="Halo Infinite" />
-          </div>
-          <!-- Slide 3 -->
-          <div class="item">
-            <img src="/static/assets/images/Hitman3.jpeg" alt="Hitman 3" />
-          </div>
-          <!-- Slide 4 -->
-          <div class="item">
-            <img src="/static/assets/images/Mario_world.jpeg" alt="Mario World" />
-          </div>
-          <!-- Slide 5 -->
-          <div class="item">
-            <img src="/static/assets/images/new-pokemon-snap-switch.jpeg" alt="Pokemon Snap" />
-          </div>
-          <!-- Slide 6 -->
-          <div class="item">
-            <img src="/static/assets/images/Mass_Effect.jpeg" alt="Mass Effect" />
-          </div>
-          <!-- Slide 8 -->
-          <div class="item">
-            <img src="/static/assets/images/Deathloop.jpeg" alt="Horizon Forbidden West" />
-          </div>
-          <!-- Slide 9 -->
-          <div class="item">
-            <img src="/static/assets/images/Doritos-Mountain-Dew.jpeg" alt="Horizon Forbidden West" />
-          </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-generic" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
+        </nav>
       </div>
-      <!-- Carousel END -->
     </div>
-  </div>
-</header>
-{% endblock %}{% block body %}
-<!-- ###################################### -->
-<!-- DO NOT EDIT THE BODY PLEASE!! -->
-<!-- ###################################### -->
-
-<body>
-  <div class="content">{% block content %}{% endblock %}</div>
-</body>
-<!-- ###################################### -->
-<!-- Footer -->
-<!-- ###################################### -->
-{% endblock %} {% block Footer %}
-<div class="footer-dark">
-  <footer>
+    {% endblock %}{% block carousel %}
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-3 item">
-          <!-- footer nav-->
-          <h3>QUICK LINKS</h3>
-          <ul>
-            <li>
-              <a href="/"><span class="footer_link1">Home</span></a>
-            </li>
-            <li>
-              <a href="/user/1/"><span class="footer_link2">Players</span></a>
-            </li>
-            <li>
-              <a href="/viewGames/"><span class="footer_link3">Games</span></a>
-            </li>
-            <li>
-              <a href="/posts/"><span class="footer_link5"></span>Posts</a>
-            </li>
-          </ul>
+        <div id="carousel-generic" class="carousel slide" data-ride="carousel">
+          <!-- SLIDE INDICATIORS -->
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carousel-generic"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carousel-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-generic" data-slide-to="5"></li>
+            <li data-target="#carousel-generic" data-slide-to="6"></li>
+            <li data-target="#carousel-generic" data-slide-to="7"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="item active">
+              <img
+                src="/static/assets/images/Dying_light2.jpeg"
+                alt="Dying light 2"
+              />
+            </div>
+            <!-- Slide 2 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Halo_Infinite.jpeg"
+                alt="Halo Infinite"
+              />
+            </div>
+            <!-- Slide 3 -->
+            <div class="item">
+              <img src="/static/assets/images/Hitman3.jpeg" alt="Hitman 3" />
+            </div>
+            <!-- Slide 4 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Mario_world.jpeg"
+                alt="Mario World"
+              />
+            </div>
+            <!-- Slide 5 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/new-pokemon-snap-switch.jpeg"
+                alt="Pokemon Snap"
+              />
+            </div>
+            <!-- Slide 6 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Mass_Effect.jpeg"
+                alt="Mass Effect"
+              />
+            </div>
+            <!-- Slide 8 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Deathloop.jpeg"
+                alt="Horizon Forbidden West"
+              />
+            </div>
+            <!-- Slide 9 -->
+            <div class="item">
+              <img
+                src="/static/assets/images/Doritos-Mountain-Dew.jpeg"
+                alt="Horizon Forbidden West"
+              />
+            </div>
+          </div>
+          <!-- Controls -->
+          <a
+            class="left carousel-control"
+            href="#carousel-generic"
+            data-slide="prev"
+          >
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a
+            class="right carousel-control"
+            href="#carousel-generic"
+            data-slide="next"
+          >
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
         </div>
-        <div class="col-sm-6 col-md-3 item">
-          <h3>GAMES</h3>
-          <ul>
-            <li>
-              <a href="https://github.com/jonlee234"><span class="footer_game_link1"></span>Jonathane Leavell</a>
-            </li>
-            <li>
-              <a href="https://github.com/codeNameGizzie"><span class="footer_game_link2"></span>Shavonne Carson</a>
-            </li>
-            <li>
-              <a href="https://github.com/RMHavelaar"><span class="footer_game_link3"></span>Robert Havelaar</a>
-            </li>
-            <li>
-              <a href="https://github.com/delpercio"><span class="footer_game_link4"></span>Steven Delpercio</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /footer nav-->
-        <div class="col-md-6 item text">
-          <h3>Kenzie Academy Team Charity Capstone</h3>
-          <p class="about-us">
-            After a year an intense year of studying at Kenzie Academy we are
-            finally at the end and to show off what all we have learned. We
-            present to you Gamr. Gamr is a website dedicated to listing games
-            and user-written walkthroughs / cheats for those games.
-          </p>
-        </div>
+        <!-- Carousel END -->
       </div>
     </div>
-  </footer>
-  <!-- End Of Footer -->
-  {% endblock %}
-</div>
+  </header>
+  {% endblock %}{% block body %}
+  <!-- ###################################### -->
+  <!-- DO NOT EDIT THE BODY PLEASE!! -->
+  <!-- ###################################### -->
 
+  <body>
+    <div class="content">{% block content %}{% endblock %}</div>
+  </body>
+
+  <!-- ###################################### -->
+  <!-- Footer -->
+  <!-- ###################################### -->
+  {% endblock %} {% block Footer %}
+  <div class="footer-dark">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-3 item">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="/"><span class="footer_link1">Home</span></a>
+              </li>
+              <li>
+                <a href="/user/1/"><span class="footer_link2">Players</span></a>
+              </li>
+              <li>
+                <a href="/viewGames/"
+                  ><span class="footer_link3">Games</span></a
+                >
+              </li>
+              <li>
+                <a href="/posts/"><span class="footer_link5"></span>Posts</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3 item">
+            <h3>GAMES</h3>
+            <ul>
+              <li>
+                <a href="https://github.com/jonlee234"
+                  ><span class="footer_game_link1"></span>Jonathane Leavell</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/codeNameGizzie"
+                  ><span class="footer_game_link2"></span>Shavonne Carson</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/RMHavelaar"
+                  ><span class="footer_game_link3"></span>Robert Havelaar</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/delpercio"
+                  ><span class="footer_game_link4"></span>Steven Delpercio</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 item text">
+            <h3>Kenzie Academy Team Charity Capstone</h3>
+            <p class="about-us">
+              After a year an intense year of studying at Kenzie Academy we are
+              finally at the end and to show off what all we have learned. We
+              present to you Gamr. Gamr is a website dedicated to listing games
+              and user-written walkthroughs / cheats for those games.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {% endblock %}
+  </div>
 </html>

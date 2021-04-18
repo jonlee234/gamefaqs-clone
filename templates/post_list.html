@@ -8,10 +8,14 @@
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
-        <img id="gif" src="/static/assets/images/funnymario.gif" />
+        <img
+          id="gif"
+          alt="Funny Mario GIF"
+          src="/static/assets/images/funnymario.gif"
+        />
       </div>
     </div>
-    <div class="col-md-6 gedf-main" >
+    <div class="col-md-6 gedf-main">
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -30,7 +34,12 @@
           <ul>
             {% for post in object_list reversed%}
             <li class="game-feed-li">
-              <img src="{{user.thumbnail.url}}" width="50" height="50" />
+              <img
+                src="{{user.thumbnail.url}}"
+                alt="post thumbnail"
+                width="50"
+                height="50"
+              />
               <a href="/posts/{{post.id}}" id="game-feed-title"
                 >{{ post.topic }}</a
               >
