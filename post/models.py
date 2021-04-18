@@ -50,7 +50,6 @@ class Comment(models.Model):
         Post, on_delete=models.CASCADE, max_length=1200, related_name="comments"
     )
     author = models.CharField(max_length=200)
-    author_id = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
