@@ -1,54 +1,47 @@
 {% extends "base.html" %} {% block content %}
-
-<body>
+<div class="container-img">
   <br />
-  <div class="container-img">
+  <div class="testing">
     <div class="container">
       <div class="row profile">
         <div class="col-md-3">
           <div class="profile-sidebar" style="background-color: #b3b3b3">
-            <!-- SIDEBAR USERPIC -->
-            <!-- #####TODO make avatar###### -->
+            <!-- #####TODO make avatar Show###### -->
             <div class="profile-userpic">
               <!-- <div class="img-responsive">{{user.avatar}}</div> -->
               <img src="{{user.avatar.url}}" class="img-responsive" alt="aavi" />
             </div>
-            <!-- END SIDEBAR USERPIC -->
-            <!-- SIDEBAR USER TITLE -->
             <div class="profile-usertitle">
               <div class="profile-usertitle-name">{{user.username}}</div>
               <div class="profile-usertitle-job">{{user.fullname}}</div>
             </div>
-            <!-- END SIDEBAR USER TITLE -->
-            <!-- SIDEBAR BUTTONS -->
+
             <div class="profile-userbuttons">
               <!-- ##### TODO proper follow link ###### -->
               <button type="button" class="btn btn-success btn-sm" href="/follow/1">
                 Follow
               </button>
-              <!-- Non-functional, Style Purposes only -->
+              <!-- TODO Fix Users Email.  Users email is adding at the end of the sites url  I.E  http://localhost:8000/user/4/sdasdad@gmail.com-->
               <button type="button" class="btn btn-danger btn-sm">
-                Message
+                <a id="email-link" href="{{user.email}}" target="_blank">{{user.email}}</a>
               </button>
             </div>
 
             <div class="portlet light bordered">
-              <!-- STATS -->
               <div class="row list-separated profile-stat">
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">1,187</div>
-                  <div class="uppercase profile-stat-text">Posts</div>
+                  <div class="uppercase profile-stat-text">Online</div>
+                  <div class="uppercase profile-stat-title">{{user.is_online}}</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">21,956</div>
+                  <div class="uppercase profile-stat-title">{{user.followers.count}}</div>
                   <div class="uppercase profile-stat-text">Followers</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">3856</div>
-                  <div class="uppercase profile-stat-text">Follows</div>
+                  <div class="uppercase profile-stat-title">{{user.platform_choice_field}}</div>
+                  <div class="uppercase profile-stat-text">Platform </div>
                 </div>
               </div>
-              <!-- END STATS -->
               <div>
                 <h4 class="profile-desc-title">{{user.username}}'s Bio:</h4>
                 <span class="profile-desc-text"> {{user.bio}} </span>
@@ -56,17 +49,11 @@
             </div>
           </div>
         </div>
-        <!-- #####TODO STRETCH GOAL add most recent posts for who evers profile you are viewing.##### -->
-        <div class="col-md-9" style="background-color: #b3b3b3">
-          <div class="profile-content" style="background-color: #b3b3b3">
-            Most Recent Posts
-          </div>
-
-
-
+        <div class="col-md-9" id="profile-hero">
+          <div class="profile-content"></div>
         </div>
       </div>
-      {% endblock %}
     </div>
   </div>
-</body>
+  {% endblock %}
+</div>
