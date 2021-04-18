@@ -34,7 +34,11 @@
             <h4 class="homepage-title">New Gamrs</h4>
             {% for users in users_list %}
             <div class="small-users-box">
-              <div>{{users.username}} {{users.platform_choice_field}}</div>
+              <p>
+                <a href="/user/{{users.id}}/" id="game-feed-title">{{users.username}}</a>
+                Plays On: <a class="landing-games-list"
+                  href="/viewGames/platform/{{users.platform_choice_field}}/">{{users.platform_choice_field}}</a>
+              </p>
             </div>
             {%endfor%}
           </div>

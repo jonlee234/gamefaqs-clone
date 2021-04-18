@@ -26,7 +26,7 @@
   <hr />
   {% for comment in post.comments.all %}
   <div class="comment">
-    <span class="author"><strong>{{ comment.author }}</strong></span>
+    <span class="author"><strong>{{ comment.author}}</strong></span>
     <span class="comment-text" style="color: #fff">
       <p>{{ comment.text|linebreaks }}</p>
     </span>
@@ -37,3 +37,6 @@
   <p>Claim Firsties!</p>
 </div>
 {% endfor %} {% endblock %}
+<!-- <a class="all-users" href="/user/{{comment.author_id}}">
+  {{comment.author}}
+</a> -->

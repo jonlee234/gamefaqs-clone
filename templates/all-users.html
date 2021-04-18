@@ -22,10 +22,10 @@
         <h1 class="user-list-title">View all users</h1>
         <div class="user-list-container">
           <br />
-          {% for items in user %}
+          {% for users in all_users %}
           <div>
             <a class="all-users" href="/user/{{items.id}}">
-              {{items.username}}
+              {{users.username}}
             </a>
           </div>
           {% endfor %}
