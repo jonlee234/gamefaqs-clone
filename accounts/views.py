@@ -25,6 +25,7 @@ def index(request):
 @login_required
 def user_profile_view(request, CustomUser_id):
     my_Custom_User = CustomUser.objects.get(id=CustomUser_id)
+    user_info = CustomUser.objects.get(id=CustomUser_id)
     return render(request, "user_profile.html", {"user": my_Custom_User})
 
 

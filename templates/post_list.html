@@ -29,13 +29,7 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="game-tab"
-                href="/post/add/"
-                role="tab"
-                >Make a Post</a
-              >
+              <a class="nav-link active" id="game-tab" href="/post/add/" role="tab">Make a Post</a>
             </li>
           </ul>
         </div>
@@ -43,20 +37,12 @@
           <ul>
             {% for post in object_list %}
             <li class="game-feed-li">
-              <a href="/posts/{{post.id}}" id="game-feed-title"
-                >{{ post.topic }}</a
-              >
+              <a href="/posts/{{post.id}}" id="game-feed-title">{{ post.topic }}</a>
               -
-              <span class="comments-title-1"
-                ><a
-                  href="{% url 'post_detail' pk=post.id %}"
-                  id="game-feed-title"
-                  >Comments: {{ post.comments.count }}</a
-                >
+              <span class="comments-title-1"><a href="{% url 'post_detail' pk=post.id %}" id="game-feed-title">Comments:
+                  {{ post.comments.count }}</a>
               </span>
-              <a href="/user/{{user.id}}/" id="game-feed-title"
-                >by: {{user.username}}</a
-              >
+              <a href="/user/{{user.id}}/" id="game-feed-title">by: {{post.user_posted}}</a>
               <span class="post-date">- @{{ post.post_date }}</span>
             </li>
             {% empty %}
