@@ -35,7 +35,7 @@ class Post(models.Model):
     topic = models.CharField(max_length=40)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    thumbnail = models.ImageField(null=True, blank=True, upload_to="media/")
+    thumbnail = models.ImageField(null=True, blank=True, upload_to="media/", default = "static/assets/images/hs.jpeg")
     platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)
 
     def get_absolute_url(self):
