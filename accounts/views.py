@@ -55,7 +55,8 @@ def unfavorite_game_view(request, game_id):
 
 def user_list_view(request):
     user = CustomUser.objects.filter(is_online=True)
-    return render(request, "all-users.html", {"user": user})
+    all_users = CustomUser.objects.all()
+    return render(request, "all-users.html", {"user": user, "all_users":all_users})
 
 
 # def profile_view(request, username):
