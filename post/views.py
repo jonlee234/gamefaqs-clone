@@ -13,7 +13,7 @@ from post.models import Post, Comment
 class PostCreate(LoginRequiredMixin, CreateView):
     template_name = "add_post.html"
     model = Post
-    fields = ["topic", "game", "platforms", "text", "post_date", "thumbnail"]
+    fields = ["topic", "game",  "text",  "thumbnail"]
 
     def form_valid(self, form):
         form.instance.user_posted = self.request.user

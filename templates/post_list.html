@@ -8,7 +8,11 @@
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
-        <img id="gif" alt="Funny Mario GIF" src="/static/assets/images/funnymario.gif" />
+        <img
+          id="gif"
+          alt="Funny Mario GIF"
+          src="/static/assets/images/funnymario.gif"
+        />
       </div>
     </div>
     <div class="col-md-6 gedf-main">
@@ -16,7 +20,13 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="game-tab" href="/post/add/" role="tab">Make a Post</a>
+              <a
+                class="nav-link active"
+                id="game-tab"
+                href="/post/add/"
+                role="tab"
+                >Add a Post</a
+              >
             </li>
           </ul>
         </div>
@@ -25,12 +35,20 @@
             {% for post in object_list reversed%}
             <li class="game-feed-li">
               <img src="{{post.thumbnail.url}}" width="50" height="50" />
-              <a href="/posts/{{post.id}}" id="game-feed-title">{{ post.topic }}</a>
+              <a href="/posts/{{post.id}}" id="game-feed-title"
+                >{{ post.topic }}</a
+              >
               -
-              <span class="comments-title-1"><a href="{% url 'post_detail' pk=post.id %}" id="game-feed-title">Comments:
-                  {{ post.comments.count }}</a>
+              <span class="comments-title-1"
+                ><a
+                  href="{% url 'post_detail' pk=post.id %}"
+                  id="game-feed-title"
+                  >Comments: {{ post.comments.count }}</a
+                >
               </span>
-              <a href="/user/{{user.id}}/" id="game-feed-title">by: {{post.user_posted}}</a>
+              <a href="/user/{{user.id}}/" id="game-feed-title"
+                >by: {{post.user_posted}}</a
+              >
               <span class="post-date">- @{{ post.post_date }}</span>
             </li>
             {% empty %}
