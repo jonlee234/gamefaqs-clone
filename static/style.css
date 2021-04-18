@@ -481,8 +481,13 @@ form {
   color: var(--global-color-yellow);
 }
 
-.post-title {
-  font-size: 5rem;
+.game-post {
+  font-size: 2rem !important;
+  color: var(--global-color-yellow) !important;
+}
+
+.landing-games-list {
+  color: var(--global-color-yellow) !important;
 }
 
 .author {
@@ -507,15 +512,24 @@ form {
   font-size: 3rem;
 }
 
+.posts-div-2 {
+  text-align: center !important;
+}
+
 /* ############################################ */
 /* Online User List */
 /* ############################################ */
 
 .user-list-title {
-  font-size: 8rem;
+  font-size: 6rem;
   color: var(--global-color-white);
   margin: 0px;
   text-align: center;
+}
+
+.all-users {
+  color: var(--global-color-yellow);
+  font-size: 3rem;
 }
 
 .user-list-container {
@@ -525,7 +539,7 @@ form {
 
 .online-users {
   font-size: 4rem;
-  color: var(--global-color-yellow);
+  color: var(--global-color-background);
   margin: 0px;
 }
 
@@ -539,18 +553,25 @@ form {
 
 .profile-sidebar {
   text-align: center;
+  background-color: #c2932e !important;
 }
 
 .porifle-desc-text {
   word-wrap: break-word;
 }
 
-.container-img {
-  background-color: var(--global-color-background);
+#profile-hero {
+  background-image: url(/static/assets/images/pc-gaming-pc.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .profile-sidebar {
-  padding: 20px 0 10px 0;
+  padding: 70px 0 70px 0;
+}
+
+#email-link {
+  color: var(--global-color-white) !important;
 }
 
 .profile-userpic img {
@@ -569,7 +590,7 @@ form {
 }
 
 .profile-usertitle-name {
-  color: #5a7391;
+  color: var(--global-color-black);
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -597,7 +618,7 @@ form {
 }
 
 .profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
+  border-bottom: 1px solid #058cf3;
 }
 
 .profile-usermenu ul li:last-child {
@@ -640,15 +661,29 @@ textarea {
 .search-results-container {
   text-align: center;
   color: var(--global-color-white);
+  background-image: url(/static/assets/images/ghosts.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 0px 500px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border: 1px solid var(--global-color-brawndo);
+}
+
+.search-add-game {
+  font-size: 2rem !important;
+  color: var(--global-color-yellow);
 }
 
 .search-result {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--global-color-yellow);
 }
 
 .search-results-title {
-  font-size: 8rem;
+  font-size: 6rem;
 }
 
 /* ############################################ */
