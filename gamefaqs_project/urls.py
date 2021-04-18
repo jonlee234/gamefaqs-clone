@@ -42,7 +42,7 @@ urlpatterns = [
     path("viewGames/", AllGameView.as_view(), name="games"),
     path("viewGames/<int:game_id>/", GameTitleView, name="game-title"),
     path("newGame/", AddGameView.as_view(), name="add-game"),
-    path("viewGames/platform/<int:platform>/", PlatformView, name="platform"),
+    path("viewGames/platform/<str:platform>/", PlatformView, name="platform"),
     path("viewGames/search/<str:title>/", Search, name="search"),
     # Auth Links
     path("login/", auth_view.login_view, name="login"),
