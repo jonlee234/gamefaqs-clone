@@ -1,13 +1,16 @@
 {% extends "base.html" %} {% block content %}
 <div class="search-results-container">
   <br />
-  <h1 class="search-results-title">Your Search results:</h1>
+  <h1 class="search-results-title">Heres what we found for you</h1>
   {% if games %} {% for items in games %}
-  <a class="search-result" href="/viewGames/{{items.id}}">
-    {{ items.title.title }}<br />
-  </a>
-  {% endfor %} {% else %}
-  <h1>No results found</h1>
+  <li>
+    <a class="search-result" href="/viewGames/{{items.id}}">
+      {{ items.title.title }}<br />
+    </a>
+    {% endfor %} {% else %}
+    <h1>&#x1F914; No results found &#x1F914;</h1>
+    <a class="search-add-game" href="/newGame/" role="tab">Add your game</a>
+  </li>
   {% endif %}
 </div>
 {% endblock %}

@@ -6,7 +6,7 @@
       <div class="row profile">
         <div class="col-md-3">
           <div class="profile-sidebar" style="background-color: #b3b3b3">
-            <h1 class="user-list-title">Online</h1>
+            <h1 class="user-list-title">View online users</h1>
             <div class="user-list-container">
               <br />
               {% for items in user %}
@@ -19,18 +19,18 @@
             </div>
           </div>
         </div>
-        <h1 class="user-list-title">View all users</h1>
-        <div class="user-list-container">
-          <br />
-          {% for items in user %}
-          <div>
-            <a class="all-users" href="/user/{{items.id}}">
-              {{items.username}}
-            </a>
-          </div>
-          {% endfor %}
-        </div>
       </div>
+    </div>
+    <h1 class="user-list-title">View all users</h1>
+    <div class="user-list-container">
+      <br />
+      {% for items in user %}
+      <div>
+        <a class="online-users" href="/user/{{items.id}}">
+          {{items.username}}
+        </a>
+      </div>
+      {% endfor %}
     </div>
   </div>
   {% endblock %}

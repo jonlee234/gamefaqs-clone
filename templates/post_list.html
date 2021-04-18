@@ -41,7 +41,7 @@
         </div>
         <div class="post-feed">
           <ul>
-            {% for post in object_list %}
+            {% for post in object_list reversed%}
             <li class="game-feed-li">
                 <img src="{{user.thumbnail.url}}" width="50" height="50"/>
               <a href="/posts/{{post.id}}" id="game-feed-title"

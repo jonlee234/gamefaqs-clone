@@ -521,10 +521,15 @@ form {
 /* ############################################ */
 
 .user-list-title {
-  font-size: 8rem;
+  font-size: 6rem;
   color: var(--global-color-white);
   margin: 0px;
   text-align: center;
+}
+
+.all-users {
+  color: var(--global-color-yellow);
+  font-size: 3rem;
 }
 
 .user-list-container {
@@ -534,7 +539,7 @@ form {
 
 .online-users {
   font-size: 4rem;
-  color: var(--global-color-yellow);
+  color: var(--global-color-background);
   margin: 0px;
 }
 
@@ -548,7 +553,7 @@ form {
 
 .profile-sidebar {
   text-align: center;
-  background-color: #C2932E !important;
+  background-color: #c2932e !important;
 }
 
 .porifle-desc-text {
@@ -656,15 +661,29 @@ textarea {
 .search-results-container {
   text-align: center;
   color: var(--global-color-white);
+  background-image: url(/static/assets/images/ghosts.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 0px 500px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border: 1px solid var(--global-color-brawndo);
+}
+
+.search-add-game {
+  font-size: 2rem !important;
+  color: var(--global-color-yellow);
 }
 
 .search-result {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--global-color-yellow);
 }
 
 .search-results-title {
-  font-size: 8rem;
+  font-size: 6rem;
 }
 
 /* ############################################ */

@@ -38,16 +38,16 @@
             <div class="portlet light bordered">
               <div class="row list-separated profile-stat">
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">1,187</div>
-                  <div class="uppercase profile-stat-text">Posts</div>
+                  <div class="uppercase profile-stat-text">Online</div>
+                  <div class="uppercase profile-stat-title">{{user.is_online}}</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">21,956</div>
+                  <div class="uppercase profile-stat-title">{{user.followers.count}}</div>
                   <div class="uppercase profile-stat-text">Followers</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                  <div class="uppercase profile-stat-title">3856</div>
-                  <div class="uppercase profile-stat-text">Follows</div>
+                  <div class="uppercase profile-stat-title">{{user.platform_choice_field}}</div>
+                  <div class="uppercase profile-stat-text">Platform </div>
                 </div>
               </div>
               <div>
