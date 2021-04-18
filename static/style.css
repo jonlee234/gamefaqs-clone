@@ -390,9 +390,19 @@ form {
   font-size: 5rem;
 }
 
+#game-tab:hover {
+  background-color: var(--global-color-brawndo);
+  color: var(--global-color-yellow);
+}
+
+.small-users-box {
+  text-transform: uppercase;
+}
+
 #game-feed-title {
   color: var(--global-color-yellow) !important;
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .game-info-container {
@@ -486,8 +496,15 @@ form {
   color: var(--global-color-yellow) !important;
 }
 
+.game-feed {
+  font-size: 2rem !important;
+}
+
 .landing-games-list {
   color: var(--global-color-yellow) !important;
+  font-size: 2rem !important;
+  text-transform: uppercase;
+  list-style:none;
 }
 
 .author {
@@ -509,7 +526,7 @@ form {
 
 .game-feed-li {
   color: var(--global-color-white);
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .posts-div-2 {
@@ -547,14 +564,11 @@ form {
 /* PROFILE PAGE */
 /* ############################################ */
 
-
-
 .profile-sidebar {
   text-align: center;
   background-color: #c2932e !important;
   border: 2px inset var(--global-color-brawndo);
 }
-
 
 .porifle-desc-text {
   word-wrap: break-word;
@@ -564,7 +578,7 @@ form {
   background-image: url(/static/assets/images/pc-gaming-pc.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-   border: 2px outset var(--global-color-brawndo);
+  border: 2px outset var(--global-color-brawndo);
 }
 
 .profile-sidebar {
@@ -893,10 +907,12 @@ input[type="submit"]:active {
 .landing-template {
   color: white;
   text-align: center;
+
+  /* max-width: 200%; */
 }
 
 .landing-profile-view {
-  color: white;
+  color: var(--global-color-white);
   border: 1px solid var(--global-color-white);
   width: fit-content;
   background-color: var(--global-color-background);
@@ -904,10 +920,6 @@ input[type="submit"]:active {
   margin-top: 10px;
   margin-right: 2px;
   margin-left: 4px;
-}
-
-.landing-profile-view > p {
-  color: var(--global-color-white);
 }
 
 .small-posts-box {
@@ -944,6 +956,7 @@ input[type="submit"]:active {
 
 .homepage-title {
   color: var(--global-color-yellow);
+  font-size: 3rem !important;
 }
 
 .bottom-div {
@@ -963,8 +976,9 @@ input[type="submit"]:active {
   font-size: 40px;
 }
 
-.landing-games-list {
-  color: var(--global-color-white);
+.no-recent1 {
+  color: var(--global-color-yellow);
+  font-size: 40px !important;
 }
 
 /* ############################################ */
@@ -1022,7 +1036,12 @@ input[type="submit"]:active {
   }
 }
 
-
 #gif {
   width: 300px !important;
+}
+
+.about-me {
+  display: inline-block;
+  word-wrap: break-word !important;
+  width: 50%;
 }
