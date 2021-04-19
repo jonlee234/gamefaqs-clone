@@ -7,26 +7,26 @@ from game.models import Game
 
 # Create your models here.
 PLATFORM_CHOICES = (
-        ("PC", "PC"),
-        ("PS5", "PS5"),
-        ("XSX", "XSX"),
-        ("Switch", "Switch"),
-        ("iOS", "iOS"),
-        ("Android", "Android"),
-        ("Arcade", "Arcade"),
-        ("PS4", "PS4"),
-        ("PS3", "PS3"),
-        ("Xbox One", "Xbox One"),
-        ("Xbox 360", "Xbox 360"),
-        ("Sega", "Sega"),
-        ("Wii U", "Wii U"),
-        ("Wii", "Wii"),
-        ("PSP", "PSP"),
-        ("Vita", "Vita"),
-        ("3DS", "3DS"),
-        ("RetoPy", "RetoPy"),
-        ("Other Systems", "Other Systems"),
-    )
+    ("PC", "PC"),
+    ("PS5", "PS5"),
+    ("XSX", "XSX"),
+    ("Switch", "Switch"),
+    ("iOS", "iOS"),
+    ("Android", "Android"),
+    ("Arcade", "Arcade"),
+    ("PS4", "PS4"),
+    ("PS3", "PS3"),
+    ("Xbox One", "Xbox One"),
+    ("Xbox 360", "Xbox 360"),
+    ("Sega", "Sega"),
+    ("Wii U", "Wii U"),
+    ("Wii", "Wii"),
+    ("PSP", "PSP"),
+    ("Vita", "Vita"),
+    ("3DS", "3DS"),
+    ("RetoPy", "RetoPy"),
+    ("Other Systems", "Other Systems"),
+)
 
 
 class Post(models.Model):
@@ -35,7 +35,12 @@ class Post(models.Model):
     topic = models.CharField(max_length=40)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    thumbnail = models.ImageField(null=True, blank=True, upload_to="media/", default = "static/assets/images/hs.jpeg")
+    thumbnail = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to="media/",
+        default="static/assets/images/hs.jpeg",
+    )
     platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)
 
     def get_absolute_url(self):
@@ -52,6 +57,8 @@ class Comment(models.Model):
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
+    thumbnail = models.ImageField(null=True, blank=True, upload_to="media/")
+    author_id = models.IntegerField(null=True, blank=True)
     approved_comment = models.BooleanField(default=False)
 
     def approve(self):

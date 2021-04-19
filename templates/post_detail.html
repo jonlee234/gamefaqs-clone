@@ -35,12 +35,24 @@
   </p>
   {%endif%}
   <hr />
-  {% for comment in post.comments.all %}
+  {% for comment in post.comments.all %} {%if comment.thumbnail%}
+  <img
+    src="{{comment.thumbnail.url}}"
+    alt="comment thumbnail"
+    height="100px"
+    width="100px"
+  />
+  {%endif%}
   <div class="comment">
-    <span class="author"><strong>{{ comment.author}}</strong></span>
+    <span class="author"
+      ><strong
+        ><a href="/user/{{comment.author_id}}">{{comment.author}}</a></strong
+      ></span
+    >
     <span class="comment-text" style="color: #fff">
       <p>{{ comment.text|linebreaks }}</p>
     </span>
+
     <div class="date">{{ comment.created_date }}</div>
     <hr />
   </div>
