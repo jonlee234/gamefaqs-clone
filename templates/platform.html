@@ -3,11 +3,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="platform-template">
-        <h1 class="platform-title">View by Platform</h1>
+        <h1 class="platform-title">Games on:</h1>
         {% for items in games %}
         <li>
           <a class="platform-list" href="/viewGames/{{items.id}}">
-            {{items.get_platform_display}} {{items.title.title}}
+            {{items.title.title}} - {{items.get_platform_display}}
           </a>
         </li>
         {% endfor %}

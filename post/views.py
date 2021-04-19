@@ -13,7 +13,7 @@ from post.models import Post, Comment
 class PostCreate(LoginRequiredMixin, CreateView):
     template_name = "add_post.html"
     model = Post
-    fields = ["topic", "game", "platforms", "text", "post_date", "thumbnail"]
+    fields = ["topic", "game",  "text",  "thumbnail"]
 
     def form_valid(self, form):
         form.instance.user_posted = self.request.user
@@ -47,6 +47,7 @@ def add_comment_to_post(request, pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.author = request.user
+            comment.author_id = request.user.id
             comment.save()
             return redirect("post_detail", pk=post.pk)
     else:

@@ -8,25 +8,25 @@ class LoginForm(forms.Form):
 
 class SignupForm(forms.Form):
     PLATFORM_CHOICES = (
-        ("1", "PC"),
-        ("2", "PS5"),
-        ("3", "XSX"),
-        ("4", "Switch"),
-        ("5", "iOS"),
-        ("6", "Android"),
-        ("7", "Arcade"),
-        ("8", "PS4"),
-        ("9", "PS3"),
-        ("10", "Xbox One"),
-        ("11", "Xbox 360"),
-        ("12", "Sega"),
-        ("13", "Wii U"),
-        ("14", "Wii"),
-        ("15", "PSP"),
-        ("16", "Vita"),
-        ("17", "3DS"),
-        ("18", "RetoPy"),
-        ("19", "Other Systems"),
+        ("PC", "PC"),
+        ("PS5", "PS5"),
+        ("XSX", "XSX"),
+        ("Switch", "Switch"),
+        ("iOS", "iOS"),
+        ("Android", "Android"),
+        ("Arcade", "Arcade"),
+        ("PS4", "PS4"),
+        ("PS3", "PS3"),
+        ("Xbox One", "Xbox One"),
+        ("Xbox 360", "Xbox 360"),
+        ("Sega", "Sega"),
+        ("Wii U", "Wii U"),
+        ("Wii", "Wii"),
+        ("PSP", "PSP"),
+        ("Vita", "Vita"),
+        ("3DS", "3DS"),
+        ("RetoPy", "RetoPy"),
+        ("Other Systems", "Other Systems"),
     )
     avatar = forms.ImageField(required=False)
     email = forms.EmailField()
@@ -35,6 +35,6 @@ class SignupForm(forms.Form):
     bio = forms.CharField(max_length=140)
     platform_choice_field = forms.CharField(
         label="Favorite Platform",
-        max_length=2,
+        max_length=200,
         widget=forms.Select(choices=PLATFORM_CHOICES),
     )

@@ -4,6 +4,7 @@
   --global-color-black: #333;
   --global-color-yellow: #face02;
   --global-color-brawndo: #7eaa41;
+  font-family: "Roboto", sans-serif !important;
 }
 
 *,
@@ -17,6 +18,7 @@
 
 .content {
   background-color: var(--global-color-background) !important;
+
 }
 
 html,
@@ -25,6 +27,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--global-color-background);
+
 }
 
 a:hover {
@@ -36,6 +39,7 @@ header {
   background-image: url(/static/assets/images/mtndew.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 h1,
@@ -48,7 +52,7 @@ h6,
 p,
 label,
 a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   color: var(--global-color-white);
 }
 
@@ -390,9 +394,19 @@ form {
   font-size: 5rem;
 }
 
+#game-tab:hover {
+  background-color: var(--global-color-brawndo);
+  color: var(--global-color-yellow);
+}
+
+.small-users-box {
+  text-transform: uppercase;
+}
+
 #game-feed-title {
   color: var(--global-color-yellow) !important;
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .game-info-container {
@@ -481,8 +495,20 @@ form {
   color: var(--global-color-yellow);
 }
 
-.post-title {
-  font-size: 5rem;
+.game-post {
+  font-size: 2rem !important;
+  color: var(--global-color-yellow) !important;
+}
+
+.game-feed {
+  font-size: 2rem !important;
+}
+
+.landing-games-list {
+  color: var(--global-color-yellow) !important;
+  font-size: 2rem !important;
+  text-transform: uppercase;
+  list-style: none;
 }
 
 .author {
@@ -504,7 +530,11 @@ form {
 
 .game-feed-li {
   color: var(--global-color-white);
-  font-size: 3rem;
+  font-size: 1rem;
+}
+
+.posts-div-2 {
+  text-align: center !important;
 }
 
 /* ############################################ */
@@ -512,10 +542,15 @@ form {
 /* ############################################ */
 
 .user-list-title {
-  font-size: 8rem;
+  font-size: 6rem;
   color: var(--global-color-white);
   margin: 0px;
   text-align: center;
+}
+
+.all-users {
+  color: var(--global-color-yellow);
+  font-size: 3rem;
 }
 
 .user-list-container {
@@ -525,7 +560,7 @@ form {
 
 .online-users {
   font-size: 4rem;
-  color: var(--global-color-yellow);
+  color: var(--global-color-background);
   margin: 0px;
 }
 
@@ -533,24 +568,29 @@ form {
 /* PROFILE PAGE */
 /* ############################################ */
 
-.profile {
-  margin: 0;
-}
-
 .profile-sidebar {
   text-align: center;
+  background-color: #c2932e !important;
+  border: 2px inset var(--global-color-brawndo);
 }
 
 .porifle-desc-text {
   word-wrap: break-word;
 }
 
-.container-img {
-  background-color: var(--global-color-background);
+#profile-hero {
+  background-image: url(/static/assets/images/pc-gaming-pc.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px outset var(--global-color-brawndo);
 }
 
 .profile-sidebar {
-  padding: 20px 0 10px 0;
+  padding: 20px 5px 55px 5px;
+}
+
+#email-link {
+  color: var(--global-color-white) !important;
 }
 
 .profile-userpic img {
@@ -569,7 +609,7 @@ form {
 }
 
 .profile-usertitle-name {
-  color: #5a7391;
+  color: var(--global-color-black);
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -578,8 +618,11 @@ form {
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px !important;
 }
-
+#stats {
+  margin-bottom: 20px !important;
+}
 .profile-userbuttons .btn {
   text-transform: uppercase;
   font-size: 11px;
@@ -597,7 +640,7 @@ form {
 }
 
 .profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
+  border-bottom: 1px solid #058cf3;
 }
 
 .profile-usermenu ul li:last-child {
@@ -640,15 +683,29 @@ textarea {
 .search-results-container {
   text-align: center;
   color: var(--global-color-white);
+  background-image: url(/static/assets/images/ghosts.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 0px 500px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border: 1px solid var(--global-color-brawndo);
+}
+
+.search-add-game {
+  font-size: 2rem !important;
+  color: var(--global-color-yellow);
 }
 
 .search-result {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--global-color-yellow);
 }
 
 .search-results-title {
-  font-size: 8rem;
+  font-size: 6rem;
 }
 
 /* ############################################ */
@@ -854,10 +911,12 @@ input[type="submit"]:active {
 .landing-template {
   color: white;
   text-align: center;
+
+  /* max-width: 200%; */
 }
 
 .landing-profile-view {
-  color: white;
+  color: var(--global-color-white);
   border: 1px solid var(--global-color-white);
   width: fit-content;
   background-color: var(--global-color-background);
@@ -865,10 +924,6 @@ input[type="submit"]:active {
   margin-top: 10px;
   margin-right: 2px;
   margin-left: 4px;
-}
-
-.landing-profile-view > p {
-  color: var(--global-color-white);
 }
 
 .small-posts-box {
@@ -905,6 +960,7 @@ input[type="submit"]:active {
 
 .homepage-title {
   color: var(--global-color-yellow);
+  font-size: 3rem !important;
 }
 
 .bottom-div {
@@ -918,14 +974,16 @@ input[type="submit"]:active {
 
 #home-post {
   color: var(--global-color-white);
+  font-size: 2rem;
 }
 
 .no-recent {
   font-size: 40px;
 }
 
-.landing-games-list {
-  color: var(--global-color-white);
+.no-recent1 {
+  color: var(--global-color-yellow);
+  font-size: 40px !important;
 }
 
 /* ############################################ */
@@ -981,4 +1039,14 @@ input[type="submit"]:active {
   to {
     transform: translatey(-0.15em);
   }
+}
+
+#gif {
+  width: 300px !important;
+}
+
+.about-me {
+  display: inline-block;
+  word-wrap: break-word !important;
+  width: 50%;
 }

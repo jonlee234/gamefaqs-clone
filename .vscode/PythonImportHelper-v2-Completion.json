@@ -898,7 +898,7 @@
         "kind": 6,
         "importPath": "accounts.models",
         "description": "accounts.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\", default='media/default.png')\n    followers = models.ManyToManyField(\"self\", symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    is_online = models.BooleanField(default=False)",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    username = models.CharField(max_length=20, unique=True)\n    email = models.EmailField(max_length=70, unique=True)\n    bio = models.CharField(max_length=500)\n    date_joined = models.DateField(default=timezone.now)\n    platform_choice_field = models.CharField(max_length=50, choices=PLATFORM_CHOICES)\n    avatar = models.ImageField(null=True, blank=True, upload_to=\"media/\", default='./media/default.png')\n    followers = models.ManyToManyField(\"self\", symmetrical=False)\n    favorite_games = models.ManyToManyField(Game, symmetrical=False)\n    is_online = models.BooleanField(default=False)",
         "detail": "accounts.models",
         "documentation": {}
     },
@@ -916,7 +916,7 @@
         "kind": 5,
         "importPath": "accounts.models",
         "description": "accounts.models",
-        "peekOfCode": "PLATFORM_CHOICES = (\n    (\"1\", \"PC\"),\n    (\"2\", \"PS5\"),\n    (\"3\", \"XSX\"),\n    (\"4\", \"Switch\"),\n    (\"5\", \"iOS\"),\n    (\"6\", \"Android\"),\n    (\"7\", \"Arcade\"),\n    (\"8\", \"PS4\"),\n    (\"9\", \"PS3\"),",
+        "peekOfCode": "PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),\n        (\"Android\", \"Android\"),\n        (\"Arcade\", \"Arcade\"),\n        (\"PS4\", \"PS4\"),\n        (\"PS3\", \"PS3\"),",
         "detail": "accounts.models",
         "documentation": {}
     },
@@ -934,7 +934,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def user_profile_view(request, CustomUser_id):\n    my_Custom_User = CustomUser.objects.get(id=CustomUser_id)\n    return render(request, \"user_profile.html\", {\"user\": my_Custom_User})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):\n    request.user.favorite_games.add(Game.objects.get(id=game_id))",
+        "peekOfCode": "def user_profile_view(request, CustomUser_id):\n    my_Custom_User = CustomUser.objects.get(id=CustomUser_id)\n    user_info = CustomUser.objects.get(id=CustomUser_id)\n    return render(request, \"user_profile.html\", {\"user\": my_Custom_User})\n@login_required\ndef follower_view(request, user_id):\n    request.user.followers.add(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef favorite_game_view(request, game_id):",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -961,7 +961,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})",
+        "peekOfCode": "def unfollow_view(request, user_id):\n    request.user.followers.remove(CustomUser.objects.get(id=user_id))\n    return HttpResponseRedirect(reverse(\"profile\", args=[user_id]))\n@login_required\ndef unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    all_users = CustomUser.objects.all()",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -970,7 +970,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})\n# def profile_view(request, username):\n#     user = CustomUser.objects.get(username=username)\n#     return render(request, \"user_profile.html\", {\"user\": user})",
+        "peekOfCode": "def unfavorite_game_view(request, game_id):\n    request.user.favorite_games.remove(Game.objects.get(id=game_id))\n    return HttpResponseRedirect(reverse(\"game-title\", args=[game_id]))\ndef user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    all_users = CustomUser.objects.all()\n    return render(request, \"all-users.html\", {\"user\": user, \"all_users\":all_users})\n# def profile_view(request, username):\n#     user = CustomUser.objects.get(username=username)\n#     return render(request, \"user_profile.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -979,7 +979,7 @@
         "kind": 2,
         "importPath": "accounts.views",
         "description": "accounts.views",
-        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    return render(request, \"all-users.html\", {\"user\": user})\n# def profile_view(request, username):\n#     user = CustomUser.objects.get(username=username)\n#     return render(request, \"user_profile.html\", {\"user\": user})",
+        "peekOfCode": "def user_list_view(request):\n    user = CustomUser.objects.filter(is_online=True)\n    all_users = CustomUser.objects.all()\n    return render(request, \"all-users.html\", {\"user\": user, \"all_users\":all_users})\n# def profile_view(request, username):\n#     user = CustomUser.objects.get(username=username)\n#     return render(request, \"user_profile.html\", {\"user\": user})",
         "detail": "accounts.views",
         "documentation": {}
     },
@@ -997,7 +997,7 @@
         "kind": 6,
         "importPath": "authentication.forms",
         "description": "authentication.forms",
-        "peekOfCode": "class LoginForm(forms.Form):\n    username = forms.CharField(max_length=50)\n    password = forms.CharField(widget=forms.PasswordInput())\nclass SignupForm(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"1\", \"PC\"),\n        (\"2\", \"PS5\"),\n        (\"3\", \"XSX\"),\n        (\"4\", \"Switch\"),\n        (\"5\", \"iOS\"),",
+        "peekOfCode": "class LoginForm(forms.Form):\n    username = forms.CharField(max_length=50)\n    password = forms.CharField(widget=forms.PasswordInput())\nclass SignupForm(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),",
         "detail": "authentication.forms",
         "documentation": {}
     },
@@ -1006,7 +1006,7 @@
         "kind": 6,
         "importPath": "authentication.forms",
         "description": "authentication.forms",
-        "peekOfCode": "class SignupForm(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"1\", \"PC\"),\n        (\"2\", \"PS5\"),\n        (\"3\", \"XSX\"),\n        (\"4\", \"Switch\"),\n        (\"5\", \"iOS\"),\n        (\"6\", \"Android\"),\n        (\"7\", \"Arcade\"),\n        (\"8\", \"PS4\"),",
+        "peekOfCode": "class SignupForm(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),\n        (\"Android\", \"Android\"),\n        (\"Arcade\", \"Arcade\"),\n        (\"PS4\", \"PS4\"),",
         "detail": "authentication.forms",
         "documentation": {}
     },
@@ -1087,7 +1087,7 @@
         "kind": 6,
         "importPath": "game.forms",
         "description": "game.forms",
-        "peekOfCode": "class game_form(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),\n        (\"08\", \"PS4\"),",
+        "peekOfCode": "class game_form(forms.Form):\n    PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),\n        (\"Android\", \"Android\"),\n        (\"Arcade\", \"Arcade\"),\n        (\"PS4\", \"PS4\"),",
         "detail": "game.forms",
         "documentation": {}
     },
@@ -1114,7 +1114,7 @@
         "kind": 6,
         "importPath": "game.models",
         "description": "game.models",
-        "peekOfCode": "class Game(models.Model):\n    PLATFORM_CHOICES = (\n        (\"01\", \"PC\"),\n        (\"02\", \"PS5\"),\n        (\"03\", \"XSX\"),\n        (\"04\", \"Switch\"),\n        (\"05\", \"iOS\"),\n        (\"06\", \"Android\"),\n        (\"07\", \"Arcade\"),\n        (\"08\", \"PS4\"),",
+        "peekOfCode": "class Game(models.Model):\n    PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),\n        (\"Android\", \"Android\"),\n        (\"Arcade\", \"Arcade\"),\n        (\"PS4\", \"PS4\"),",
         "detail": "game.models",
         "documentation": {}
     },
@@ -1177,7 +1177,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1186,7 +1186,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = config(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1195,7 +1195,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.settings",
         "description": "gamefaqs_project.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"*\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "gamefaqs_project.settings",
         "documentation": {}
     },
@@ -1402,7 +1402,7 @@
         "kind": 5,
         "importPath": "gamefaqs_project.urls",
         "description": "gamefaqs_project.urls",
-        "peekOfCode": "urlpatterns = [\n    # Core links\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"admin/\", admin.site.urls, name=\"admin\"),\n    # Game Related Links\n    path(\"viewGames/\", AllGameView.as_view(), name=\"games\"),\n    path(\"viewGames/<int:game_id>/\", GameTitleView, name=\"game-title\"),\n    path(\"newGame/\", AddGameView.as_view(), name=\"add-game\"),\n    path(\"viewGames/platform/<int:platform>/\", PlatformView, name=\"platform\"),\n    path(\"viewGames/search/<str:title>/\", Search, name=\"search\"),",
+        "peekOfCode": "urlpatterns = [\n    # Core links\n    path(\"\", user_view.index, name=\"homepage\"),\n    path(\"admin/\", admin.site.urls, name=\"admin\"),\n    # Game Related Links\n    path(\"viewGames/\", AllGameView.as_view(), name=\"games\"),\n    path(\"viewGames/<int:game_id>/\", GameTitleView, name=\"game-title\"),\n    path(\"newGame/\", AddGameView.as_view(), name=\"add-game\"),\n    path(\"viewGames/platform/<str:platform>/\", PlatformView, name=\"platform\"),\n    path(\"viewGames/search/<str:title>/\", Search, name=\"search\"),",
         "detail": "gamefaqs_project.urls",
         "documentation": {}
     },
@@ -1465,7 +1465,7 @@
         "kind": 6,
         "importPath": "post.models",
         "description": "post.models",
-        "peekOfCode": "class Post(models.Model):\n    text = models.TextField(max_length=1000)\n    post_date = models.DateTimeField(default=timezone.now)\n    topic = models.CharField(max_length=40)\n    game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True, blank=True, upload_to=\"media/\")\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)\n    def get_absolute_url(self):\n        return reverse(\"post_detail\", kwargs={\"pk\": self.pk})",
+        "peekOfCode": "class Post(models.Model):\n    text = models.TextField(max_length=1000)\n    post_date = models.DateTimeField(default=timezone.now)\n    topic = models.CharField(max_length=40)\n    game = models.ForeignKey(Game, on_delete=models.CASCADE)\n    user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)\n    thumbnail = models.ImageField(null=True, blank=True, upload_to=\"media/\", default = \"static/assets/images/hs.jpeg\")\n    platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)\n    def get_absolute_url(self):\n        return reverse(\"post_detail\", kwargs={\"pk\": self.pk})",
         "detail": "post.models",
         "documentation": {}
     },
@@ -1483,7 +1483,7 @@
         "kind": 5,
         "importPath": "post.models",
         "description": "post.models",
-        "peekOfCode": "PLATFORM_CHOICES = (\n    (\"1\", \"PC\"),\n    (\"2\", \"PS5\"),\n    (\"3\", \"XSX\"),\n    (\"4\", \"Switch\"),\n    (\"5\", \"iOS\"),\n    (\"6\", \"Android\"),\n    (\"7\", \"Arcade\"),\n    (\"8\", \"PS4\"),\n    (\"9\", \"PS3\"),",
+        "peekOfCode": "PLATFORM_CHOICES = (\n        (\"PC\", \"PC\"),\n        (\"PS5\", \"PS5\"),\n        (\"XSX\", \"XSX\"),\n        (\"Switch\", \"Switch\"),\n        (\"iOS\", \"iOS\"),\n        (\"Android\", \"Android\"),\n        (\"Arcade\", \"Arcade\"),\n        (\"PS4\", \"PS4\"),\n        (\"PS3\", \"PS3\"),",
         "detail": "post.models",
         "documentation": {}
     },
@@ -1492,7 +1492,7 @@
         "kind": 6,
         "importPath": "post.views",
         "description": "post.views",
-        "peekOfCode": "class PostCreate(LoginRequiredMixin, CreateView):\n    template_name = \"add_post.html\"\n    model = Post\n    fields = [\"topic\", \"game\", \"platforms\", \"text\", \"post_date\", \"thumbnail\"]\n    def form_valid(self, form):\n        form.instance.user_posted = self.request.user\n        return super().form_valid(form)\nclass PostDetailView(DetailView):\n    template_name = \"post_detail.html\"\n    model = Post",
+        "peekOfCode": "class PostCreate(LoginRequiredMixin, CreateView):\n    template_name = \"add_post.html\"\n    model = Post\n    fields = [\"topic\", \"game\",  \"text\",  \"thumbnail\"]\n    def form_valid(self, form):\n        form.instance.user_posted = self.request.user\n        return super().form_valid(form)\nclass PostDetailView(DetailView):\n    template_name = \"post_detail.html\"\n    model = Post",
         "detail": "post.views",
         "documentation": {}
     },
@@ -1519,7 +1519,7 @@
         "kind": 2,
         "importPath": "post.views",
         "description": "post.views",
-        "peekOfCode": "def add_comment_to_post(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == \"POST\":\n        form = CommentForm(request.POST)\n        if form.is_valid():\n            comment = form.save(commit=False)\n            comment.post = post\n            comment.author = request.user\n            comment.save()\n            return redirect(\"post_detail\", pk=post.pk)",
+        "peekOfCode": "def add_comment_to_post(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == \"POST\":\n        form = CommentForm(request.POST)\n        if form.is_valid():\n            comment = form.save(commit=False)\n            comment.post = post\n            comment.author = request.user\n            comment.author_id = request.user.id\n            comment.save()",
         "detail": "post.views",
         "documentation": {}
     },

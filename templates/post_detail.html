@@ -6,7 +6,12 @@
         <h1 class="post-title">Topic: {{ object.topic }}</h1>
         <p>Poster: {{ object.user_posted }}</p>
         <h2>{{ object.game }}</h2>
-        <img src="{{object.thumbnail.url}}" />
+        <img
+          src="{{object.thumbnail.url}}"
+          alt="post thumbnail"
+          height="500px"
+          width="500px"
+        />
         <p class="post-text">{{ object.text }}</p>
         <p class="date">Published: {{ object.post_date }}</p>
       </div>
@@ -32,10 +37,10 @@
   <hr />
   {% for comment in post.comments.all %}
   <div class="comment">
-    <span class="author"><strong>{{ comment.author }}</strong></span>
-    <span class="comment-text" style="color: #fff"
-      ><p>{{ comment.text|linebreaks }}</p></span
-    >
+    <span class="author"><strong>{{ comment.author}}</strong></span>
+    <span class="comment-text" style="color: #fff">
+      <p>{{ comment.text|linebreaks }}</p>
+    </span>
     <div class="date">{{ comment.created_date }}</div>
     <hr />
   </div>

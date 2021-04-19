@@ -1,11 +1,37 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="user-list-title">View online users</h1>
-<div class="user-list-container">
+<div class="container-img">
   <br />
-  {% for items in user %}
-  <div>
-    <a class="online-users" href="/user/{{items.id}}"> {{items.username}} </a>
+  <div class="testing">
+    <div class="container">
+      <div class="row profile">
+        <div class="col-md-3">
+          <div class="profile-sidebar">
+            <h1 class="user-list-title">Online</h1>
+            <div class="user-list-container">
+              <br />
+              {% for items in user %}
+              <div>
+                <a class="online-users" href="/user/{{items.id}}">
+                  {{items.username}}
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <h1 class="user-list-title">View all users</h1>
+        <div class="user-list-container">
+          <br />
+          {% for users in all_users %}
+          <div>
+            <a class="all-users" href="/user/{{users.id}}">
+              {{users.username}}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
-  {% endfor %}
+  {% endblock %}
 </div>
-{% endblock %}

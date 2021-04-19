@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="add-post-template">
         <h1 class="add-post-title">Add a post</h1>
-        <form method="post" enctype="multipart/form-data" style="color: #fff">
+        <form method="post" enctype="multipart/form-data">
           {% csrf_token %} {{form.media}} {{form.as_p}}
           <input type="submit" value="submit" />
         </form>

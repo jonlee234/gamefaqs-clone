@@ -6,26 +6,18 @@
         <h1 class="game-title-detail">{{game.title}}</h1>
         <span class="platform-detail-title">On: {{platform}}</span>
         <br />
-        <a href="/user/{{user.id}}/" id="game-feed-title" class="game-detail"
-          >Posted by: {{user.username}}</a
-        >
         <br />
-        <img src="{{game.cover_art.url}}" />
+        <img src="{{game.cover_art.url}}" width="500px" height="500px" />
+        <br />
+        <br />
         <div class="game-detail">
           About {{game.title}}: <br />
           {{game.description}}
         </div>
-        <a href="/favorite_game/{{game.id}}">
+        <!-- <a href="/favorite_game/{{game.id}}">
           <input type="submit" value="Favorite" />
-        </a>
+        </a> -->
       </div>
-      <!-- fix properly with css -->
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   </div>
 </div>

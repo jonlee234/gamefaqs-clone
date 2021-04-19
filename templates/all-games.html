@@ -8,24 +8,18 @@
           <div class="card-title">GAMR Community</div>
           <div class="card-subtitle">Connect, Share, Play</div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="h6 text-muted" id="gamr">Posts by Gamrs</div>
-            <div class="h5" id="gamr-count">96</div>
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted" id="gamr">Online Members</div>
-            <div class="h5" id="gamr-count">7</div>
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted" id="gamr">Game Guides</div>
-            <div class="h5" id="gamr-count">240</div>
-          </li>
-        </ul>
+        <div class="card-gif">
+          <img alt="Mario Gif" src="/static/assets/images/mariogif.gif" />
+        </div>
       </div>
     </div>
     <div class="game-search">
-      <form class="form-inline" action="" method="post" enctype="multipart/form-data">
+      <form
+        class="form-inline"
+        action=""
+        method="post"
+        enctype="multipart/form-data"
+      >
         {% csrf_token %} {{search}}
         <div class="input-group">
           <input type="submit" value="Search" />
@@ -37,25 +31,50 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="game-tab" href="/newGame/" role="tab">Add a game</a>
+              <a
+                class="nav-link active"
+                id="game-tab"
+                href="/newGame/"
+                role="tab"
+                >Add a game</a
+              >
             </li>
           </ul>
         </div>
-        <div class="post-feed">
-          <ul>
-            {% for items in games %}
+        <div class="game-feed">
+          {% for game in games %}
+          <ul id="game-feed-bullet">
             <li>
-              <a href="/viewGames/{{items.id}}" id="post-feed-title">
-                {{ items.title.title }}
+              <a class="landing-games-list">
+                <p class="game-post">
+                  <img
+                    src="{{game.cover_art.url}}"
+                    alt="Game Cover Art"
+                    width="50"
+                    height="50"
+                  />
+                  <a class="landing-games-list" href="/viewGames/{{game.id}}"
+                    >{{game.title}}</a
+                  >
+                  -
+                  <a
+                    class="landing-games-list"
+                    href="/viewGames/platform/{{game.platform}}/"
+                  >
+                    {{game.get_platform_display}}</a
+                  >
+                </p>
               </a>
 
-              <a href="/viewGames/platform/{{items.platform}}" id="post-feed-platform">
-                on: {{items.get_platform_display}}</a>
-              <a href="/user/{{user.id}}/" id="post-feed-user">
-                by: {{user.username}}</a>
+              <a
+                href="/viewGames/platform/{{items.platform}}"
+                id="post-feed-platform"
+              >
+                {{items.get_platform_display}}</a
+              >
             </li>
-            {% endfor %}
           </ul>
+          {% endfor %}
         </div>
       </div>
     </div>
