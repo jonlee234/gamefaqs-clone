@@ -1,8 +1,39 @@
 {% extends "base.html" %} {% block content %}
 <div className="post-detail-container">
+  {% if user.is_authenticated %}
+  <form action="{% url 'post_like' object.id %}" method="POST">
+    {% csrf_token %} {% if post_is_liked %}
+    <button
+      type="submit"
+      name="post_id"
+      value="{{object.id}}"
+      class="btn btn-info"
+    >
+      Unlike
+    </button>
+    {% else %}
+    <button
+      type="submit"
+      name="post_id"
+      value="{{object.id}}"
+      class="btn btn-info"
+    >
+      Like
+    </button>
+    {% endif %}
+  </form>
+  {% else %}
+  <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}"
+    >Log in to like this article!</a
+  ><br />
+  {% endif %}
+
   <div class="row">
     <div class="col-md-12">
       <div class="post-detail-template">
+        <h1 class="post-title">
+          {{ number_of_likes }} Like{{ number_of_likes|pluralize }}
+        </h1>
         <h1 class="post-title">Topic: {{ object.topic }}</h1>
         <p>Poster: {{ object.user_posted }}</p>
         <h2>{{ object.game }}</h2>

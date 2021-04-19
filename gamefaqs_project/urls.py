@@ -31,6 +31,7 @@ from post.views import (
     PostDetailView,
     PostListView,
     add_comment_to_post,
+    PostLike,
 )
 
 
@@ -63,6 +64,7 @@ urlpatterns = [
     # Favorites
     path("favorite_game/<int:game_id>", favorite_game_view, name="favorite_game"),
     path("unfavorite_game/<int:game_id>", unfavorite_game_view, name="unfavorite_game"),
+    path("post-like/<int:pk>", PostLike, name="post_like"),
     # Statics
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

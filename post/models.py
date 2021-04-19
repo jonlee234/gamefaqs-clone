@@ -7,26 +7,26 @@ from game.models import Game
 
 # Create your models here.
 PLATFORM_CHOICES = (
-        ("PC", "PC"),
-        ("PS5", "PS5"),
-        ("XSX", "XSX"),
-        ("Switch", "Switch"),
-        ("iOS", "iOS"),
-        ("Android", "Android"),
-        ("Arcade", "Arcade"),
-        ("PS4", "PS4"),
-        ("PS3", "PS3"),
-        ("Xbox One", "Xbox One"),
-        ("Xbox 360", "Xbox 360"),
-        ("Sega", "Sega"),
-        ("Wii U", "Wii U"),
-        ("Wii", "Wii"),
-        ("PSP", "PSP"),
-        ("Vita", "Vita"),
-        ("3DS", "3DS"),
-        ("RetoPy", "RetoPy"),
-        ("Other Systems", "Other Systems"),
-    )
+    ("PC", "PC"),
+    ("PS5", "PS5"),
+    ("XSX", "XSX"),
+    ("Switch", "Switch"),
+    ("iOS", "iOS"),
+    ("Android", "Android"),
+    ("Arcade", "Arcade"),
+    ("PS4", "PS4"),
+    ("PS3", "PS3"),
+    ("Xbox One", "Xbox One"),
+    ("Xbox 360", "Xbox 360"),
+    ("Sega", "Sega"),
+    ("Wii U", "Wii U"),
+    ("Wii", "Wii"),
+    ("PSP", "PSP"),
+    ("Vita", "Vita"),
+    ("3DS", "3DS"),
+    ("RetoPy", "RetoPy"),
+    ("Other Systems", "Other Systems"),
+)
 
 
 class Post(models.Model):
@@ -35,8 +35,17 @@ class Post(models.Model):
     topic = models.CharField(max_length=40)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user_posted = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    thumbnail = models.ImageField(null=True, blank=True, upload_to="media/", default = "static/assets/images/hs.jpeg")
+    thumbnail = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to="media/",
+        default="static/assets/images/hs.jpeg",
+    )
     platforms = models.CharField(choices=PLATFORM_CHOICES, max_length=50)
+    likes = models.ManyToManyField(CustomUser, related_name="post_like")
+
+    def number_of_likes(self):
+        return self.likes.count()
 
     def get_absolute_url(self):
         return reverse("post_detail", kwargs={"pk": self.pk})

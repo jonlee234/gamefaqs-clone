@@ -13,7 +13,7 @@ from post.models import Post, Comment
 class PostCreate(LoginRequiredMixin, CreateView):
     template_name = "add_post.html"
     model = Post
-    fields = ["topic", "game",  "text",  "thumbnail"]
+    fields = ["topic", "game", "text", "thumbnail"]
 
     def form_valid(self, form):
         form.instance.user_posted = self.request.user
@@ -26,6 +26,12 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        likes_connected = get_object_or_404(Post, id=self.kwargs["pk"])
+        liked = False
+        if likes_connected.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context["number_of_likes"] = likes_connected.number_of_likes()
+        context["post_is_liked"] = liked
         return context
 
 
@@ -53,3 +59,13 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, "add_comment_to_post.html", {"form": form})
+
+
+def PostLike(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get("post_id"))
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+
+    return redirect("post_detail", pk=post.pk)
