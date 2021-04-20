@@ -25,26 +25,26 @@ def index(request):
 @login_required
 def user_profile_view(request, CustomUser_id):
     my_Custom_User = CustomUser.objects.get(id=CustomUser_id)
-    user_info = CustomUser.objects.get(id=CustomUser_id)
-    return render(request, "user_profile.html", {"user": my_Custom_User})
+    followers = CustomUser.objects.filter(followers=CustomUser_id)
+    return render(request, "user_profile.html", {"user": my_Custom_User, "followers": followers})
 
 
 @login_required
 def follower_view(request, user_id):
     request.user.followers.add(CustomUser.objects.get(id=user_id))
-    return HttpResponseRedirect(reverse("profile", args=[user_id]))
+    return HttpResponseRedirect(reverse("user-profile", args=[user_id]))
 
 
 @login_required
 def favorite_game_view(request, game_id):
     request.user.favorite_games.add(Game.objects.get(id=game_id))
-    return HttpResponseRedirect(reverse("profile", args=[request.user.id]))
+    return HttpResponseRedirect(reverse("user-profile", args=[request.user.id]))
 
 
 @login_required
 def unfollow_view(request, user_id):
     request.user.followers.remove(CustomUser.objects.get(id=user_id))
-    return HttpResponseRedirect(reverse("profile", args=[user_id]))
+    return HttpResponseRedirect(reverse("user-profile", args=[user_id]))
 
 
 @login_required

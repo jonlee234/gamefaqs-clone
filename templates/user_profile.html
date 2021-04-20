@@ -20,15 +20,31 @@
 
             <div class="profile-userbuttons">
               <!-- ##### TODO Set this up or remove it.###### -->
+              {% if  user.id != request.user.id %}
+              <a href="/follow/{{user.id}}">
+                  <button type="button" class="btn btn-success btn-sm" >
+                    Follow
+                  </button>
+              </a>
+              {% endif %}
 
-              <button type="button" class="btn btn-success btn-sm" href="/follow/{{user.id}}">
-                Follow
-              </button>
               <button type="button" class="btn btn-success btn-sm">
                 <a id="email-link" href="mailto:{{user.email}}" target="_blank"
-                  >{{user.email}}</a
+                >{{user.email}}</a
                 >
               </button>
+              <div>
+                <h3>Follows:</h3>
+                <!-- FOLLOWERS -->
+                {% for items in followers %}
+                  <p>
+                      <a href="/user/{{items.id}}/">
+                        {{items}}
+                      </a>
+                    </p>
+                {% endfor %}
+
+              </div>
             </div>
             <div>
               <div class="portlet light bordered" id="stats">
