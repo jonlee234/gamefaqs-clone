@@ -37,6 +37,7 @@ class CustomUser(AbstractUser):
     followers = models.ManyToManyField("self", symmetrical=False)
     favorite_games = models.ManyToManyField(Game, symmetrical=False)
     is_online = models.BooleanField(default=False)
+    
     def __str__(self):
         return self.username
 
