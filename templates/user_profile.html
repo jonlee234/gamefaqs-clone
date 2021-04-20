@@ -21,12 +21,17 @@
             <div class="profile-userbuttons">
               <!-- ##### TODO Set this up or remove it.###### -->
               {% if  user.id != request.user.id %}
+
+
               <a href="/follow/{{user.id}}">
                   <button type="button" class="btn btn-success btn-sm" >
                     Follow
                   </button>
               </a>
+
               {% endif %}
+
+
 
               <button type="button" class="btn btn-success btn-sm">
                 <a id="email-link" href="mailto:{{user.email}}" target="_blank"
